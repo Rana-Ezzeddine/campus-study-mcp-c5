@@ -1,0 +1,168 @@
+DISCOVERY: search_rooms, reserve_room, find_and_reserve
+
+CLIENT -> SERVER search_rooms {"day": "2026-10-23", "hour": 10, "party_size": 2, "quiet_only": true}
+SERVER -> CLIENT {
+  "meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "Campus Study Toolkit",
+      "version": "4.1.3"
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"day\":\"2026-10-23\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true}]}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structured_content": {
+    "day": "2026-10-23",
+    "hour": 10,
+    "timezone": "Asia/Beirut",
+    "duration_minutes": 60,
+    "rooms": [
+      {
+        "room_id": "CEDAR-2",
+        "name": "Cedar Study Pod",
+        "capacity": 2,
+        "quiet": true
+      },
+      {
+        "room_id": "OLIVE-4",
+        "name": "Olive Study Room",
+        "capacity": 4,
+        "quiet": true
+      }
+    ]
+  },
+  "is_error": false,
+  "result_type": "complete"
+}
+
+CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-specific"}
+SERVER -> CLIENT {
+  "meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "Campus Study Toolkit",
+      "version": "4.1.3"
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"reservation_id\":\"2d600afc-bd72-4217-881a-d83cc7f0e7e7\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structured_content": {
+    "reservation_id": "2d600afc-bd72-4217-881a-d83cc7f0e7e7",
+    "room_id": "CEDAR-2",
+    "day": "2026-10-23",
+    "hour": 10,
+    "party_size": 2,
+    "student_name": "Rana",
+    "timezone": "Asia/Beirut",
+    "duration_minutes": 60
+  },
+  "is_error": false,
+  "result_type": "complete"
+}
+
+CLIENT -> SERVER find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
+SERVER -> CLIENT {
+  "meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "Campus Study Toolkit",
+      "version": "4.1.3"
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"reservation\":{\"reservation_id\":\"de958062-b801-4f23-aa37-7a0fccadaa44\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structured_content": {
+    "reservation": {
+      "reservation_id": "de958062-b801-4f23-aa37-7a0fccadaa44",
+      "room_id": "OLIVE-4",
+      "day": "2026-10-23",
+      "hour": 10,
+      "party_size": 3,
+      "student_name": "Rana",
+      "timezone": "Asia/Beirut",
+      "duration_minutes": 60
+    },
+    "selection_reason": "Smallest available room meeting your constraints.",
+    "steps": [
+      "search_rooms",
+      "reserve_room"
+    ]
+  },
+  "is_error": false,
+  "result_type": "complete"
+}
+
+CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-conflict"}
+SERVER -> CLIENT {
+  "meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "Campus Study Toolkit",
+      "version": "4.1.3"
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "SLOT_UNAVAILABLE: room was booked; search again or choose another hour.",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structured_content": null,
+  "is_error": true,
+  "result_type": "complete"
+}
+
+CLIENT -> SERVER find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
+SERVER -> CLIENT {
+  "meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "Campus Study Toolkit",
+      "version": "4.1.3"
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"reservation\":{\"reservation_id\":\"de958062-b801-4f23-aa37-7a0fccadaa44\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Existing result for this request_id.\",\"steps\":[\"idempotency replay\"]}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structured_content": {
+    "reservation": {
+      "reservation_id": "de958062-b801-4f23-aa37-7a0fccadaa44",
+      "room_id": "OLIVE-4",
+      "day": "2026-10-23",
+      "hour": 10,
+      "party_size": 3,
+      "student_name": "Rana",
+      "timezone": "Asia/Beirut",
+      "duration_minutes": 60
+    },
+    "selection_reason": "Existing result for this request_id.",
+    "steps": [
+      "idempotency replay"
+    ]
+  },
+  "is_error": false,
+  "result_type": "complete"
+}
+
+This is an MCP-client demonstration, not an LLM routing demonstration.
+For the live agent, run python -m campus_toolkit.agent with OPENAI_API_KEY set.
