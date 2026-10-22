@@ -1,0 +1,51 @@
+name: Free local LLM verification
+
+on:
+  push:
+    paths:
+      - '.github/workflows/free-live-agent.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-llm:
+    # Standard Linux runners in this public repository; no paid API or GPU runner.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      MODEL_PROVIDER: ollama
+      OLLAMA_MODEL: qwen2.5:3b
+      OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+      OLLAMA_HOST: 127.0.0.1:11434
+      OLLAMA_NUM_PARALLEL: '1'
+      OLLAMA_CONTEXT_LENGTH: '8192'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install Ollama from the official source
+        run: curl -fsSL https://ollama.com/install.sh | sh
+      - name: Start the local model server
+        run: |
+          ollama serve > /tmp/ollama.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:11434/api/tags; then break; fi
+            sleep 1
+          done
+          ollama pull "$OLLAMA_MODEL"
+          ollama --version
+          ollama list
+      - name: Verify actual LLM tool selection and retain results
+        run: python scripts/verify.py --live
+      - name: Retain actual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: free-local-llm-verification
+          path: evidence/
+          retention-days: 7
