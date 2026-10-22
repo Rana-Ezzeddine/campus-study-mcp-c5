@@ -14,8 +14,9 @@ from .agent import ROOT, build_agent, connection, run_turn
 async def main():
     load_dotenv(ROOT / ".env")
     set_tracing_disabled(True)
-    if not os.getenv("OPENAI_API_KEY"):
-        raise SystemExit("Set OPENAI_API_KEY in .env before running the live agent demo.")
+    provider = os.getenv("MODEL_PROVIDER", "ollama")
+    model = os.getenv("OLLAMA_MODEL", "qwen2.5:3b") if provider == "ollama" else os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
+    print(f"REAL LLM VERIFICATION: provider={provider}, model={model}")
     day = (datetime.now(ZoneInfo("Asia/Beirut")) + timedelta(days=1)).date().isoformat()
     scenarios = [
         ("search_rooms", f"Which quiet rooms are available for 2 people on {day} at 10:00 Beirut time? Only look up availability."),
@@ -38,7 +39,7 @@ async def main():
                 if rows != expected_rooms:
                     raise AssertionError(f"Unexpected persisted state: {rows}; expected {expected_rooms}")
                 print("ROUTING CHECK: PASS", expected)
-    print("\nAll three live agent routing checks passed.")
+    print("\nAll three live agent routing checks passed with a real language model.")
 
 
 if __name__ == "__main__":
