@@ -1,0 +1,787 @@
+﻿2026-10-22T19:28:39.5422614Z Current runner version: '2.338.0'
+2026-10-22T19:28:39.5449145Z ##[group]Runner Image Provisioner
+2026-10-22T19:28:39.5450053Z Hosted Compute Agent
+2026-10-22T19:28:39.5450743Z Version: 20261012.601
+2026-10-22T19:28:39.5451471Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-22T19:28:39.5452227Z Build Date: 2026-10-12T17:48:21Z
+2026-10-22T19:28:39.5452999Z Worker ID: {24615f2d-4709-492d-a5a8-28dd1d218ade}
+2026-10-22T19:28:39.5453732Z Region: southcentralus
+2026-10-22T19:28:39.5454454Z Cloud: Azure
+2026-10-22T19:28:39.5455044Z ##[endgroup]
+2026-10-22T19:28:39.5456687Z ##[group]Operating System
+2026-10-22T19:28:39.5457629Z Ubuntu
+2026-10-22T19:28:39.5458187Z 24.04.5
+2026-10-22T19:28:39.5458744Z LTS
+2026-10-22T19:28:39.5459356Z ##[endgroup]
+2026-10-22T19:28:39.5459932Z ##[group]Runner Image
+2026-10-22T19:28:39.5460599Z Image: ubuntu-24.04
+2026-10-22T19:28:39.5461236Z Version: 20261012.334.1
+2026-10-22T19:28:39.5462650Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-22T19:28:39.5464227Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-22T19:28:39.5465257Z ##[endgroup]
+2026-10-22T19:28:39.5466447Z ##[group]GITHUB_TOKEN Permissions
+2026-10-22T19:28:39.5469222Z Contents: read
+2026-10-22T19:28:39.5469919Z Metadata: read
+2026-10-22T19:28:39.5470491Z ##[endgroup]
+2026-10-22T19:28:39.5472747Z Secret source: Actions
+2026-10-22T19:28:39.5473803Z Cache mode: write
+2026-10-22T19:28:39.5474628Z Prepare workflow directory
+2026-10-22T19:28:39.5861795Z Prepare all required actions
+2026-10-22T19:28:39.5910579Z Getting action download info
+2026-10-22T19:28:39.8783842Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-22T19:28:39.9618739Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-22T19:28:40.0408690Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-22T19:28:40.2605850Z Complete job name: integration (3.13)
+2026-10-22T19:28:40.3475709Z ##[group]Run actions/checkout@v4
+2026-10-22T19:28:40.3476696Z with:
+2026-10-22T19:28:40.3477363Z   repository: Rana-Ezzeddine/campus-study-mcp-c5
+2026-10-22T19:28:40.3481713Z   token: ***
+2026-10-22T19:28:40.3482166Z   ssh-strict: true
+2026-10-22T19:28:40.3482620Z   ssh-user: git
+2026-10-22T19:28:40.3483065Z   persist-credentials: true
+2026-10-22T19:28:40.3483558Z   clean: true
+2026-10-22T19:28:40.3484012Z   sparse-checkout-cone-mode: true
+2026-10-22T19:28:40.3484533Z   fetch-depth: 1
+2026-10-22T19:28:40.3484961Z   fetch-tags: false
+2026-10-22T19:28:40.3485406Z   show-progress: true
+2026-10-22T19:28:40.3485858Z   lfs: false
+2026-10-22T19:28:40.3486411Z   submodules: false
+2026-10-22T19:28:40.3487140Z   set-safe-directory: true
+2026-10-22T19:28:40.3487742Z   allow-unsafe-pr-checkout: false
+2026-10-22T19:28:40.3488586Z ##[endgroup]
+2026-10-22T19:28:40.4587626Z Syncing repository: Rana-Ezzeddine/campus-study-mcp-c5
+2026-10-22T19:28:40.4590391Z ##[group]Getting Git version info
+2026-10-22T19:28:40.4591753Z Working directory is '/home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5'
+2026-10-22T19:28:40.4593523Z [command]/usr/bin/git version
+2026-10-22T19:28:40.4924923Z git version 2.55.0
+2026-10-22T19:28:40.4947994Z ##[endgroup]
+2026-10-22T19:28:40.4966051Z Temporarily overriding HOME='/home/runner/work/_temp/ca1c2d56-4b45-4f8f-bf5d-d8f17761cb2e' before making global git config changes
+2026-10-22T19:28:40.4968519Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T19:28:40.4972478Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5
+2026-10-22T19:28:40.5027414Z Deleting the contents of '/home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5'
+2026-10-22T19:28:40.5037243Z ##[group]Initializing the repository
+2026-10-22T19:28:40.5038599Z [command]/usr/bin/git init /home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5
+2026-10-22T19:28:40.5147979Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-22T19:28:40.5167549Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-22T19:28:40.5179489Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-22T19:28:40.5180873Z hint: call:
+2026-10-22T19:28:40.5181793Z hint:
+2026-10-22T19:28:40.5182707Z hint: 	git config --global init.defaultBranch <name>
+2026-10-22T19:28:40.5183831Z hint:
+2026-10-22T19:28:40.5184863Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-22T19:28:40.5186466Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-22T19:28:40.5187925Z hint:
+2026-10-22T19:28:40.5192028Z hint: 	git branch -m <name>
+2026-10-22T19:28:40.5192939Z hint:
+2026-10-22T19:28:40.5194066Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-22T19:28:40.5196247Z Initialized empty Git repository in /home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5/.git/
+2026-10-22T19:28:40.5199866Z [command]/usr/bin/git remote add origin https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
+2026-10-22T19:28:40.5239873Z ##[endgroup]
+2026-10-22T19:28:40.5241132Z ##[group]Disabling automatic garbage collection
+2026-10-22T19:28:40.5242146Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-22T19:28:40.5278758Z ##[endgroup]
+2026-10-22T19:28:40.5279861Z ##[group]Setting up auth
+2026-10-22T19:28:40.5287688Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T19:28:40.5329832Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T19:28:40.5709030Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T19:28:40.5726392Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T19:28:40.6000733Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T19:28:40.6045012Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T19:28:40.6328661Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-22T19:28:40.6381039Z ##[endgroup]
+2026-10-22T19:28:40.6382320Z ##[group]Fetching the repository
+2026-10-22T19:28:40.6393163Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +66ec8633667d31408e3b7f9cb5bbb149757b132d:refs/remotes/origin/main
+2026-10-22T19:28:41.0059337Z From https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
+2026-10-22T19:28:41.0060904Z  * [new ref]         66ec8633667d31408e3b7f9cb5bbb149757b132d -> origin/main
+2026-10-22T19:28:41.0064432Z ##[endgroup]
+2026-10-22T19:28:41.0065638Z ##[group]Determining the checkout info
+2026-10-22T19:28:41.0068071Z ##[endgroup]
+2026-10-22T19:28:41.0075783Z [command]/usr/bin/git sparse-checkout disable
+2026-10-22T19:28:41.0130609Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-22T19:28:41.0166445Z ##[group]Checking out the ref
+2026-10-22T19:28:41.0171357Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-22T19:28:41.0247743Z Switched to a new branch 'main'
+2026-10-22T19:28:41.0252160Z branch 'main' set up to track 'origin/main'.
+2026-10-22T19:28:41.0259269Z ##[endgroup]
+2026-10-22T19:28:41.0308336Z [command]/usr/bin/git log -1 --format=%H
+2026-10-22T19:28:41.0338040Z 66ec8633667d31408e3b7f9cb5bbb149757b132d
+2026-10-22T19:28:41.0637727Z ##[group]Run actions/setup-python@v5
+2026-10-22T19:28:41.0638328Z with:
+2026-10-22T19:28:41.0638952Z   python-version: 3.13
+2026-10-22T19:28:41.0639429Z   check-latest: false
+2026-10-22T19:28:41.0643626Z   token: ***
+2026-10-22T19:28:41.0644074Z   update-environment: true
+2026-10-22T19:28:41.0644574Z   allow-prereleases: false
+2026-10-22T19:28:41.0645056Z   freethreaded: false
+2026-10-22T19:28:41.0645505Z ##[endgroup]
+2026-10-22T19:28:41.2128953Z ##[group]Installed versions
+2026-10-22T19:28:41.2242156Z (node:2309) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T19:28:41.2244080Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T19:28:41.2245339Z Successfully set up CPython (3.13.16)
+2026-10-22T19:28:41.2246577Z ##[endgroup]
+2026-10-22T19:28:41.2440056Z ##[group]Run python -m pip install -r requirements.txt
+2026-10-22T19:28:41.2441030Z [36;1mpython -m pip install -r requirements.txt[0m
+2026-10-22T19:28:41.3081705Z shell: /usr/bin/bash -e {0}
+2026-10-22T19:28:41.3082345Z env:
+2026-10-22T19:28:41.3083006Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:28:41.3084028Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T19:28:41.3085035Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:28:41.3085926Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:28:41.3086826Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:28:41.3087939Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T19:28:41.3088727Z ##[endgroup]
+2026-10-22T19:28:43.7027495Z Collecting fastmcp==4.1.3 (from -r requirements.txt (line 2))
+2026-10-22T19:28:43.7791721Z   Downloading fastmcp-4.1.3-py3-none-any.whl.metadata (9.2 kB)
+2026-10-22T19:28:43.8189899Z Collecting openai-agents==0.24.0 (from -r requirements.txt (line 3))
+2026-10-22T19:28:43.8326165Z   Downloading openai_agents-0.24.0-py3-none-any.whl.metadata (13 kB)
+2026-10-22T19:28:43.8670012Z Collecting python-dotenv==1.2.4 (from -r requirements.txt (line 4))
+2026-10-22T19:28:43.8806632Z   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+2026-10-22T19:28:43.9170095Z Collecting mcp==2.3.0 (from -r requirements.txt (line 5))
+2026-10-22T19:28:43.9302630Z   Downloading mcp-2.3.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-22T19:28:43.9573505Z Collecting fastmcp-slim==4.1.3 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:43.9715660Z   Downloading fastmcp_slim-4.1.3-py3-none-any.whl.metadata (11 kB)
+2026-10-22T19:28:44.0006366Z Collecting griffelib<3,>=2 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.0137296Z   Downloading griffelib-2.4.1-py3-none-any.whl.metadata (1.9 kB)
+2026-10-22T19:28:44.0372209Z Collecting httpx2>=2.12.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.0505444Z   Downloading httpx2-2.16.0-py3-none-any.whl.metadata (10 kB)
+2026-10-22T19:28:44.1226634Z Collecting openai<4,>=3.0.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.1373525Z   Downloading openai-3.36.1-py3-none-any.whl.metadata (44 kB)
+2026-10-22T19:28:44.2580810Z Collecting pydantic<3,>=2.12.2 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.2714634Z   Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+2026-10-22T19:28:44.3139741Z Collecting pyjwt>=2.15.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.3274727Z   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+2026-10-22T19:28:44.3511953Z Collecting python-multipart>=0.0.31 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.3675504Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+2026-10-22T19:28:44.4030252Z Collecting requests<3,>=2.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.4162304Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-10-22T19:28:44.4497757Z Collecting starlette>=1.3.1 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.4628728Z   Downloading starlette-1.9.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-22T19:28:44.4970537Z Collecting typing-extensions<5,>=4.12.2 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.5103803Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-22T19:28:44.5382483Z Collecting urllib3>=2.8.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.5516648Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-22T19:28:44.6757580Z Collecting websockets<17,>=15.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:44.6890572Z   Downloading websockets-16.1.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.8 kB)
+2026-10-22T19:28:44.9260164Z Collecting anyio>=4.9 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:44.9394965Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-22T19:28:44.9721989Z Collecting jsonschema>=4.20.0 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:44.9855833Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-10-22T19:28:45.0095083Z Collecting mcp-types==2.3.0 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:45.0228174Z   Downloading mcp_types-2.3.0-py3-none-any.whl.metadata (1.9 kB)
+2026-10-22T19:28:45.0512679Z Collecting opentelemetry-api>=1.28.0 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:45.0670261Z   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+2026-10-22T19:28:45.0980911Z Collecting sse-starlette>=3.0.0 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:45.1271990Z   Downloading sse_starlette-3.5.0-py3-none-any.whl.metadata (15 kB)
+2026-10-22T19:28:45.1533749Z Collecting typing-inspection>=0.4.1 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:45.1946329Z   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+2026-10-22T19:28:45.2281580Z Collecting uvicorn>=0.31.1 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:45.2422234Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-22T19:28:45.2739446Z Collecting platformdirs>=4.0.0 (from fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.2885971Z   Downloading platformdirs-4.13.5-py3-none-any.whl.metadata (5.5 kB)
+2026-10-22T19:28:45.3148306Z Collecting pydantic-settings>=2.0.0 (from fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.3296768Z   Downloading pydantic_settings-2.16.1-py3-none-any.whl.metadata (4.0 kB)
+2026-10-22T19:28:45.3675077Z Collecting rich>=13.9.4 (from fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.3876618Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-10-22T19:28:45.4189211Z Collecting authlib>=1.6.11 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.4318482Z   Downloading authlib-1.9.1-py2.py3-none-any.whl.metadata (10 kB)
+2026-10-22T19:28:45.4554227Z Collecting exceptiongroup>=1.2.2 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.4700777Z   Downloading exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+2026-10-22T19:28:45.4961944Z Collecting py-key-value-aio<0.5.0,>=0.4.4 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.5091966Z   Downloading py_key_value_aio-0.4.6-py3-none-any.whl.metadata (16 kB)
+2026-10-22T19:28:45.5441049Z Collecting certifi>=2026.10.19 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.5573902Z   Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)
+2026-10-22T19:28:45.5968348Z Collecting cyclopts>=4.0.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.6100863Z   Downloading cyclopts-5.3.0-py3-none-any.whl.metadata (12 kB)
+2026-10-22T19:28:45.6394164Z Collecting joserfc>=1.5.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.6527324Z   Downloading joserfc-1.7.7-py3-none-any.whl.metadata (3.2 kB)
+2026-10-22T19:28:45.6765818Z Collecting jsonref>=1.1.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.6911399Z   Downloading jsonref-1.1.0-py3-none-any.whl.metadata (2.7 kB)
+2026-10-22T19:28:45.7170223Z Collecting jsonschema-path>=0.3.4 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.7333561Z   Downloading jsonschema_path-0.5.0-py3-none-any.whl.metadata (8.1 kB)
+2026-10-22T19:28:45.7625128Z Collecting openapi-pydantic>=0.6.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.7756201Z   Downloading openapi_pydantic-0.6.0-py3-none-any.whl.metadata (12 kB)
+2026-10-22T19:28:45.8156182Z Collecting packaging>=24.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.8314032Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-10-22T19:28:45.8565747Z Collecting pyperclip>=1.9.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.8716492Z   Downloading pyperclip-1.11.0-py3-none-any.whl.metadata (2.4 kB)
+2026-10-22T19:28:45.9192688Z Collecting pyyaml<7.0,>=6.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.9327803Z   Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-10-22T19:28:45.9556968Z Collecting uncalled-for>=0.4.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:45.9688460Z   Downloading uncalled_for-0.4.1-py3-none-any.whl.metadata (3.3 kB)
+2026-10-22T19:28:46.0483238Z Collecting watchfiles>=1.0.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:46.0619178Z   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2026-10-22T19:28:46.1592226Z Collecting jiter<1,>=0.16.0 (from openai<4,>=3.0.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:46.1730219Z   Downloading jiter-0.17.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+2026-10-22T19:28:46.1984110Z Collecting sniffio (from openai<4,>=3.0.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:46.2114650Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2026-10-22T19:28:46.2385174Z Collecting idna>=2.8 (from anyio>=4.9->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:46.2516496Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-22T19:28:46.2781456Z Collecting httpcore2==2.16.0 (from httpx2>=2.12.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:46.2920258Z   Downloading httpcore2-2.16.0-py3-none-any.whl.metadata (27 kB)
+2026-10-22T19:28:46.3186444Z Collecting truststore>=0.10 (from httpx2>=2.12.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:46.3326580Z   Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+2026-10-22T19:28:46.3566809Z Collecting h11>=0.16 (from httpcore2==2.16.0->httpx2>=2.12.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:46.3706289Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-22T19:28:46.4081123Z Collecting beartype>=0.20.0 (from py-key-value-aio<0.5.0,>=0.4.4->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:46.4215314Z   Downloading beartype-0.23.1-py3-none-any.whl.metadata (35 kB)
+2026-10-22T19:28:46.4640961Z Collecting aiofile>=3.12.3 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:46.4784341Z   Downloading aiofile-3.12.3-py3-none-any.whl.metadata (17 kB)
+2026-10-22T19:28:46.5157806Z Collecting keyring>=25.6.0 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:46.5289931Z   Downloading keyring-25.7.0-py3-none-any.whl.metadata (21 kB)
+2026-10-22T19:28:46.5596738Z Collecting cachetools>=5.0.0 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:46.5739698Z   Downloading cachetools-7.2.4-py3-none-any.whl.metadata (5.5 kB)
+2026-10-22T19:28:46.5964573Z Collecting annotated-types>=0.6.0 (from pydantic<3,>=2.12.2->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:46.6097512Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-10-22T19:28:47.2623606Z Collecting pydantic-core==2.50.1 (from pydantic<3,>=2.12.2->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:47.2828147Z   Downloading pydantic_core-2.50.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+2026-10-22T19:28:47.4083017Z Collecting charset_normalizer<4,>=2 (from requests<3,>=2.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T19:28:47.4219894Z   Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-10-22T19:28:47.4864825Z Collecting caio~=0.12.0 (from aiofile>=3.12.3->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:47.5004379Z   Downloading caio-0.12.9-cp313-cp313-manylinux_2_34_x86_64.whl.metadata (4.6 kB)
+2026-10-22T19:28:47.6731102Z Collecting cryptography>=45.0.1 (from authlib>=1.6.11->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:47.6877345Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-10-22T19:28:47.7986856Z Collecting cffi>=2.0.0 (from cryptography>=45.0.1->authlib>=1.6.11->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:47.8125713Z   Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-10-22T19:28:47.8367606Z Collecting pycparser (from cffi>=2.0.0->cryptography>=45.0.1->authlib>=1.6.11->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:47.8501958Z   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+2026-10-22T19:28:47.8756620Z Collecting attrs>=23.1.0 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:47.8890319Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-22T19:28:47.9119428Z Collecting docstring-parser<4.0,>=0.15 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:47.9250722Z   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+2026-10-22T19:28:47.9512630Z Collecting rich-rst<3,>=2.0.1 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:47.9645170Z   Downloading rich_rst-2.2.0-py3-none-any.whl.metadata (5.0 kB)
+2026-10-22T19:28:47.9991989Z Collecting pygments>=2.0.0 (from rich-rst<3,>=2.0.1->cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:48.0128257Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-10-22T19:28:48.0425837Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:48.0559479Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-10-22T19:28:48.0855698Z Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:48.1001065Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-10-22T19:28:48.3435587Z Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:48.3571094Z   Downloading rpds_py-2026.9.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-10-22T19:28:48.3836958Z Collecting pathable<0.7.0,>=0.6.0 (from jsonschema-path>=0.3.4->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:48.6737548Z   Downloading pathable-0.6.0-py3-none-any.whl.metadata (7.2 kB)
+2026-10-22T19:28:48.7041096Z Collecting SecretStorage>=3.2 (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:48.7176174Z   Downloading secretstorage-3.5.0-py3-none-any.whl.metadata (4.0 kB)
+2026-10-22T19:28:48.7398634Z Collecting jeepney>=0.4.2 (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:48.7531206Z   Downloading jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
+2026-10-22T19:28:48.7764597Z Collecting jaraco.classes (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:48.7894127Z   Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-22T19:28:48.8213456Z Collecting jaraco.functools (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:48.8722008Z   Downloading jaraco_functools-4.6.0-py3-none-any.whl.metadata (2.9 kB)
+2026-10-22T19:28:48.9085586Z Collecting jaraco.context (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:48.9217474Z   Downloading jaraco_context-6.1.2-py3-none-any.whl.metadata (4.2 kB)
+2026-10-22T19:28:48.9670205Z Collecting email-validator>=2.0.0 (from pydantic[email]>=2.12.0->fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:48.9798921Z   Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+2026-10-22T19:28:49.0071446Z Collecting dnspython>=2.0.0 (from email-validator>=2.0.0->pydantic[email]>=2.12.0->fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:49.0199515Z   Downloading dnspython-2.9.0-py3-none-any.whl.metadata (5.7 kB)
+2026-10-22T19:28:49.0582625Z Collecting markdown-it-py>=2.2.0 (from rich>=13.9.4->fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:49.0723127Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-22T19:28:49.0989653Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.9.4->fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:49.1344342Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-10-22T19:28:49.1781541Z Collecting click>=7.0 (from uvicorn>=0.31.1->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T19:28:49.1913962Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-22T19:28:49.2226554Z Collecting more-itertools (from jaraco.classes->keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T19:28:49.2356770Z   Downloading more_itertools-11.2.1-py3-none-any.whl.metadata (42 kB)
+2026-10-22T19:28:49.2609497Z Downloading fastmcp-4.1.3-py3-none-any.whl (8.2 kB)
+2026-10-22T19:28:49.2796035Z Downloading openai_agents-0.24.0-py3-none-any.whl (1.2 MB)
+2026-10-22T19:28:49.3501034Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 23.9 MB/s  0:00:00
+2026-10-22T19:28:49.3639744Z Downloading mcp-2.3.0-py3-none-any.whl (368 kB)
+2026-10-22T19:28:49.3851238Z Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+2026-10-22T19:28:49.4016748Z Downloading fastmcp_slim-4.1.3-py3-none-any.whl (931 kB)
+2026-10-22T19:28:49.4188993Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 931.0/931.0 kB 46.7 MB/s  0:00:00
+2026-10-22T19:28:49.4339890Z Downloading mcp_types-2.3.0-py3-none-any.whl (69 kB)
+2026-10-22T19:28:49.4492885Z Downloading griffelib-2.4.1-py3-none-any.whl (172 kB)
+2026-10-22T19:28:49.4655327Z Downloading openai-3.36.1-py3-none-any.whl (2.3 MB)
+2026-10-22T19:28:49.4955084Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 75.0 MB/s  0:00:00
+2026-10-22T19:28:49.5094995Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-22T19:28:49.5284346Z Downloading httpx2-2.16.0-py3-none-any.whl (97 kB)
+2026-10-22T19:28:49.5446829Z Downloading httpcore2-2.16.0-py3-none-any.whl (85 kB)
+2026-10-22T19:28:49.5601362Z Downloading jiter-0.17.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (344 kB)
+2026-10-22T19:28:49.5775010Z Downloading py_key_value_aio-0.4.6-py3-none-any.whl (171 kB)
+2026-10-22T19:28:49.6082177Z Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+2026-10-22T19:28:49.6299237Z Downloading pydantic_core-2.50.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+2026-10-22T19:28:49.6764827Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 44.4 MB/s  0:00:00
+2026-10-22T19:28:49.6901570Z Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+2026-10-22T19:28:49.7003495Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.6/801.6 kB 77.0 MB/s  0:00:00
+2026-10-22T19:28:49.7143851Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-10-22T19:28:49.7298795Z Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+2026-10-22T19:28:49.7457904Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-22T19:28:49.7616519Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-22T19:28:49.7773747Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-10-22T19:28:49.7936099Z Downloading websockets-16.1.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (187 kB)
+2026-10-22T19:28:49.8093083Z Downloading aiofile-3.12.3-py3-none-any.whl (22 kB)
+2026-10-22T19:28:49.8251585Z Downloading caio-0.12.9-cp313-cp313-manylinux_2_34_x86_64.whl (162 kB)
+2026-10-22T19:28:49.8417639Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-10-22T19:28:49.8567221Z Downloading authlib-1.9.1-py2.py3-none-any.whl (266 kB)
+2026-10-22T19:28:49.8729879Z Downloading beartype-0.23.1-py3-none-any.whl (1.6 MB)
+2026-10-22T19:28:49.8914398Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 83.8 MB/s  0:00:00
+2026-10-22T19:28:49.9048788Z Downloading cachetools-7.2.4-py3-none-any.whl (18 kB)
+2026-10-22T19:28:49.9202464Z Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)
+2026-10-22T19:28:49.9355804Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-10-22T19:28:49.9801387Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 106.9 MB/s  0:00:00
+2026-10-22T19:28:49.9933254Z Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-10-22T19:28:50.0086495Z Downloading cyclopts-5.3.0-py3-none-any.whl (296 kB)
+2026-10-22T19:28:50.0250602Z Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+2026-10-22T19:28:50.0400098Z Downloading rich_rst-2.2.0-py3-none-any.whl (279 kB)
+2026-10-22T19:28:50.0561606Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-22T19:28:50.0723131Z Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+2026-10-22T19:28:50.0878182Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-22T19:28:50.1026140Z Downloading joserfc-1.7.7-py3-none-any.whl (71 kB)
+2026-10-22T19:28:50.1189226Z Downloading jsonref-1.1.0-py3-none-any.whl (9.4 kB)
+2026-10-22T19:28:50.1336336Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-10-22T19:28:50.1488259Z Downloading jsonschema_path-0.5.0-py3-none-any.whl (24 kB)
+2026-10-22T19:28:50.1635169Z Downloading pathable-0.6.0-py3-none-any.whl (18 kB)
+2026-10-22T19:28:50.1786424Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-10-22T19:28:50.1941544Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-10-22T19:28:50.2097506Z Downloading keyring-25.7.0-py3-none-any.whl (39 kB)
+2026-10-22T19:28:50.2251001Z Downloading jeepney-0.9.0-py3-none-any.whl (49 kB)
+2026-10-22T19:28:50.2403797Z Downloading openapi_pydantic-0.6.0-py3-none-any.whl (96 kB)
+2026-10-22T19:28:50.2564773Z Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+2026-10-22T19:28:50.2719010Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-10-22T19:28:50.2876184Z Downloading platformdirs-4.13.5-py3-none-any.whl (32 kB)
+2026-10-22T19:28:50.3031341Z Downloading pydantic_settings-2.16.1-py3-none-any.whl (80 kB)
+2026-10-22T19:28:50.3186296Z Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+2026-10-22T19:28:50.3340904Z Downloading dnspython-2.9.0-py3-none-any.whl (354 kB)
+2026-10-22T19:28:50.3503502Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-10-22T19:28:50.3610725Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 120.3 MB/s  0:00:00
+2026-10-22T19:28:50.3761931Z Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+2026-10-22T19:28:50.3925900Z Downloading pyperclip-1.11.0-py3-none-any.whl (11 kB)
+2026-10-22T19:28:50.4078383Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+2026-10-22T19:28:50.4230019Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-10-22T19:28:50.4394641Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-10-22T19:28:50.4547596Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-10-22T19:28:50.4698379Z Downloading rpds_py-2026.9.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (370 kB)
+2026-10-22T19:28:50.4865278Z Downloading secretstorage-3.5.0-py3-none-any.whl (15 kB)
+2026-10-22T19:28:50.5032841Z Downloading sse_starlette-3.5.0-py3-none-any.whl (17 kB)
+2026-10-22T19:28:50.5182285Z Downloading starlette-1.9.0-py3-none-any.whl (80 kB)
+2026-10-22T19:28:50.5335853Z Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+2026-10-22T19:28:50.5490403Z Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+2026-10-22T19:28:50.5639410Z Downloading uncalled_for-0.4.1-py3-none-any.whl (14 kB)
+2026-10-22T19:28:50.5797162Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-10-22T19:28:50.5962421Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-10-22T19:28:50.6116961Z Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+2026-10-22T19:28:50.6292516Z Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+2026-10-22T19:28:50.6435037Z Downloading jaraco_context-6.1.2-py3-none-any.whl (7.9 kB)
+2026-10-22T19:28:50.6580438Z Downloading jaraco_functools-4.6.0-py3-none-any.whl (11 kB)
+2026-10-22T19:28:50.6728857Z Downloading more_itertools-11.2.1-py3-none-any.whl (74 kB)
+2026-10-22T19:28:50.6879284Z Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+2026-10-22T19:28:50.7033239Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+2026-10-22T19:28:51.1375422Z Installing collected packages: pyperclip, websockets, urllib3, uncalled-for, typing-extensions, truststore, sniffio, rpds-py, pyyaml, python-multipart, python-dotenv, pyjwt, pygments, pycparser, platformdirs, pathable, packaging, more-itertools, mdurl, jsonref, jiter, jeepney, jaraco.context, idna, h11, griffelib, exceptiongroup, docstring-parser, dnspython, click, charset_normalizer, certifi, caio, cachetools, beartype, attrs, annotated-types, uvicorn, typing-inspection, requests, referencing, pydantic-core, py-key-value-aio, opentelemetry-api, markdown-it-py, jaraco.functools, jaraco.classes, httpcore2, email-validator, cffi, anyio, aiofile, watchfiles, starlette, rich, pydantic, jsonschema-specifications, jsonschema-path, httpx2, cryptography, sse-starlette, SecretStorage, rich-rst, pydantic-settings, openapi-pydantic, openai, mcp-types, jsonschema, joserfc, mcp, keyring, fastmcp-slim, cyclopts, authlib, openai-agents, fastmcp
+2026-10-22T19:28:59.7040590Z 
+2026-10-22T19:28:59.7110576Z Successfully installed SecretStorage-3.5.0 aiofile-3.12.3 annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 authlib-1.9.1 beartype-0.23.1 cachetools-7.2.4 caio-0.12.9 certifi-2026.10.19 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.0 cryptography-50.0.2 cyclopts-5.3.0 dnspython-2.9.0 docstring-parser-0.18.0 email-validator-2.3.0 exceptiongroup-1.3.1 fastmcp-4.1.3 fastmcp-slim-4.1.3 griffelib-2.4.1 h11-0.16.0 httpcore2-2.16.0 httpx2-2.16.0 idna-3.20 jaraco.classes-3.4.0 jaraco.context-6.1.2 jaraco.functools-4.6.0 jeepney-0.9.0 jiter-0.17.0 joserfc-1.7.7 jsonref-1.1.0 jsonschema-4.26.0 jsonschema-path-0.5.0 jsonschema-specifications-2025.9.1 keyring-25.7.0 markdown-it-py-4.2.0 mcp-2.3.0 mcp-types-2.3.0 mdurl-0.1.2 more-itertools-11.2.1 openai-3.36.1 openai-agents-0.24.0 openapi-pydantic-0.6.0 opentelemetry-api-1.45.1 packaging-26.3 pathable-0.6.0 platformdirs-4.13.5 py-key-value-aio-0.4.6 pycparser-3.12 pydantic-2.14.1 pydantic-core-2.50.1 pydantic-settings-2.16.1 pygments-2.21.0 pyjwt-2.15.1 pyperclip-1.11.0 python-dotenv-1.2.4 python-multipart-0.0.32 pyyaml-6.0.3 referencing-0.37.0 requests-2.34.2 rich-15.0.0 rich-rst-2.2.0 rpds-py-2026.9.1 sniffio-1.3.1 sse-starlette-3.5.0 starlette-1.9.0 truststore-0.10.5 typing-extensions-4.16.0 typing-inspection-0.4.4 uncalled-for-0.4.1 urllib3-2.8.0 uvicorn-0.54.0 watchfiles-1.3.0 websockets-16.1.1
+2026-10-22T19:28:59.7120099Z 
+2026-10-22T19:28:59.7120789Z [notice] A new release of pip is available: 26.2.1 -> 26.2.2
+2026-10-22T19:28:59.7121420Z [notice] To update, run: pip install --upgrade pip
+2026-10-22T19:29:00.0030682Z ##[group]Run python -m pip freeze
+2026-10-22T19:29:00.0031008Z [36;1mpython -m pip freeze[0m
+2026-10-22T19:29:00.0104891Z shell: /usr/bin/bash -e {0}
+2026-10-22T19:29:00.0105178Z env:
+2026-10-22T19:29:00.0105486Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:00.0105937Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T19:29:00.0106373Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:00.0106761Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:00.0107399Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:00.0107791Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T19:29:00.0108130Z ##[endgroup]
+2026-10-22T19:29:00.2812067Z aiofile==3.12.3
+2026-10-22T19:29:00.2812519Z annotated-types==0.8.0
+2026-10-22T19:29:00.2812961Z anyio==4.15.1
+2026-10-22T19:29:00.2813276Z attrs==26.1.0
+2026-10-22T19:29:00.2813726Z Authlib==1.9.1
+2026-10-22T19:29:00.2814031Z beartype==0.23.1
+2026-10-22T19:29:00.2814344Z cachetools==7.2.4
+2026-10-22T19:29:00.2814656Z caio==0.12.9
+2026-10-22T19:29:00.2814964Z certifi==2026.10.19
+2026-10-22T19:29:00.2815282Z cffi==2.1.1
+2026-10-22T19:29:00.2815643Z charset-normalizer==3.5.2
+2026-10-22T19:29:00.2816032Z click==8.5.0
+2026-10-22T19:29:00.2816377Z cryptography==50.0.2
+2026-10-22T19:29:00.2816732Z cyclopts==5.3.0
+2026-10-22T19:29:00.2817431Z dnspython==2.9.0
+2026-10-22T19:29:00.2817787Z docstring_parser==0.18.0
+2026-10-22T19:29:00.2818587Z email-validator==2.3.0
+2026-10-22T19:29:00.2818958Z exceptiongroup==1.3.1
+2026-10-22T19:29:00.2819307Z fastmcp==4.1.3
+2026-10-22T19:29:00.2819650Z fastmcp-slim==4.1.3
+2026-10-22T19:29:00.2819987Z griffelib==2.4.1
+2026-10-22T19:29:00.2820285Z h11==0.16.0
+2026-10-22T19:29:00.2820585Z httpcore2==2.16.0
+2026-10-22T19:29:00.2820902Z httpx2==2.16.0
+2026-10-22T19:29:00.2821245Z idna==3.20
+2026-10-22T19:29:00.2821556Z jaraco.classes==3.4.0
+2026-10-22T19:29:00.2821919Z jaraco.context==6.1.2
+2026-10-22T19:29:00.2822266Z jaraco.functools==4.6.0
+2026-10-22T19:29:00.2822618Z jeepney==0.9.0
+2026-10-22T19:29:00.2822926Z jiter==0.17.0
+2026-10-22T19:29:00.2823229Z joserfc==1.7.7
+2026-10-22T19:29:00.2823534Z jsonref==1.1.0
+2026-10-22T19:29:00.2823847Z jsonschema==4.26.0
+2026-10-22T19:29:00.2824192Z jsonschema-path==0.5.0
+2026-10-22T19:29:00.2824582Z jsonschema-specifications==2025.9.1
+2026-10-22T19:29:00.2825018Z keyring==25.7.0
+2026-10-22T19:29:00.2825395Z markdown-it-py==4.2.0
+2026-10-22T19:29:00.2825748Z mcp==2.3.0
+2026-10-22T19:29:00.2826054Z mcp-types==2.3.0
+2026-10-22T19:29:00.2826376Z mdurl==0.1.2
+2026-10-22T19:29:00.2826691Z more-itertools==11.2.1
+2026-10-22T19:29:00.2827255Z openai==3.36.1
+2026-10-22T19:29:00.2827577Z openai-agents==0.24.0
+2026-10-22T19:29:00.2827931Z openapi-pydantic==0.6.0
+2026-10-22T19:29:00.2828311Z opentelemetry-api==1.45.1
+2026-10-22T19:29:00.2828689Z packaging==26.3
+2026-10-22T19:29:00.2829013Z pathable==0.6.0
+2026-10-22T19:29:00.2829360Z platformdirs==4.13.5
+2026-10-22T19:29:00.2829718Z py-key-value-aio==0.4.6
+2026-10-22T19:29:00.2830066Z pycparser==3.12
+2026-10-22T19:29:00.2830380Z pydantic==2.14.1
+2026-10-22T19:29:00.2830723Z pydantic-settings==2.16.1
+2026-10-22T19:29:00.2831100Z pydantic_core==2.50.1
+2026-10-22T19:29:00.2831441Z Pygments==2.21.0
+2026-10-22T19:29:00.2831764Z PyJWT==2.15.1
+2026-10-22T19:29:00.2832076Z pyperclip==1.11.0
+2026-10-22T19:29:00.2832417Z python-dotenv==1.2.4
+2026-10-22T19:29:00.2832781Z python-multipart==0.0.32
+2026-10-22T19:29:00.2833151Z PyYAML==6.0.3
+2026-10-22T19:29:00.2833484Z referencing==0.37.0
+2026-10-22T19:29:00.2833809Z requests==2.34.2
+2026-10-22T19:29:00.2834116Z rich==15.0.0
+2026-10-22T19:29:00.2834419Z rich-rst==2.2.0
+2026-10-22T19:29:00.2834734Z rpds-py==2026.9.1
+2026-10-22T19:29:00.2835067Z SecretStorage==3.5.0
+2026-10-22T19:29:00.2835431Z sniffio==1.3.1
+2026-10-22T19:29:00.2835828Z sse-starlette==3.5.0
+2026-10-22T19:29:00.2836185Z starlette==1.9.0
+2026-10-22T19:29:00.2836509Z truststore==0.10.5
+2026-10-22T19:29:00.2837466Z typing-inspection==0.4.4
+2026-10-22T19:29:00.2837864Z typing_extensions==4.16.0
+2026-10-22T19:29:00.2838238Z uncalled-for==0.4.1
+2026-10-22T19:29:00.2838569Z urllib3==2.8.0
+2026-10-22T19:29:00.2838883Z uvicorn==0.54.0
+2026-10-22T19:29:00.2839200Z watchfiles==1.3.0
+2026-10-22T19:29:00.2839526Z websockets==16.1.1
+2026-10-22T19:29:00.3180743Z ##[group]Run python scripts/verify.py
+2026-10-22T19:29:00.3181098Z [36;1mpython scripts/verify.py[0m
+2026-10-22T19:29:00.3251317Z shell: /usr/bin/bash -e {0}
+2026-10-22T19:29:00.3251620Z env:
+2026-10-22T19:29:00.3251947Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:00.3252414Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T19:29:00.3252867Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:00.3253264Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:00.3253646Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:00.3254024Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T19:29:00.3254357Z ##[endgroup]
+2026-10-22T19:29:03.8161326Z 
+2026-10-22T19:29:03.8161345Z 
+2026-10-22T19:29:03.8162196Z ╭──────────────────────────────────────────────────────────────────────────────╮
+2026-10-22T19:29:03.8162824Z │                                                                              │
+2026-10-22T19:29:03.8163263Z │                                                                              │
+2026-10-22T19:29:03.8164088Z │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+2026-10-22T19:29:03.8164512Z │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+2026-10-22T19:29:03.8164921Z │                                                                              │
+2026-10-22T19:29:03.8165302Z │                                                                              │
+2026-10-22T19:29:03.8165685Z │                                                                              │
+2026-10-22T19:29:03.8166095Z │                                FastMCP 4.1.3                                 │
+2026-10-22T19:29:03.8166779Z │                            https://gofastmcp.com                             │
+2026-10-22T19:29:03.8167588Z │                                                                              │
+2026-10-22T19:29:03.8168217Z │                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+2026-10-22T19:29:03.8168929Z │                 🚀 Deploy free: https://horizon.prefect.io                   │
+2026-10-22T19:29:03.8169588Z │                                                                              │
+2026-10-22T19:29:03.8170271Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-10-22T19:29:03.8170674Z 
+2026-10-22T19:29:03.8170680Z 
+2026-10-22T19:29:03.8186515Z [10/22/26 19:29:03] INFO     Starting MCP server 'Campus Study  transport.py:241
+2026-10-22T19:29:03.8187188Z                              Toolkit' with transport 'stdio'                    
+2026-10-22T19:29:04.4060406Z Executing <Task finished name='Task-24' coro=<_MCPServerWithClientSession.call_tool() done, defined at /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/agents/mcp/server.py:1599> result=CallToolResul...pe='complete') created at /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/asyncio/tasks.py:419> took 0.140 seconds
+2026-10-22T19:29:05.8376336Z 
+2026-10-22T19:29:05.8376742Z 
+2026-10-22T19:29:05.8378107Z ╭──────────────────────────────────────────────────────────────────────────────╮
+2026-10-22T19:29:05.8378947Z │                                                                              │
+2026-10-22T19:29:05.8379609Z │                                                                              │
+2026-10-22T19:29:05.8380284Z │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+2026-10-22T19:29:05.8380969Z │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+2026-10-22T19:29:05.8381591Z │                                                                              │
+2026-10-22T19:29:05.8382201Z │                                                                              │
+2026-10-22T19:29:05.8383410Z │                                                                              │
+2026-10-22T19:29:05.8384063Z │                                FastMCP 4.1.3                                 │
+2026-10-22T19:29:05.8384515Z │                            https://gofastmcp.com                             │
+2026-10-22T19:29:05.8385103Z │                                                                              │
+2026-10-22T19:29:05.8385546Z │                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+2026-10-22T19:29:05.8386034Z │                 🚀 Deploy free: https://horizon.prefect.io                   │
+2026-10-22T19:29:05.8386455Z │                                                                              │
+2026-10-22T19:29:05.8386902Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-10-22T19:29:05.8387277Z 
+2026-10-22T19:29:05.8387281Z 
+2026-10-22T19:29:05.8401407Z [10/22/26 19:29:05] INFO     Starting MCP server 'Campus Study  transport.py:241
+2026-10-22T19:29:05.8402172Z                              Toolkit' with transport 'stdio'                    
+2026-10-22T19:29:06.1015098Z [10/22/26 19:29:06] Error calling tool 'reserve_room'                           
+2026-10-22T19:29:06.1161717Z                     Error calling tool 'find_and_reserve'                       
+2026-10-22T19:29:06.1200687Z                     Error calling tool 'search_rooms'                           
+2026-10-22T19:29:09.8414986Z MCP CALL search_rooms {"day": "2026-10-23", "hour": 10, "party_size": 2}
+2026-10-22T19:29:09.8417424Z MCP RESULT {"type": "text", "text": "{\"day\":\"2026-10-23\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true},{\"room_id\":\"SEA-6\",\"name\":\"Sea View Collaboration Room\",\"capacity\":6,\"quiet\":false}]}"}
+2026-10-22T19:29:09.8419564Z ASSISTANT: Scripted test received the actual MCP result.
+2026-10-22T19:29:09.8420371Z MCP CALL reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "runner-action"}
+2026-10-22T19:29:09.8421532Z MCP RESULT {"type": "text", "text": "{\"reservation_id\":\"0a7d5f97-9cf7-4ead-b3fc-d89691aebd36\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}"}
+2026-10-22T19:29:09.8422471Z ASSISTANT: Scripted test received the actual MCP result.
+2026-10-22T19:29:09.8423084Z MCP CALL find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "quiet_only": true, "student_name": "Rana", "request_id": "runner-plan"}
+2026-10-22T19:29:09.8424638Z MCP RESULT {"type": "text", "text": "{\"reservation\":{\"reservation_id\":\"85e301ab-8d4e-40d2-b77c-f9f5df99e9c9\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}"}
+2026-10-22T19:29:09.8425966Z ASSISTANT: Scripted test received the actual MCP result.
+2026-10-22T19:29:09.8426719Z test_runner_executes_three_tools_and_returns_results_to_model (test_agent_runner.AgentRunnerTests.test_runner_executes_three_tools_and_returns_results_to_model) ... ok
+2026-10-22T19:29:09.8427970Z test_action_persists_across_restart (test_core.ToolkitTests.test_action_persists_across_restart) ... ok
+2026-10-22T19:29:09.8428703Z test_concurrent_writers_cannot_double_book (test_core.ToolkitTests.test_concurrent_writers_cannot_double_book) ... ok
+2026-10-22T19:29:09.8429339Z test_data_empty_is_valid (test_core.ToolkitTests.test_data_empty_is_valid) ... ok
+2026-10-22T19:29:09.8429905Z test_data_read_only_and_sorted (test_core.ToolkitTests.test_data_read_only_and_sorted) ... ok
+2026-10-22T19:29:09.8430817Z test_idempotency_and_changed_request (test_core.ToolkitTests.test_idempotency_and_changed_request) ... ok
+2026-10-22T19:29:09.8431411Z test_invalid_inputs (test_core.ToolkitTests.test_invalid_inputs) ... ok
+2026-10-22T19:29:09.8431931Z test_no_match_no_write (test_core.ToolkitTests.test_no_match_no_write) ... ok
+2026-10-22T19:29:09.8432745Z test_orchestration_invokes_both_capabilities (test_core.ToolkitTests.test_orchestration_invokes_both_capabilities) ... ok
+2026-10-22T19:29:09.8433493Z test_orchestration_recovers_from_race (test_core.ToolkitTests.test_orchestration_recovers_from_race) ... ok
+2026-10-22T19:29:09.8434246Z test_plan_replay_does_not_book_a_different_room (test_core.ToolkitTests.test_plan_replay_does_not_book_a_different_room) ... ok
+2026-10-22T19:29:09.8434990Z test_slot_conflict_has_no_second_write (test_core.ToolkitTests.test_slot_conflict_has_no_second_write) ... ok
+2026-10-22T19:29:09.8435725Z test_unknown_room_capacity_name_and_request (test_core.ToolkitTests.test_unknown_room_capacity_name_and_request) ... ok
+2026-10-22T19:29:09.8436528Z test_discovery_calls_resource_and_errors_over_stdio (test_mcp.MCPTests.test_discovery_calls_resource_and_errors_over_stdio) ... ok
+2026-10-22T19:29:09.8437172Z 
+2026-10-22T19:29:09.8437353Z ----------------------------------------------------------------------
+2026-10-22T19:29:09.8437731Z Ran 14 tests in 3.752s
+2026-10-22T19:29:09.8437879Z 
+2026-10-22T19:29:09.8437962Z OK
+2026-10-22T19:29:09.8438073Z 
+2026-10-22T19:29:09.8438078Z 
+2026-10-22T19:29:09.8438081Z 
+2026-10-22T19:29:09.8438563Z ╭──────────────────────────────────────────────────────────────────────────────╮
+2026-10-22T19:29:09.8439013Z │                                                                              │
+2026-10-22T19:29:09.8439410Z │                                                                              │
+2026-10-22T19:29:09.8439819Z │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+2026-10-22T19:29:09.8440226Z │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+2026-10-22T19:29:09.8440630Z │                                                                              │
+2026-10-22T19:29:09.8441004Z │                                                                              │
+2026-10-22T19:29:09.8441389Z │                                                                              │
+2026-10-22T19:29:09.8441807Z │                                FastMCP 4.1.3                                 │
+2026-10-22T19:29:09.8442240Z │                            https://gofastmcp.com                             │
+2026-10-22T19:29:09.8442646Z │                                                                              │
+2026-10-22T19:29:09.8443091Z │                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+2026-10-22T19:29:09.8443574Z │                 🚀 Deploy free: https://horizon.prefect.io                   │
+2026-10-22T19:29:09.8443998Z │                                                                              │
+2026-10-22T19:29:09.8444601Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-10-22T19:29:09.8444842Z 
+2026-10-22T19:29:09.8444847Z 
+2026-10-22T19:29:09.8445040Z [10/22/26 19:29:08] INFO     Starting MCP server 'Campus Study  transport.py:241
+2026-10-22T19:29:09.8445458Z                              Toolkit' with transport 'stdio'                    
+2026-10-22T19:29:09.8445857Z [10/22/26 19:29:09] Error calling tool 'reserve_room'                           
+2026-10-22T19:29:09.8446254Z DISCOVERY: search_rooms, reserve_room, find_and_reserve
+2026-10-22T19:29:09.8446489Z 
+2026-10-22T19:29:09.8446748Z CLIENT -> SERVER search_rooms {"day": "2026-10-23", "hour": 10, "party_size": 2, "quiet_only": true}
+2026-10-22T19:29:09.8447420Z SERVER -> CLIENT {
+2026-10-22T19:29:09.8447633Z   "meta": {
+2026-10-22T19:29:09.8447876Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T19:29:09.8448183Z       "name": "Campus Study Toolkit",
+2026-10-22T19:29:09.8448449Z       "version": "4.1.3"
+2026-10-22T19:29:09.8448671Z     }
+2026-10-22T19:29:09.8448856Z   },
+2026-10-22T19:29:09.8449051Z   "content": [
+2026-10-22T19:29:09.8449249Z     {
+2026-10-22T19:29:09.8449439Z       "type": "text",
+2026-10-22T19:29:09.8450274Z       "text": "{\"day\":\"2026-10-23\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true}]}",
+2026-10-22T19:29:09.8451277Z       "annotations": null,
+2026-10-22T19:29:09.8451519Z       "meta": null
+2026-10-22T19:29:09.8451720Z     }
+2026-10-22T19:29:09.8451902Z   ],
+2026-10-22T19:29:09.8452091Z   "structured_content": {
+2026-10-22T19:29:09.8452326Z     "day": "2026-10-23",
+2026-10-22T19:29:09.8452539Z     "hour": 10,
+2026-10-22T19:29:09.8452751Z     "timezone": "Asia/Beirut",
+2026-10-22T19:29:09.8453005Z     "duration_minutes": 60,
+2026-10-22T19:29:09.8453234Z     "rooms": [
+2026-10-22T19:29:09.8453428Z       {
+2026-10-22T19:29:09.8453634Z         "room_id": "CEDAR-2",
+2026-10-22T19:29:09.8453896Z         "name": "Cedar Study Pod",
+2026-10-22T19:29:09.8454150Z         "capacity": 2,
+2026-10-22T19:29:09.8454367Z         "quiet": true
+2026-10-22T19:29:09.8454575Z       },
+2026-10-22T19:29:09.8454763Z       {
+2026-10-22T19:29:09.8454955Z         "room_id": "OLIVE-4",
+2026-10-22T19:29:09.8455198Z         "name": "Olive Study Room",
+2026-10-22T19:29:09.8455455Z         "capacity": 4,
+2026-10-22T19:29:09.8455666Z         "quiet": true
+2026-10-22T19:29:09.8455868Z       }
+2026-10-22T19:29:09.8456046Z     ]
+2026-10-22T19:29:09.8456227Z   },
+2026-10-22T19:29:09.8456419Z   "is_error": false,
+2026-10-22T19:29:09.8456645Z   "result_type": "complete"
+2026-10-22T19:29:09.8456867Z }
+2026-10-22T19:29:09.8456965Z 
+2026-10-22T19:29:09.8457719Z CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-specific"}
+2026-10-22T19:29:09.8458281Z SERVER -> CLIENT {
+2026-10-22T19:29:09.8458486Z   "meta": {
+2026-10-22T19:29:09.8458711Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T19:29:09.8459007Z       "name": "Campus Study Toolkit",
+2026-10-22T19:29:09.8459284Z       "version": "4.1.3"
+2026-10-22T19:29:09.8459511Z     }
+2026-10-22T19:29:09.8459683Z   },
+2026-10-22T19:29:09.8459860Z   "content": [
+2026-10-22T19:29:09.8460052Z     {
+2026-10-22T19:29:09.8460231Z       "type": "text",
+2026-10-22T19:29:09.8460941Z       "text": "{\"reservation_id\":\"2d600afc-bd72-4217-881a-d83cc7f0e7e7\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}",
+2026-10-22T19:29:09.8461713Z       "annotations": null,
+2026-10-22T19:29:09.8461936Z       "meta": null
+2026-10-22T19:29:09.8462130Z     }
+2026-10-22T19:29:09.8462298Z   ],
+2026-10-22T19:29:09.8462490Z   "structured_content": {
+2026-10-22T19:29:09.8462776Z     "reservation_id": "2d600afc-bd72-4217-881a-d83cc7f0e7e7",
+2026-10-22T19:29:09.8463324Z     "room_id": "CEDAR-2",
+2026-10-22T19:29:09.8463546Z     "day": "2026-10-23",
+2026-10-22T19:29:09.8463756Z     "hour": 10,
+2026-10-22T19:29:09.8463960Z     "party_size": 2,
+2026-10-22T19:29:09.8464171Z     "student_name": "Rana",
+2026-10-22T19:29:09.8464412Z     "timezone": "Asia/Beirut",
+2026-10-22T19:29:09.8464655Z     "duration_minutes": 60
+2026-10-22T19:29:09.8464865Z   },
+2026-10-22T19:29:09.8465048Z   "is_error": false,
+2026-10-22T19:29:09.8465265Z   "result_type": "complete"
+2026-10-22T19:29:09.8465487Z }
+2026-10-22T19:29:09.8465585Z 
+2026-10-22T19:29:09.8465997Z CLIENT -> SERVER find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
+2026-10-22T19:29:09.8466549Z SERVER -> CLIENT {
+2026-10-22T19:29:09.8466800Z   "meta": {
+2026-10-22T19:29:09.8467191Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T19:29:09.8467555Z       "name": "Campus Study Toolkit",
+2026-10-22T19:29:09.8467812Z       "version": "4.1.3"
+2026-10-22T19:29:09.8468024Z     }
+2026-10-22T19:29:09.8468197Z   },
+2026-10-22T19:29:09.8468373Z   "content": [
+2026-10-22T19:29:09.8468563Z     {
+2026-10-22T19:29:09.8468744Z       "type": "text",
+2026-10-22T19:29:09.8469886Z       "text": "{\"reservation\":{\"reservation_id\":\"de958062-b801-4f23-aa37-7a0fccadaa44\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}",
+2026-10-22T19:29:09.8471180Z       "annotations": null,
+2026-10-22T19:29:09.8471418Z       "meta": null
+2026-10-22T19:29:09.8471614Z     }
+2026-10-22T19:29:09.8471788Z   ],
+2026-10-22T19:29:09.8471994Z   "structured_content": {
+2026-10-22T19:29:09.8472223Z     "reservation": {
+2026-10-22T19:29:09.8472508Z       "reservation_id": "de958062-b801-4f23-aa37-7a0fccadaa44",
+2026-10-22T19:29:09.8472829Z       "room_id": "OLIVE-4",
+2026-10-22T19:29:09.8473058Z       "day": "2026-10-23",
+2026-10-22T19:29:09.8473269Z       "hour": 10,
+2026-10-22T19:29:09.8473475Z       "party_size": 3,
+2026-10-22T19:29:09.8473697Z       "student_name": "Rana",
+2026-10-22T19:29:09.8473944Z       "timezone": "Asia/Beirut",
+2026-10-22T19:29:09.8474190Z       "duration_minutes": 60
+2026-10-22T19:29:09.8474408Z     },
+2026-10-22T19:29:09.8474708Z     "selection_reason": "Smallest available room meeting your constraints.",
+2026-10-22T19:29:09.8475082Z     "steps": [
+2026-10-22T19:29:09.8475287Z       "search_rooms",
+2026-10-22T19:29:09.8475497Z       "reserve_room"
+2026-10-22T19:29:09.8475693Z     ]
+2026-10-22T19:29:09.8475865Z   },
+2026-10-22T19:29:09.8476045Z   "is_error": false,
+2026-10-22T19:29:09.8476256Z   "result_type": "complete"
+2026-10-22T19:29:09.8476473Z }
+2026-10-22T19:29:09.8476576Z 
+2026-10-22T19:29:09.8476974Z CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-conflict"}
+2026-10-22T19:29:09.8477729Z SERVER -> CLIENT {
+2026-10-22T19:29:09.8477927Z   "meta": {
+2026-10-22T19:29:09.8478155Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T19:29:09.8478446Z       "name": "Campus Study Toolkit",
+2026-10-22T19:29:09.8478710Z       "version": "4.1.3"
+2026-10-22T19:29:09.8478921Z     }
+2026-10-22T19:29:09.8479094Z   },
+2026-10-22T19:29:09.8479272Z   "content": [
+2026-10-22T19:29:09.8479458Z     {
+2026-10-22T19:29:09.8479640Z       "type": "text",
+2026-10-22T19:29:09.8479987Z       "text": "SLOT_UNAVAILABLE: room was booked; search again or choose another hour.",
+2026-10-22T19:29:09.8480395Z       "annotations": null,
+2026-10-22T19:29:09.8480619Z       "meta": null
+2026-10-22T19:29:09.8480817Z     }
+2026-10-22T19:29:09.8480984Z   ],
+2026-10-22T19:29:09.8481173Z   "structured_content": null,
+2026-10-22T19:29:09.8481405Z   "is_error": true,
+2026-10-22T19:29:09.8481617Z   "result_type": "complete"
+2026-10-22T19:29:09.8481829Z }
+2026-10-22T19:29:09.8481930Z 
+2026-10-22T19:29:09.8482483Z CLIENT -> SERVER find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
+2026-10-22T19:29:09.8483047Z SERVER -> CLIENT {
+2026-10-22T19:29:09.8483251Z   "meta": {
+2026-10-22T19:29:09.8483464Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T19:29:09.8483757Z       "name": "Campus Study Toolkit",
+2026-10-22T19:29:09.8484021Z       "version": "4.1.3"
+2026-10-22T19:29:09.8484227Z     }
+2026-10-22T19:29:09.8484394Z   },
+2026-10-22T19:29:09.8484569Z   "content": [
+2026-10-22T19:29:09.8484755Z     {
+2026-10-22T19:29:09.8484934Z       "type": "text",
+2026-10-22T19:29:09.8485976Z       "text": "{\"reservation\":{\"reservation_id\":\"de958062-b801-4f23-aa37-7a0fccadaa44\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Existing result for this request_id.\",\"steps\":[\"idempotency replay\"]}",
+2026-10-22T19:29:09.8487247Z       "annotations": null,
+2026-10-22T19:29:09.8487489Z       "meta": null
+2026-10-22T19:29:09.8487681Z     }
+2026-10-22T19:29:09.8487851Z   ],
+2026-10-22T19:29:09.8488047Z   "structured_content": {
+2026-10-22T19:29:09.8488403Z     "reservation": {
+2026-10-22T19:29:09.8488674Z       "reservation_id": "de958062-b801-4f23-aa37-7a0fccadaa44",
+2026-10-22T19:29:09.8488991Z       "room_id": "OLIVE-4",
+2026-10-22T19:29:09.8489224Z       "day": "2026-10-23",
+2026-10-22T19:29:09.8489437Z       "hour": 10,
+2026-10-22T19:29:09.8489640Z       "party_size": 3,
+2026-10-22T19:29:09.8489856Z       "student_name": "Rana",
+2026-10-22T19:29:09.8490107Z       "timezone": "Asia/Beirut",
+2026-10-22T19:29:09.8490351Z       "duration_minutes": 60
+2026-10-22T19:29:09.8490632Z     },
+2026-10-22T19:29:09.8491003Z     "selection_reason": "Existing result for this request_id.",
+2026-10-22T19:29:09.8491493Z     "steps": [
+2026-10-22T19:29:09.8491757Z       "idempotency replay"
+2026-10-22T19:29:09.8492054Z     ]
+2026-10-22T19:29:09.8492318Z   },
+2026-10-22T19:29:09.8492614Z   "is_error": false,
+2026-10-22T19:29:09.8492959Z   "result_type": "complete"
+2026-10-22T19:29:09.8493269Z }
+2026-10-22T19:29:09.8493405Z 
+2026-10-22T19:29:09.8493698Z This is an MCP-client demonstration, not an LLM routing demonstration.
+2026-10-22T19:29:09.8494383Z For the live agent, run python -m campus_toolkit.agent with OPENAI_API_KEY set.
+2026-10-22T19:29:09.8494875Z 
+2026-10-22T19:29:10.2564101Z ##[group]Run actions/upload-artifact@v4
+2026-10-22T19:29:10.2564404Z with:
+2026-10-22T19:29:10.2564633Z   name: verification-python-3.13
+2026-10-22T19:29:10.2564899Z   path: evidence/
+2026-10-22T19:29:10.2565131Z   if-no-files-found: warn
+2026-10-22T19:29:10.2565375Z   compression-level: 6
+2026-10-22T19:29:10.2565609Z   overwrite: false
+2026-10-22T19:29:10.2565840Z   include-hidden-files: false
+2026-10-22T19:29:10.2566086Z env:
+2026-10-22T19:29:10.2566354Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:10.2566808Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T19:29:10.2567454Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:10.2567840Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:10.2568248Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T19:29:10.2568626Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T19:29:10.2568993Z ##[endgroup]
+2026-10-22T19:29:10.4273195Z (node:2375) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T19:29:10.4274065Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T19:29:10.4358216Z With the provided path, there will be 4 files uploaded
+2026-10-22T19:29:10.4367784Z Artifact name is valid!
+2026-10-22T19:29:10.4368792Z Root directory input is valid!
+2026-10-22T19:29:10.7262639Z Beginning upload of artifact content to blob storage
+2026-10-22T19:29:10.7490705Z (node:2375) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-22T19:29:10.9125562Z Uploaded bytes 3367
+2026-10-22T19:29:10.9616119Z Finished uploading artifact content to blob storage!
+2026-10-22T19:29:10.9617253Z SHA256 digest of uploaded artifact zip is a228ce88d3cfb6b14638e3d9a7a2371e3f40394809511cdf2b0b1374ca59df36
+2026-10-22T19:29:10.9618534Z Finalizing artifact upload
+2026-10-22T19:29:11.4356799Z Artifact verification-python-3.13.zip successfully finalized. Artifact ID 12452837944
+2026-10-22T19:29:11.4357905Z Artifact verification-python-3.13 has been successfully uploaded! Final size is 3367 bytes. Artifact ID is 12452837944
+2026-10-22T19:29:11.4365107Z Artifact download URL: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39840397595/artifacts/12452837944
+2026-10-22T19:29:11.4579792Z Post job cleanup.
+2026-10-22T19:29:11.5797796Z (node:2389) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T19:29:11.5798553Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T19:29:11.6032284Z Post job cleanup.
+2026-10-22T19:29:11.7207988Z [command]/usr/bin/git version
+2026-10-22T19:29:11.7247778Z git version 2.55.0
+2026-10-22T19:29:11.7278685Z Temporarily overriding HOME='/home/runner/work/_temp/dcb79d60-7ced-4ca7-bbf6-1e6ea076d170' before making global git config changes
+2026-10-22T19:29:11.7280388Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T19:29:11.7308065Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5
+2026-10-22T19:29:11.7368671Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T19:29:11.7370671Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T19:29:11.7678406Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T19:29:11.7712830Z http.https://github.com/.extraheader
+2026-10-22T19:29:11.7723477Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-22T19:29:11.7769521Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T19:29:11.8082012Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T19:29:11.8148202Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T19:29:11.8694469Z Cleaning up orphan processes
+2026-10-22T19:29:11.9078733Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
