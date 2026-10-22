@@ -6,9 +6,9 @@ Repository: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
 
 Verified run: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39840397595
 
-**Verification: 14 tests passed with zero skips on Python 3.11 and 3.13.** Real MCP calls, resource access, failures, replay and the SDK Runner integration passed. The runner test uses an explicitly scripted model; live LLM routing requires your API key and remains unverified.
+**Verification: 14 tests passed with zero skips on Python 3.11 and 3.13.** Real MCP calls, resource access, failures, replay and the SDK Runner integration passed. The runner test uses an explicitly scripted model. The separate live verification uses an actual local language model through Ollama; see the validation record for its execution status.
 
-A fictional campus room assistant built with **FastMCP** and the **OpenAI Agents SDK**. It exposes exactly three MCP tools and one read-only catalog resource. The catalog and bookings are local demonstration data, not AUB facilities or a real campus reservation service.
+A fictional campus room assistant built with **FastMCP** and the **OpenAI Agents SDK**, using a **free local Ollama model by default**. No OpenAI API key, payment method, or paid API is required for this mode. It exposes exactly three MCP tools and one read-only catalog resource. The catalog and bookings are local demonstration data, not AUB facilities or a real campus reservation service.
 
 | Category | MCP tool | Single responsibility | Output |
 |---|---|---|---|
@@ -37,11 +37,15 @@ The **MCP-only demo needs no API key**. It launches a real FastMCP subprocess an
 
 ```bash
 cp .env.example .env
-# Edit .env and enter your own OpenAI API key.
+# Defaults to MODEL_PROVIDER=ollama. No API key needed.
+# Start the Ollama application first, then download the model:
+ollama pull qwen2.5:3b
 python -m campus_toolkit.agent
 ```
 
-An OpenAI API account with available credit is required for model calls. A ChatGPT subscription alone is not an API key. Change `OPENAI_MODEL` if your account uses another tool-capable model. Keys are read from the environment and never included in source. `.env` and the booking database are gitignored.
+Install [Ollama](https://ollama.com/download), start its application or run `ollama serve` in another terminal, and run `ollama pull qwen2.5:3b` once. The model download is about 1.9 GB. Inference uses your computer rather than a paid API. The SDK uses `OpenAIChatCompletionsModel` with Ollama's OpenAI-compatible endpoint at localhost. The dummy string `ollama` is a client placeholder, not a credential. The free mode rejects non-local endpoints. `.env` and the booking database are gitignored.
+
+Optional paid OpenAI support remains available only if you explicitly set `MODEL_PROVIDER=openai` and configure `OPENAI_API_KEY`; it is disabled by default. You do not need it for this assignment.
 
 Example conversation (replace the date with tomorrow, within 30 days):
 
@@ -117,6 +121,6 @@ Run `python -m unittest discover -s tests -p test_core.py -v` for dependency-fre
 
 ## Submission
 
-Submit this source folder or a repository containing it, plus the reading summary and reflection. The repository link is provided above. The original brief also requires a 5-7 minute screencast. The video is intentionally omitted per your request; use the guide if your instructor still requires it. Review the reflection in your own voice and run live verification with your API key before claiming a complete model demonstration. The manual Live OpenAI agent verification workflow is also available if you configure an `OPENAI_API_KEY` repository secret yourself; credentials never belong in source files.
+Submit this source folder or a repository containing it, plus the reading summary and reflection. The repository link is provided above. The original brief also requires a 5-7 minute screencast. The video is intentionally omitted per your request; use the guide if your instructor still requires it. Review the reflection in your own voice and use the live verification evidence before claiming a complete model demonstration. The Free local LLM verification workflow also performs this check on a standard Linux runner in this public repository, without any API secret. The separate paid-OpenAI workflow is optional and requires explicit selection.
 
 References: [FastMCP tools](https://gofastmcp.com/servers/tools), [OpenAI Agents SDK MCP](https://openai.github.io/openai-agents-python/mcp/), and sources in the reading summary.
