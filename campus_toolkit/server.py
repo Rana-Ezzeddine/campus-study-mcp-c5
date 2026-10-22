@@ -51,7 +51,9 @@ def create_server(db_path: Path | None = None) -> FastMCP:
     def reserve_room(room_id: Annotated[str, Field(description="Exact room ID from search_rooms.")],
                      day: Day, hour: Hour, party_size: Size, student_name: Name,
                      request_id: Request) -> Reservation:
-        """ACTION: Persist one reservation in the local demo database. Only use on an explicit booking request.
+        """ACTION: Book the exact room ID specified by the user, such as CEDAR-2 or OLIVE-4.
+        This is the required tool when a booking request names a specific room; it preserves that choice.
+        Persist one reservation in the local demo database. Only use on an explicit booking request.
         Returns a reservation ID after commit. Identical request_id retries return the same reservation;
         changed inputs with that ID fail. Unknown rooms, insufficient capacity and occupied slots fail.
         This does not book any real university room.
@@ -64,7 +66,9 @@ def create_server(db_path: Path | None = None) -> FastMCP:
     def find_and_reserve(day: Day, hour: Hour, party_size: Size,
                          student_name: Name, request_id: Request,
                          quiet_only: bool = False) -> PlanResult:
-        """ORCHESTRATION: Fulfill an explicit request to find and book a suitable fictional study room.
+        """ORCHESTRATION: Choose a suitable room for a booking request with NO user-specified room ID.
+        Do NOT use this tool if the user names CEDAR-2, OLIVE-4 or SEA-6; use reserve_room instead.
+        Fulfill an explicit request to find and book a suitable fictional study room.
         Calls search_rooms logic then reserve_room logic, choosing the smallest available match.
         Returns the reservation, reason and steps. No match raises NO_MATCHING_ROOM with no write.
         Reuse the request_id only for identical retries. Do not call for availability-only questions.
