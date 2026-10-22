@@ -1,0 +1,5 @@
+# Install current stable releases, as the brief requests. Record your resolved
+# environment with: python -m pip freeze > evidence/installed-requirements.txt
+fastmcp
+openai-agents
+python-dotenv
