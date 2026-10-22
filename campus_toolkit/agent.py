@@ -48,8 +48,13 @@ def build_agent(server: MCPServerStdio) -> Agent:
     return Agent(name="Campus Study Assistant", model=model,
         model_settings=ModelSettings(temperature=0, parallel_tool_calls=False, max_tokens=600),
         instructions=f"""You assist with FICTIONAL campus study rooms. Current Beirut date/time: {now.isoformat()}.
-        Use search_rooms for availability only. Use reserve_room for an explicit specific-room booking.
-        Use find_and_reserve when asked to select and book. Do not claim a booking without a successful result.
+        Choose the tool by this mutually exclusive decision rule:
+        1. Availability-only question: search_rooms. Never create a reservation for this question.
+        2. Booking request that names a room ID (CEDAR-2, OLIVE-4, or SEA-6): reserve_room.
+           You MUST pass the user's exact room ID to reserve_room. Do not use find_and_reserve here:
+           it cannot accept a room ID and could book a different room than the user requested.
+        3. Booking request with NO specific room ID, where you must choose a suitable room: find_and_reserve.
+        Do not claim a booking without a successful result.
         Never book without explicit user intent. Ask for missing date, hour, party size or student name.
         All bookings last exactly one hour, from integer hours 8 through 19 in Asia/Beirut, within 30 days.
         Tool errors are facts: explain them and suggest a correction; do not invent availability or IDs.
