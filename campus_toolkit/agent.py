@@ -9,11 +9,13 @@ import os
 from pathlib import Path
 import sys
 from uuid import uuid4
+from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
-from agents import Agent, Runner, RunConfig, set_tracing_disabled
+from agents import Agent, Runner, RunConfig, ModelSettings, OpenAIChatCompletionsModel, set_tracing_disabled
 from agents.mcp import MCPServerStdio
 from dotenv import load_dotenv
+from openai import AsyncOpenAI
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -28,8 +30,23 @@ def connection(db_path: str | None = None) -> MCPServerStdio:
 
 
 def build_agent(server: MCPServerStdio) -> Agent:
+    provider = os.getenv("MODEL_PROVIDER", "ollama").lower()
+    if provider == "ollama":
+        base_url = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434/v1")
+        if urlparse(base_url).hostname not in {"localhost", "127.0.0.1", "::1"}:
+            raise ValueError("OLLAMA_BASE_URL must point to localhost; this mode uses a local model without paid APIs.")
+        model = OpenAIChatCompletionsModel(
+            model=os.getenv("OLLAMA_MODEL", "qwen2.5:3b"),
+            openai_client=AsyncOpenAI(base_url=base_url, api_key="ollama", timeout=180.0))
+    elif provider == "openai":
+        if not os.getenv("OPENAI_API_KEY"):
+            raise ValueError("OpenAI mode requires OPENAI_API_KEY. Use MODEL_PROVIDER=ollama for free local inference.")
+        model = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
+    else:
+        raise ValueError("MODEL_PROVIDER must be ollama (free local default) or openai (optional paid API).")
     now = datetime.now(ZoneInfo("Asia/Beirut"))
-    return Agent(name="Campus Study Assistant", model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"),
+    return Agent(name="Campus Study Assistant", model=model,
+        model_settings=ModelSettings(temperature=0, parallel_tool_calls=False, max_tokens=600),
         instructions=f"""You assist with FICTIONAL campus study rooms. Current Beirut date/time: {now.isoformat()}.
         Use search_rooms for availability only. Use reserve_room for an explicit specific-room booking.
         Use find_and_reserve when asked to select and book. Do not claim a booking without a successful result.
@@ -64,8 +81,6 @@ async def run_turn(agent: Agent, prompt: str, history: list | None = None):
 async def main(prompt: str | None):
     load_dotenv(ROOT / ".env")
     set_tracing_disabled(True)
-    if not os.getenv("OPENAI_API_KEY"):
-        raise SystemExit("Set OPENAI_API_KEY in .env (copy .env.example). MCP-only demo needs no key.")
     async with connection() as server:
         print("Discovered MCP tools:", ", ".join(t.name for t in await server.list_tools()))
         agent = build_agent(server)
