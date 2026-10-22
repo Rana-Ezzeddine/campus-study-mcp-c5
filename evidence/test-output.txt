@@ -1,0 +1,19 @@
+test_runner_executes_three_tools_and_returns_results_to_model (test_agent_runner.AgentRunnerTests.test_runner_executes_three_tools_and_returns_results_to_model) ... ok
+test_action_persists_across_restart (test_core.ToolkitTests.test_action_persists_across_restart) ... ok
+test_concurrent_writers_cannot_double_book (test_core.ToolkitTests.test_concurrent_writers_cannot_double_book) ... ok
+test_data_empty_is_valid (test_core.ToolkitTests.test_data_empty_is_valid) ... ok
+test_data_read_only_and_sorted (test_core.ToolkitTests.test_data_read_only_and_sorted) ... ok
+test_idempotency_and_changed_request (test_core.ToolkitTests.test_idempotency_and_changed_request) ... ok
+test_invalid_inputs (test_core.ToolkitTests.test_invalid_inputs) ... ok
+test_no_match_no_write (test_core.ToolkitTests.test_no_match_no_write) ... ok
+test_orchestration_invokes_both_capabilities (test_core.ToolkitTests.test_orchestration_invokes_both_capabilities) ... ok
+test_orchestration_recovers_from_race (test_core.ToolkitTests.test_orchestration_recovers_from_race) ... ok
+test_plan_replay_does_not_book_a_different_room (test_core.ToolkitTests.test_plan_replay_does_not_book_a_different_room) ... ok
+test_slot_conflict_has_no_second_write (test_core.ToolkitTests.test_slot_conflict_has_no_second_write) ... ok
+test_unknown_room_capacity_name_and_request (test_core.ToolkitTests.test_unknown_room_capacity_name_and_request) ... ok
+test_discovery_calls_resource_and_errors_over_stdio (test_mcp.MCPTests.test_discovery_calls_resource_and_errors_over_stdio) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 3.752s
+
+OK
