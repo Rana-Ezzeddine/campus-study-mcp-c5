@@ -7,7 +7,7 @@ name = "campus-study-mcp"
 version = "1.0.0"
 description = "EECE 503P MCP assignment: data, action and orchestration"
 requires-python = ">=3.11"
-dependencies = ["fastmcp", "openai-agents", "python-dotenv"]
+dependencies = ["fastmcp==4.1.3", "openai-agents==0.24.0", "python-dotenv==1.2.4", "mcp==2.3.0"]
 
 [tool.setuptools.packages.find]
 include = ["campus_toolkit*"]
