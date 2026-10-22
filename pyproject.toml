@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "campus-study-mcp"
+version = "1.0.0"
+description = "EECE 503P MCP assignment: data, action and orchestration"
+requires-python = ">=3.11"
+dependencies = ["fastmcp", "openai-agents", "python-dotenv"]
+
+[tool.setuptools.packages.find]
+include = ["campus_toolkit*"]
