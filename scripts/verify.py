@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT))
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--live", action="store_true", help="Also run the real OpenAI agent demo (API usage).")
+    parser.add_argument("--live", action="store_true", help="Also run real LLM verification (free local Ollama by default).")
     args = parser.parse_args()
     evidence = ROOT / "evidence"
     evidence.mkdir(exist_ok=True)
@@ -45,7 +45,7 @@ def main() -> int:
         for module, filename in [("campus_toolkit.demo", "mcp-demo-output.txt")] + (
                 [("campus_toolkit.live_demo", "live-agent-output.txt")] if args.live else []):
             completed = subprocess.run([sys.executable, "-m", module], cwd=ROOT,
-                text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=180)
+                text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=600)
             (evidence / filename).write_text(completed.stdout)
             print(completed.stdout)
             report["checks"][module] = {"passed": completed.returncode == 0,
