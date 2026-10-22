@@ -4,7 +4,7 @@ The video is omitted from this package as requested. C5 still lists it as a grad
 
 ## Before recording
 
-Install requirements, run all tests with no skips, set your own API key in `.env`, and run `python -m campus_toolkit.live_demo` once to check your model access. Do not display `.env` or an API key in a recording. Model calls incur API usage. Both scripted demos use fresh temporary databases.
+Install requirements, run all tests with no skips, start Ollama, pull `qwen2.5:3b`, and run `python -m campus_toolkit.live_demo` once to check your model access. The default local-model mode needs no API key and makes no paid API calls. Both scripted demos use fresh temporary databases.
 
 ## Recording outline (approximately 6 minutes)
 
