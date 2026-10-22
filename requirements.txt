@@ -1,5 +1,5 @@
-# Install current stable releases, as the brief requests. Record your resolved
-# environment with: python -m pip freeze > evidence/installed-requirements.txt
-fastmcp
-openai-agents
-python-dotenv
+# Current stable versions resolved by GitHub Actions on 2026-10-22.
+fastmcp==4.1.3
+openai-agents==0.24.0
+python-dotenv==1.2.4
+mcp==2.3.0
