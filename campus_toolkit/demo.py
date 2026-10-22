@@ -31,7 +31,7 @@ async def main():
                 result = await server.call_tool(name, args)
                 print("SERVER -> CLIENT", result.model_dump_json(indent=2))
             print("\nThis is an MCP-client demonstration, not an LLM routing demonstration.")
-            print("For the live agent, run python -m campus_toolkit.agent with OPENAI_API_KEY set.")
+            print("For the live agent, start Ollama, pull qwen2.5:3b, and run python -m campus_toolkit.agent.")
 
 
 if __name__ == "__main__":
