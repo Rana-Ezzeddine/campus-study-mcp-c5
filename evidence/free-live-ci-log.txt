@@ -1,0 +1,1048 @@
+﻿2026-10-22T20:04:51.8960421Z Current runner version: '2.338.0'
+2026-10-22T20:04:51.8984982Z ##[group]Runner Image Provisioner
+2026-10-22T20:04:51.8985881Z Hosted Compute Agent
+2026-10-22T20:04:51.8986604Z Version: 20261012.601
+2026-10-22T20:04:51.8987243Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-22T20:04:51.8988462Z Build Date: 2026-10-12T17:48:21Z
+2026-10-22T20:04:51.8989192Z Worker ID: {9bd06e78-48f6-4478-b16c-7cb270df0654}
+2026-10-22T20:04:51.8989940Z Region: westus3
+2026-10-22T20:04:51.8990546Z Cloud: Azure
+2026-10-22T20:04:51.8991091Z ##[endgroup]
+2026-10-22T20:04:51.8992596Z ##[group]Operating System
+2026-10-22T20:04:51.8993346Z Ubuntu
+2026-10-22T20:04:51.8993907Z 24.04.5
+2026-10-22T20:04:51.8994514Z LTS
+2026-10-22T20:04:51.8995029Z ##[endgroup]
+2026-10-22T20:04:51.8995570Z ##[group]Runner Image
+2026-10-22T20:04:51.8996225Z Image: ubuntu-24.04
+2026-10-22T20:04:51.8996823Z Version: 20261012.334.1
+2026-10-22T20:04:51.8998398Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-22T20:04:51.8999900Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-22T20:04:51.9001320Z ##[endgroup]
+2026-10-22T20:04:51.9002449Z ##[group]GITHUB_TOKEN Permissions
+2026-10-22T20:04:51.9004362Z Contents: read
+2026-10-22T20:04:51.9004996Z Metadata: read
+2026-10-22T20:04:51.9005644Z ##[endgroup]
+2026-10-22T20:04:51.9008023Z Secret source: Actions
+2026-10-22T20:04:51.9009093Z Cache mode: write
+2026-10-22T20:04:51.9009832Z Prepare workflow directory
+2026-10-22T20:04:51.9412636Z Prepare all required actions
+2026-10-22T20:04:51.9461721Z Getting action download info
+2026-10-22T20:04:52.2930938Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-22T20:04:52.4077179Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-22T20:04:52.4837356Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-22T20:04:52.6919500Z Complete job name: local-llm
+2026-10-22T20:04:52.7802215Z ##[group]Run actions/checkout@v4
+2026-10-22T20:04:52.7803086Z with:
+2026-10-22T20:04:52.7803607Z   repository: Rana-Ezzeddine/campus-study-mcp-c5
+2026-10-22T20:04:52.7807900Z   token: ***
+2026-10-22T20:04:52.7808344Z   ssh-strict: true
+2026-10-22T20:04:52.7808776Z   ssh-user: git
+2026-10-22T20:04:52.7809218Z   persist-credentials: true
+2026-10-22T20:04:52.7809699Z   clean: true
+2026-10-22T20:04:52.7810144Z   sparse-checkout-cone-mode: true
+2026-10-22T20:04:52.7810658Z   fetch-depth: 1
+2026-10-22T20:04:52.7811086Z   fetch-tags: false
+2026-10-22T20:04:52.7811524Z   show-progress: true
+2026-10-22T20:04:52.7811966Z   lfs: false
+2026-10-22T20:04:52.7812382Z   submodules: false
+2026-10-22T20:04:52.7812825Z   set-safe-directory: true
+2026-10-22T20:04:52.7813330Z   allow-unsafe-pr-checkout: false
+2026-10-22T20:04:52.7814091Z env:
+2026-10-22T20:04:52.7814513Z   MODEL_PROVIDER: ollama
+2026-10-22T20:04:52.7815006Z   OLLAMA_MODEL: qwen2.5:3b
+2026-10-22T20:04:52.7815574Z   OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+2026-10-22T20:04:52.7816152Z   OLLAMA_HOST: 127.0.0.1:11434
+2026-10-22T20:04:52.7816642Z   OLLAMA_NUM_PARALLEL: 1
+2026-10-22T20:04:52.7817116Z   OLLAMA_CONTEXT_LENGTH: 8192
+2026-10-22T20:04:52.7817801Z ##[endgroup]
+2026-10-22T20:04:52.8832657Z Syncing repository: Rana-Ezzeddine/campus-study-mcp-c5
+2026-10-22T20:04:52.8835427Z ##[group]Getting Git version info
+2026-10-22T20:04:52.8836737Z Working directory is '/home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5'
+2026-10-22T20:04:52.8838753Z [command]/usr/bin/git version
+2026-10-22T20:04:52.8907073Z git version 2.55.0
+2026-10-22T20:04:52.8932719Z ##[endgroup]
+2026-10-22T20:04:52.8969519Z Temporarily overriding HOME='/home/runner/work/_temp/9b381226-0bae-467e-8e29-7da65d785a94' before making global git config changes
+2026-10-22T20:04:52.8972211Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T20:04:52.8974649Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5
+2026-10-22T20:04:52.9009943Z Deleting the contents of '/home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5'
+2026-10-22T20:04:52.9013773Z ##[group]Initializing the repository
+2026-10-22T20:04:52.9018349Z [command]/usr/bin/git init /home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5
+2026-10-22T20:04:52.9134524Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-22T20:04:52.9136403Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-22T20:04:52.9138279Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-22T20:04:52.9139420Z hint: call:
+2026-10-22T20:04:52.9139857Z hint:
+2026-10-22T20:04:52.9140398Z hint: 	git config --global init.defaultBranch <name>
+2026-10-22T20:04:52.9141015Z hint:
+2026-10-22T20:04:52.9141721Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-22T20:04:52.9143108Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-22T20:04:52.9144003Z hint:
+2026-10-22T20:04:52.9144636Z hint: 	git branch -m <name>
+2026-10-22T20:04:52.9145127Z hint:
+2026-10-22T20:04:52.9145778Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-22T20:04:52.9146937Z Initialized empty Git repository in /home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5/.git/
+2026-10-22T20:04:52.9161048Z [command]/usr/bin/git remote add origin https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
+2026-10-22T20:04:52.9202956Z ##[endgroup]
+2026-10-22T20:04:52.9203845Z ##[group]Disabling automatic garbage collection
+2026-10-22T20:04:52.9206687Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-22T20:04:52.9240840Z ##[endgroup]
+2026-10-22T20:04:52.9241757Z ##[group]Setting up auth
+2026-10-22T20:04:52.9248764Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T20:04:52.9292678Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T20:04:52.9690673Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T20:04:52.9725127Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T20:04:52.9999277Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T20:04:53.0031587Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T20:04:53.0294159Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-22T20:04:53.0338430Z ##[endgroup]
+2026-10-22T20:04:53.0339399Z ##[group]Fetching the repository
+2026-10-22T20:04:53.0347966Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +636e66417931c2796746147dd8f081c16260112f:refs/remotes/origin/main
+2026-10-22T20:04:53.5615323Z From https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
+2026-10-22T20:04:53.5629507Z  * [new ref]         636e66417931c2796746147dd8f081c16260112f -> origin/main
+2026-10-22T20:04:53.5633149Z ##[endgroup]
+2026-10-22T20:04:53.5634492Z ##[group]Determining the checkout info
+2026-10-22T20:04:53.5635924Z ##[endgroup]
+2026-10-22T20:04:53.5636854Z [command]/usr/bin/git sparse-checkout disable
+2026-10-22T20:04:53.5694711Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-22T20:04:53.5730468Z ##[group]Checking out the ref
+2026-10-22T20:04:53.5735256Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-22T20:04:53.5824181Z Switched to a new branch 'main'
+2026-10-22T20:04:53.5829655Z branch 'main' set up to track 'origin/main'.
+2026-10-22T20:04:53.5837079Z ##[endgroup]
+2026-10-22T20:04:53.5878555Z [command]/usr/bin/git log -1 --format=%H
+2026-10-22T20:04:53.5904907Z 636e66417931c2796746147dd8f081c16260112f
+2026-10-22T20:04:53.6311889Z ##[group]Run actions/setup-python@v5
+2026-10-22T20:04:53.6313531Z with:
+2026-10-22T20:04:53.6314619Z   python-version: 3.13
+2026-10-22T20:04:53.6315883Z   check-latest: false
+2026-10-22T20:04:53.6331341Z   token: ***
+2026-10-22T20:04:53.6332057Z   update-environment: true
+2026-10-22T20:04:53.6332847Z   allow-prereleases: false
+2026-10-22T20:04:53.6333628Z   freethreaded: false
+2026-10-22T20:04:53.6334292Z env:
+2026-10-22T20:04:53.6334868Z   MODEL_PROVIDER: ollama
+2026-10-22T20:04:53.6335620Z   OLLAMA_MODEL: qwen2.5:3b
+2026-10-22T20:04:53.6336434Z   OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+2026-10-22T20:04:53.6337367Z   OLLAMA_HOST: 127.0.0.1:11434
+2026-10-22T20:04:53.6338422Z   OLLAMA_NUM_PARALLEL: 1
+2026-10-22T20:04:53.6339170Z   OLLAMA_CONTEXT_LENGTH: 8192
+2026-10-22T20:04:53.6339965Z ##[endgroup]
+2026-10-22T20:04:53.7676345Z ##[group]Installed versions
+2026-10-22T20:04:53.7769278Z (node:2316) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T20:04:53.7772442Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T20:04:53.7774836Z Successfully set up CPython (3.13.16)
+2026-10-22T20:04:53.7777095Z ##[endgroup]
+2026-10-22T20:04:53.7966690Z ##[group]Run python -m pip install -r requirements.txt
+2026-10-22T20:04:53.7968282Z [36;1mpython -m pip install -r requirements.txt[0m
+2026-10-22T20:04:53.8321599Z shell: /usr/bin/bash -e {0}
+2026-10-22T20:04:53.8322435Z env:
+2026-10-22T20:04:53.8323011Z   MODEL_PROVIDER: ollama
+2026-10-22T20:04:53.8323747Z   OLLAMA_MODEL: qwen2.5:3b
+2026-10-22T20:04:53.8324553Z   OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+2026-10-22T20:04:53.8325494Z   OLLAMA_HOST: 127.0.0.1:11434
+2026-10-22T20:04:53.8326252Z   OLLAMA_NUM_PARALLEL: 1
+2026-10-22T20:04:53.8327002Z   OLLAMA_CONTEXT_LENGTH: 8192
+2026-10-22T20:04:53.8328194Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:04:53.8329675Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T20:04:53.8331152Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:04:53.8332446Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:04:53.8333793Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:04:53.8335116Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T20:04:53.8336196Z ##[endgroup]
+2026-10-22T20:04:56.0408537Z Collecting fastmcp==4.1.3 (from -r requirements.txt (line 2))
+2026-10-22T20:04:56.1109202Z   Downloading fastmcp-4.1.3-py3-none-any.whl.metadata (9.2 kB)
+2026-10-22T20:04:56.1488088Z Collecting openai-agents==0.24.0 (from -r requirements.txt (line 3))
+2026-10-22T20:04:56.1595849Z   Downloading openai_agents-0.24.0-py3-none-any.whl.metadata (13 kB)
+2026-10-22T20:04:56.1917351Z Collecting python-dotenv==1.2.4 (from -r requirements.txt (line 4))
+2026-10-22T20:04:56.2017058Z   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+2026-10-22T20:04:56.2331899Z Collecting mcp==2.3.0 (from -r requirements.txt (line 5))
+2026-10-22T20:04:56.2432508Z   Downloading mcp-2.3.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-22T20:04:56.2665343Z Collecting fastmcp-slim==4.1.3 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:56.2763816Z   Downloading fastmcp_slim-4.1.3-py3-none-any.whl.metadata (11 kB)
+2026-10-22T20:04:56.3008861Z Collecting griffelib<3,>=2 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.3107356Z   Downloading griffelib-2.4.1-py3-none-any.whl.metadata (1.9 kB)
+2026-10-22T20:04:56.3299309Z Collecting httpx2>=2.12.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.3397275Z   Downloading httpx2-2.16.0-py3-none-any.whl.metadata (10 kB)
+2026-10-22T20:04:56.4099343Z Collecting openai<4,>=3.0.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.4223206Z   Downloading openai-3.37.0-py3-none-any.whl.metadata (44 kB)
+2026-10-22T20:04:56.5542147Z Collecting pydantic<3,>=2.12.2 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.5643749Z   Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+2026-10-22T20:04:56.5994093Z Collecting pyjwt>=2.15.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.6093160Z   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+2026-10-22T20:04:56.6285258Z Collecting python-multipart>=0.0.31 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.6386591Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+2026-10-22T20:04:56.6703828Z Collecting requests<3,>=2.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.6802748Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-10-22T20:04:56.7106714Z Collecting starlette>=1.3.1 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.7209229Z   Downloading starlette-1.9.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-22T20:04:56.7443916Z Collecting typing-extensions<5,>=4.12.2 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.7595399Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-22T20:04:56.7857027Z Collecting urllib3>=2.8.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.7956856Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-22T20:04:56.9448182Z Collecting websockets<17,>=15.0 (from openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:56.9550634Z   Downloading websockets-16.1.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.8 kB)
+2026-10-22T20:04:56.9794700Z Collecting anyio>=4.9 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:56.9894460Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-22T20:04:57.0185702Z Collecting jsonschema>=4.20.0 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:57.0286316Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-10-22T20:04:57.0482243Z Collecting mcp-types==2.3.0 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:57.0582373Z   Downloading mcp_types-2.3.0-py3-none-any.whl.metadata (1.9 kB)
+2026-10-22T20:04:57.0839660Z Collecting opentelemetry-api>=1.28.0 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:57.0940317Z   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+2026-10-22T20:04:57.1212479Z Collecting sse-starlette>=3.0.0 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:57.1313307Z   Downloading sse_starlette-3.5.0-py3-none-any.whl.metadata (15 kB)
+2026-10-22T20:04:57.1547030Z Collecting typing-inspection>=0.4.1 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:57.1645758Z   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+2026-10-22T20:04:57.1951308Z Collecting uvicorn>=0.31.1 (from mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:57.2051554Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-22T20:04:57.2339191Z Collecting platformdirs>=4.0.0 (from fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.2440046Z   Downloading platformdirs-4.13.5-py3-none-any.whl.metadata (5.5 kB)
+2026-10-22T20:04:57.2699438Z Collecting pydantic-settings>=2.0.0 (from fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.2799316Z   Downloading pydantic_settings-2.16.1-py3-none-any.whl.metadata (4.0 kB)
+2026-10-22T20:04:57.3194115Z Collecting rich>=13.9.4 (from fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.3297890Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-10-22T20:04:57.3578113Z Collecting authlib>=1.6.11 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.3679011Z   Downloading authlib-1.9.1-py2.py3-none-any.whl.metadata (10 kB)
+2026-10-22T20:04:57.3879060Z Collecting exceptiongroup>=1.2.2 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.3979285Z   Downloading exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+2026-10-22T20:04:57.4187348Z Collecting py-key-value-aio<0.5.0,>=0.4.4 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.4286450Z   Downloading py_key_value_aio-0.4.6-py3-none-any.whl.metadata (16 kB)
+2026-10-22T20:04:57.4607898Z Collecting certifi>=2026.10.19 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.4707418Z   Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)
+2026-10-22T20:04:57.5088870Z Collecting cyclopts>=4.0.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.5191878Z   Downloading cyclopts-5.3.0-py3-none-any.whl.metadata (12 kB)
+2026-10-22T20:04:57.5449193Z Collecting joserfc>=1.5.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.5549401Z   Downloading joserfc-1.7.7-py3-none-any.whl.metadata (3.2 kB)
+2026-10-22T20:04:57.5728171Z Collecting jsonref>=1.1.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.5827388Z   Downloading jsonref-1.1.0-py3-none-any.whl.metadata (2.7 kB)
+2026-10-22T20:04:57.6022491Z Collecting jsonschema-path>=0.3.4 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.6123199Z   Downloading jsonschema_path-0.5.0-py3-none-any.whl.metadata (8.1 kB)
+2026-10-22T20:04:57.6312592Z Collecting openapi-pydantic>=0.6.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.6415630Z   Downloading openapi_pydantic-0.6.0-py3-none-any.whl.metadata (12 kB)
+2026-10-22T20:04:57.6651551Z Collecting packaging>=24.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.6755227Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-10-22T20:04:57.6951834Z Collecting pyperclip>=1.9.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.7052436Z   Downloading pyperclip-1.11.0-py3-none-any.whl.metadata (2.4 kB)
+2026-10-22T20:04:57.7517922Z Collecting pyyaml<7.0,>=6.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.7622985Z   Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-10-22T20:04:57.7803562Z Collecting uncalled-for>=0.4.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.7906894Z   Downloading uncalled_for-0.4.1-py3-none-any.whl.metadata (3.3 kB)
+2026-10-22T20:04:57.8816132Z Collecting watchfiles>=1.0.0 (from fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:57.8920392Z   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2026-10-22T20:04:58.0064903Z Collecting jiter<1,>=0.16.0 (from openai<4,>=3.0.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:58.0169073Z   Downloading jiter-0.17.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+2026-10-22T20:04:58.0386314Z Collecting sniffio (from openai<4,>=3.0.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:58.0488026Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2026-10-22T20:04:58.0723960Z Collecting idna>=2.8 (from anyio>=4.9->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:58.0826519Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-22T20:04:58.1051516Z Collecting httpcore2==2.16.0 (from httpx2>=2.12.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:58.1153162Z   Downloading httpcore2-2.16.0-py3-none-any.whl.metadata (27 kB)
+2026-10-22T20:04:58.1378608Z Collecting truststore>=0.10 (from httpx2>=2.12.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:58.1479489Z   Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+2026-10-22T20:04:58.1678740Z Collecting h11>=0.16 (from httpcore2==2.16.0->httpx2>=2.12.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:58.1780013Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-22T20:04:58.2041858Z Collecting beartype>=0.20.0 (from py-key-value-aio<0.5.0,>=0.4.4->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:58.2143920Z   Downloading beartype-0.23.1-py3-none-any.whl.metadata (35 kB)
+2026-10-22T20:04:58.2556656Z Collecting aiofile>=3.12.3 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:58.2657760Z   Downloading aiofile-3.12.3-py3-none-any.whl.metadata (17 kB)
+2026-10-22T20:04:58.3012163Z Collecting keyring>=25.6.0 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:58.3114808Z   Downloading keyring-25.7.0-py3-none-any.whl.metadata (21 kB)
+2026-10-22T20:04:58.3396374Z Collecting cachetools>=5.0.0 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:58.3496665Z   Downloading cachetools-7.2.4-py3-none-any.whl.metadata (5.5 kB)
+2026-10-22T20:04:58.3702010Z Collecting annotated-types>=0.6.0 (from pydantic<3,>=2.12.2->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:58.3801324Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-10-22T20:04:59.1229242Z Collecting pydantic-core==2.50.1 (from pydantic<3,>=2.12.2->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:59.1333188Z   Downloading pydantic_core-2.50.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+2026-10-22T20:04:59.2688525Z Collecting charset_normalizer<4,>=2 (from requests<3,>=2.0->openai-agents==0.24.0->-r requirements.txt (line 3))
+2026-10-22T20:04:59.2791588Z   Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-10-22T20:04:59.3433320Z Collecting caio~=0.12.0 (from aiofile>=3.12.3->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:59.3533109Z   Downloading caio-0.12.9-cp313-cp313-manylinux_2_34_x86_64.whl.metadata (4.6 kB)
+2026-10-22T20:04:59.5517171Z Collecting cryptography>=45.0.1 (from authlib>=1.6.11->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:59.5619611Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-10-22T20:04:59.6768984Z Collecting cffi>=2.0.0 (from cryptography>=45.0.1->authlib>=1.6.11->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:59.6872401Z   Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-10-22T20:04:59.7066709Z Collecting pycparser (from cffi>=2.0.0->cryptography>=45.0.1->authlib>=1.6.11->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:59.7167746Z   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+2026-10-22T20:04:59.7377925Z Collecting attrs>=23.1.0 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:59.7477307Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-22T20:04:59.7667913Z Collecting docstring-parser<4.0,>=0.15 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:59.7767778Z   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+2026-10-22T20:04:59.7976344Z Collecting rich-rst<3,>=2.0.1 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:59.8077255Z   Downloading rich_rst-2.2.0-py3-none-any.whl.metadata (5.0 kB)
+2026-10-22T20:04:59.8384553Z Collecting pygments>=2.0.0 (from rich-rst<3,>=2.0.1->cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:04:59.8483008Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-10-22T20:04:59.8721854Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:59.8820368Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-10-22T20:04:59.9079109Z Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:04:59.9176642Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-10-22T20:05:00.1885851Z Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:05:00.1990127Z   Downloading rpds_py-2026.9.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-10-22T20:05:00.2202312Z Collecting pathable<0.7.0,>=0.6.0 (from jsonschema-path>=0.3.4->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.2302739Z   Downloading pathable-0.6.0-py3-none-any.whl.metadata (7.2 kB)
+2026-10-22T20:05:00.2566319Z Collecting SecretStorage>=3.2 (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.2667162Z   Downloading secretstorage-3.5.0-py3-none-any.whl.metadata (4.0 kB)
+2026-10-22T20:05:00.2857266Z Collecting jeepney>=0.4.2 (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.2956907Z   Downloading jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
+2026-10-22T20:05:00.3161326Z Collecting jaraco.classes (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.3261602Z   Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-22T20:05:00.3493258Z Collecting jaraco.functools (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.3595003Z   Downloading jaraco_functools-4.6.0-py3-none-any.whl.metadata (2.9 kB)
+2026-10-22T20:05:00.3801510Z Collecting jaraco.context (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.3902849Z   Downloading jaraco_context-6.1.2-py3-none-any.whl.metadata (4.2 kB)
+2026-10-22T20:05:00.4245677Z Collecting email-validator>=2.0.0 (from pydantic[email]>=2.12.0->fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.4347041Z   Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+2026-10-22T20:05:00.4575601Z Collecting dnspython>=2.0.0 (from email-validator>=2.0.0->pydantic[email]>=2.12.0->fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.4676252Z   Downloading dnspython-2.9.0-py3-none-any.whl.metadata (5.7 kB)
+2026-10-22T20:05:00.5049741Z Collecting markdown-it-py>=2.2.0 (from rich>=13.9.4->fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.5151911Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-22T20:05:00.5371132Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.9.4->fastmcp-slim==4.1.3->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.5470522Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-10-22T20:05:00.5882978Z Collecting click>=7.0 (from uvicorn>=0.31.1->mcp==2.3.0->-r requirements.txt (line 5))
+2026-10-22T20:05:00.5984898Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-22T20:05:00.6266601Z Collecting more-itertools (from jaraco.classes->keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.3->fastmcp==4.1.3->-r requirements.txt (line 2))
+2026-10-22T20:05:00.6366299Z   Downloading more_itertools-11.2.1-py3-none-any.whl.metadata (42 kB)
+2026-10-22T20:05:00.6567311Z Downloading fastmcp-4.1.3-py3-none-any.whl (8.2 kB)
+2026-10-22T20:05:00.6692228Z Downloading openai_agents-0.24.0-py3-none-any.whl (1.2 MB)
+2026-10-22T20:05:00.7084900Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 35.8 MB/s  0:00:00
+2026-10-22T20:05:00.7185929Z Downloading mcp-2.3.0-py3-none-any.whl (368 kB)
+2026-10-22T20:05:00.7314645Z Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+2026-10-22T20:05:00.7440346Z Downloading fastmcp_slim-4.1.3-py3-none-any.whl (931 kB)
+2026-10-22T20:05:00.7575744Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 931.0/931.0 kB 60.2 MB/s  0:00:00
+2026-10-22T20:05:00.7676444Z Downloading mcp_types-2.3.0-py3-none-any.whl (69 kB)
+2026-10-22T20:05:00.7807373Z Downloading griffelib-2.4.1-py3-none-any.whl (172 kB)
+2026-10-22T20:05:00.7941369Z Downloading openai-3.37.0-py3-none-any.whl (2.3 MB)
+2026-10-22T20:05:00.8099683Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 154.2 MB/s  0:00:00
+2026-10-22T20:05:00.8200237Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-22T20:05:00.8324019Z Downloading httpx2-2.16.0-py3-none-any.whl (97 kB)
+2026-10-22T20:05:00.8445669Z Downloading httpcore2-2.16.0-py3-none-any.whl (85 kB)
+2026-10-22T20:05:00.8570349Z Downloading jiter-0.17.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (344 kB)
+2026-10-22T20:05:00.8696722Z Downloading py_key_value_aio-0.4.6-py3-none-any.whl (171 kB)
+2026-10-22T20:05:00.8816966Z Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+2026-10-22T20:05:00.8953831Z Downloading pydantic_core-2.50.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+2026-10-22T20:05:00.9065578Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 214.7 MB/s  0:00:00
+2026-10-22T20:05:00.9169230Z Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+2026-10-22T20:05:00.9225579Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.6/801.6 kB 161.4 MB/s  0:00:00
+2026-10-22T20:05:00.9324981Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-10-22T20:05:00.9444313Z Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+2026-10-22T20:05:00.9565326Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-22T20:05:00.9686101Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-22T20:05:00.9804917Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-10-22T20:05:00.9929754Z Downloading websockets-16.1.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (187 kB)
+2026-10-22T20:05:01.0055180Z Downloading aiofile-3.12.3-py3-none-any.whl (22 kB)
+2026-10-22T20:05:01.0182778Z Downloading caio-0.12.9-cp313-cp313-manylinux_2_34_x86_64.whl (162 kB)
+2026-10-22T20:05:01.0308004Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-10-22T20:05:01.0431962Z Downloading authlib-1.9.1-py2.py3-none-any.whl (266 kB)
+2026-10-22T20:05:01.0561341Z Downloading beartype-0.23.1-py3-none-any.whl (1.6 MB)
+2026-10-22T20:05:01.0640833Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 253.3 MB/s  0:00:00
+2026-10-22T20:05:01.0747278Z Downloading cachetools-7.2.4-py3-none-any.whl (18 kB)
+2026-10-22T20:05:01.0867750Z Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)
+2026-10-22T20:05:01.0993399Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-10-22T20:05:01.1159789Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 320.5 MB/s  0:00:00
+2026-10-22T20:05:01.1261526Z Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-10-22T20:05:01.1383113Z Downloading cyclopts-5.3.0-py3-none-any.whl (296 kB)
+2026-10-22T20:05:01.1505289Z Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+2026-10-22T20:05:01.1623409Z Downloading rich_rst-2.2.0-py3-none-any.whl (279 kB)
+2026-10-22T20:05:01.1749689Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-22T20:05:01.1865698Z Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+2026-10-22T20:05:01.1981978Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-22T20:05:01.2097558Z Downloading joserfc-1.7.7-py3-none-any.whl (71 kB)
+2026-10-22T20:05:01.2214285Z Downloading jsonref-1.1.0-py3-none-any.whl (9.4 kB)
+2026-10-22T20:05:01.2330830Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-10-22T20:05:01.2451658Z Downloading jsonschema_path-0.5.0-py3-none-any.whl (24 kB)
+2026-10-22T20:05:01.2566899Z Downloading pathable-0.6.0-py3-none-any.whl (18 kB)
+2026-10-22T20:05:01.2682206Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-10-22T20:05:01.2797825Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-10-22T20:05:01.2913134Z Downloading keyring-25.7.0-py3-none-any.whl (39 kB)
+2026-10-22T20:05:01.3027392Z Downloading jeepney-0.9.0-py3-none-any.whl (49 kB)
+2026-10-22T20:05:01.3143324Z Downloading openapi_pydantic-0.6.0-py3-none-any.whl (96 kB)
+2026-10-22T20:05:01.3259415Z Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+2026-10-22T20:05:01.3374804Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-10-22T20:05:01.3492131Z Downloading platformdirs-4.13.5-py3-none-any.whl (32 kB)
+2026-10-22T20:05:01.3609625Z Downloading pydantic_settings-2.16.1-py3-none-any.whl (80 kB)
+2026-10-22T20:05:01.3726707Z Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+2026-10-22T20:05:01.3841882Z Downloading dnspython-2.9.0-py3-none-any.whl (354 kB)
+2026-10-22T20:05:01.3965427Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-10-22T20:05:01.4029636Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 238.9 MB/s  0:00:00
+2026-10-22T20:05:01.4129571Z Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+2026-10-22T20:05:01.4245842Z Downloading pyperclip-1.11.0-py3-none-any.whl (11 kB)
+2026-10-22T20:05:01.4362275Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+2026-10-22T20:05:01.4479922Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-10-22T20:05:01.4601389Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-10-22T20:05:01.4721423Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-10-22T20:05:01.4837121Z Downloading rpds_py-2026.9.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (370 kB)
+2026-10-22T20:05:01.4960950Z Downloading secretstorage-3.5.0-py3-none-any.whl (15 kB)
+2026-10-22T20:05:01.5074965Z Downloading sse_starlette-3.5.0-py3-none-any.whl (17 kB)
+2026-10-22T20:05:01.5190740Z Downloading starlette-1.9.0-py3-none-any.whl (80 kB)
+2026-10-22T20:05:01.5310871Z Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+2026-10-22T20:05:01.5429095Z Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+2026-10-22T20:05:01.5544985Z Downloading uncalled_for-0.4.1-py3-none-any.whl (14 kB)
+2026-10-22T20:05:01.5659571Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-10-22T20:05:01.5788197Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-10-22T20:05:01.5913623Z Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+2026-10-22T20:05:01.6042514Z Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+2026-10-22T20:05:01.6157213Z Downloading jaraco_context-6.1.2-py3-none-any.whl (7.9 kB)
+2026-10-22T20:05:01.6273392Z Downloading jaraco_functools-4.6.0-py3-none-any.whl (11 kB)
+2026-10-22T20:05:01.6390127Z Downloading more_itertools-11.2.1-py3-none-any.whl (74 kB)
+2026-10-22T20:05:01.6506737Z Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+2026-10-22T20:05:01.6624099Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+2026-10-22T20:05:02.1126241Z Installing collected packages: pyperclip, websockets, urllib3, uncalled-for, typing-extensions, truststore, sniffio, rpds-py, pyyaml, python-multipart, python-dotenv, pyjwt, pygments, pycparser, platformdirs, pathable, packaging, more-itertools, mdurl, jsonref, jiter, jeepney, jaraco.context, idna, h11, griffelib, exceptiongroup, docstring-parser, dnspython, click, charset_normalizer, certifi, caio, cachetools, beartype, attrs, annotated-types, uvicorn, typing-inspection, requests, referencing, pydantic-core, py-key-value-aio, opentelemetry-api, markdown-it-py, jaraco.functools, jaraco.classes, httpcore2, email-validator, cffi, anyio, aiofile, watchfiles, starlette, rich, pydantic, jsonschema-specifications, jsonschema-path, httpx2, cryptography, sse-starlette, SecretStorage, rich-rst, pydantic-settings, openapi-pydantic, openai, mcp-types, jsonschema, joserfc, mcp, keyring, fastmcp-slim, cyclopts, authlib, openai-agents, fastmcp
+2026-10-22T20:05:10.6286151Z 
+2026-10-22T20:05:10.6360218Z Successfully installed SecretStorage-3.5.0 aiofile-3.12.3 annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 authlib-1.9.1 beartype-0.23.1 cachetools-7.2.4 caio-0.12.9 certifi-2026.10.19 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.0 cryptography-50.0.2 cyclopts-5.3.0 dnspython-2.9.0 docstring-parser-0.18.0 email-validator-2.3.0 exceptiongroup-1.3.1 fastmcp-4.1.3 fastmcp-slim-4.1.3 griffelib-2.4.1 h11-0.16.0 httpcore2-2.16.0 httpx2-2.16.0 idna-3.20 jaraco.classes-3.4.0 jaraco.context-6.1.2 jaraco.functools-4.6.0 jeepney-0.9.0 jiter-0.17.0 joserfc-1.7.7 jsonref-1.1.0 jsonschema-4.26.0 jsonschema-path-0.5.0 jsonschema-specifications-2025.9.1 keyring-25.7.0 markdown-it-py-4.2.0 mcp-2.3.0 mcp-types-2.3.0 mdurl-0.1.2 more-itertools-11.2.1 openai-3.37.0 openai-agents-0.24.0 openapi-pydantic-0.6.0 opentelemetry-api-1.45.1 packaging-26.3 pathable-0.6.0 platformdirs-4.13.5 py-key-value-aio-0.4.6 pycparser-3.12 pydantic-2.14.1 pydantic-core-2.50.1 pydantic-settings-2.16.1 pygments-2.21.0 pyjwt-2.15.1 pyperclip-1.11.0 python-dotenv-1.2.4 python-multipart-0.0.32 pyyaml-6.0.3 referencing-0.37.0 requests-2.34.2 rich-15.0.0 rich-rst-2.2.0 rpds-py-2026.9.1 sniffio-1.3.1 sse-starlette-3.5.0 starlette-1.9.0 truststore-0.10.5 typing-extensions-4.16.0 typing-inspection-0.4.4 uncalled-for-0.4.1 urllib3-2.8.0 uvicorn-0.54.0 watchfiles-1.3.0 websockets-16.1.1
+2026-10-22T20:05:10.6367563Z 
+2026-10-22T20:05:10.6367896Z [notice] A new release of pip is available: 26.2.1 -> 26.2.2
+2026-10-22T20:05:10.6368704Z [notice] To update, run: pip install --upgrade pip
+2026-10-22T20:05:10.8418353Z ##[group]Run curl -fsSL https://ollama.com/install.sh | sh
+2026-10-22T20:05:10.8418863Z [36;1mcurl -fsSL https://ollama.com/install.sh | sh[0m
+2026-10-22T20:05:10.8484897Z shell: /usr/bin/bash -e {0}
+2026-10-22T20:05:10.8485149Z env:
+2026-10-22T20:05:10.8485353Z   MODEL_PROVIDER: ollama
+2026-10-22T20:05:10.8485590Z   OLLAMA_MODEL: qwen2.5:3b
+2026-10-22T20:05:10.8485890Z   OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+2026-10-22T20:05:10.8486360Z   OLLAMA_HOST: 127.0.0.1:11434
+2026-10-22T20:05:10.8486597Z   OLLAMA_NUM_PARALLEL: 1
+2026-10-22T20:05:10.8486821Z   OLLAMA_CONTEXT_LENGTH: 8192
+2026-10-22T20:05:10.8487122Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:10.8487899Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T20:05:10.8488358Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:10.8488740Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:10.8489155Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:10.8489535Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T20:05:10.8489865Z ##[endgroup]
+2026-10-22T20:05:11.4354645Z >>> Installing ollama to /usr/local
+2026-10-22T20:05:12.1434917Z >>> Downloading ollama-linux-amd64.tar.zst
+2026-10-22T20:05:12.4534967Z #=#=#                                                                          
+2026-10-22T20:05:12.5564269Z ##O#-#                                                                         
+2026-10-22T20:05:12.5564850Z 
+2026-10-22T20:05:12.6689951Z                                                                            0.1%
+2026-10-22T20:05:12.7690477Z #                                                                          1.6%
+2026-10-22T20:05:12.8764888Z ###                                                                        4.5%
+2026-10-22T20:05:12.9939549Z #####                                                                      7.3%
+2026-10-22T20:05:13.1144745Z #######                                                                   10.5%
+2026-10-22T20:05:13.2172966Z ##########                                                                14.0%
+2026-10-22T20:05:13.3223585Z ############                                                              16.8%
+2026-10-22T20:05:13.4227220Z ##############                                                            19.7%
+2026-10-22T20:05:13.5863816Z ################                                                          22.5%
+2026-10-22T20:05:13.7037097Z #################                                                         24.9%
+2026-10-22T20:05:13.8214226Z ##################                                                        25.6%
+2026-10-22T20:05:13.9485524Z ###################                                                       27.0%
+2026-10-22T20:05:14.0819633Z ####################                                                      29.0%
+2026-10-22T20:05:14.2015356Z ######################                                                    31.6%
+2026-10-22T20:05:14.3123305Z ########################                                                  33.7%
+2026-10-22T20:05:14.4319444Z #########################                                                 35.1%
+2026-10-22T20:05:14.5511392Z ##########################                                                36.4%
+2026-10-22T20:05:14.6514717Z ############################                                              39.0%
+2026-10-22T20:05:14.7758558Z #############################                                             41.5%
+2026-10-22T20:05:14.8905478Z ###############################                                           43.9%
+2026-10-22T20:05:14.9922973Z ################################                                          45.7%
+2026-10-22T20:05:15.0967707Z ##################################                                        48.2%
+2026-10-22T20:05:15.2138326Z ####################################                                      50.8%
+2026-10-22T20:05:15.3286614Z ######################################                                    53.0%
+2026-10-22T20:05:15.4280972Z #######################################                                   55.2%
+2026-10-22T20:05:15.5629248Z #########################################                                 57.0%
+2026-10-22T20:05:15.6865163Z ##########################################                                59.7%
+2026-10-22T20:05:15.7901349Z #############################################                             62.9%
+2026-10-22T20:05:15.9161265Z ##############################################                            65.1%
+2026-10-22T20:05:16.0327912Z #################################################                         68.2%
+2026-10-22T20:05:16.1766448Z ##################################################                        69.6%
+2026-10-22T20:05:16.2861843Z ###################################################                       70.9%
+2026-10-22T20:05:16.3940315Z ####################################################                      73.5%
+2026-10-22T20:05:16.5241944Z #####################################################                     74.9%
+2026-10-22T20:05:16.6767936Z ######################################################                    76.3%
+2026-10-22T20:05:16.7815272Z #######################################################                   77.0%
+2026-10-22T20:05:16.8826905Z ########################################################                  78.3%
+2026-10-22T20:05:16.9828203Z #########################################################                 80.5%
+2026-10-22T20:05:17.0839793Z ############################################################              83.8%
+2026-10-22T20:05:17.1884712Z ##############################################################            86.9%
+2026-10-22T20:05:17.2899269Z ################################################################          89.9%
+2026-10-22T20:05:17.4100463Z ##################################################################        92.1%
+2026-10-22T20:05:17.5289217Z ###################################################################       93.8%
+2026-10-22T20:05:17.6625522Z ######################################################################    97.4%
+2026-10-22T20:05:17.6933865Z #######################################################################   99.8%
+2026-10-22T20:05:17.6959407Z ######################################################################## 100.0%
+2026-10-22T20:05:17.7205235Z >>> Creating ollama user...
+2026-10-22T20:05:36.7728510Z >>> Adding ollama user to render group...
+2026-10-22T20:05:36.7987856Z >>> Adding ollama user to video group...
+2026-10-22T20:05:36.8135624Z >>> Adding current user to ollama group...
+2026-10-22T20:05:36.8303308Z >>> Creating ollama systemd service...
+2026-10-22T20:05:36.8413080Z >>> Enabling and starting ollama service...
+2026-10-22T20:05:37.1217315Z Created symlink /etc/systemd/system/default.target.wants/ollama.service → /etc/systemd/system/ollama.service.
+2026-10-22T20:05:39.5609580Z >>> The Ollama API is now available at 127.0.0.1:11434.
+2026-10-22T20:05:39.5610411Z WARNING: No NVIDIA/AMD GPU detected. Ollama will run in CPU-only mode.
+2026-10-22T20:05:39.5611469Z >>> Install complete. Run "ollama" from the command line.
+2026-10-22T20:05:39.5878030Z ##[group]Run ollama serve > /tmp/ollama.log 2>&1 &
+2026-10-22T20:05:39.5878752Z [36;1mollama serve > /tmp/ollama.log 2>&1 &[0m
+2026-10-22T20:05:39.5879085Z [36;1mfor attempt in $(seq 1 30); do[0m
+2026-10-22T20:05:39.5879583Z [36;1m  if curl -fsS http://127.0.0.1:11434/api/tags; then break; fi[0m
+2026-10-22T20:05:39.5879963Z [36;1m  sleep 1[0m
+2026-10-22T20:05:39.5880166Z [36;1mdone[0m
+2026-10-22T20:05:39.5880376Z [36;1mollama pull "$OLLAMA_MODEL"[0m
+2026-10-22T20:05:39.5880748Z [36;1mollama --version[0m
+2026-10-22T20:05:39.5881010Z [36;1mollama list[0m
+2026-10-22T20:05:39.5966746Z shell: /usr/bin/bash -e {0}
+2026-10-22T20:05:39.5967198Z env:
+2026-10-22T20:05:39.5967720Z   MODEL_PROVIDER: ollama
+2026-10-22T20:05:39.5968183Z   OLLAMA_MODEL: qwen2.5:3b
+2026-10-22T20:05:39.5968772Z   OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+2026-10-22T20:05:39.5969300Z   OLLAMA_HOST: 127.0.0.1:11434
+2026-10-22T20:05:39.5969809Z   OLLAMA_NUM_PARALLEL: 1
+2026-10-22T20:05:39.5970357Z   OLLAMA_CONTEXT_LENGTH: 8192
+2026-10-22T20:05:39.5970960Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:39.5971815Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T20:05:39.5973075Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:39.5973853Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:39.5974388Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:39.5974949Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T20:05:39.5975442Z ##[endgroup]
+2026-10-22T20:05:41.1585178Z [?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠇ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠏ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+2026-10-22T20:05:41.2586242Z pulling 5ee4f07cdb9b:   1% ▕                  ▏  19 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:41.3583584Z pulling 5ee4f07cdb9b:   6% ▕█                 ▏ 120 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:41.4588573Z pulling 5ee4f07cdb9b:   9% ▕█                 ▏ 167 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:41.5587335Z pulling 5ee4f07cdb9b:  14% ▕██                ▏ 268 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:41.6589965Z pulling 5ee4f07cdb9b:  19% ▕███               ▏ 374 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:41.7583263Z pulling 5ee4f07cdb9b:  22% ▕███               ▏ 428 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:41.8586606Z pulling 5ee4f07cdb9b:  27% ▕████              ▏ 527 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:41.9588490Z pulling 5ee4f07cdb9b:  33% ▕█████             ▏ 628 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.0581508Z pulling 5ee4f07cdb9b:  35% ▕██████            ▏ 678 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.1589654Z pulling 5ee4f07cdb9b:  41% ▕███████           ▏ 792 MB/1.9 GB                  [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.2902683Z pulling 5ee4f07cdb9b:  46% ▕████████          ▏ 889 MB/1.9 GB  837 MB/s      1s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.3584591Z pulling 5ee4f07cdb9b:  49% ▕████████          ▏ 947 MB/1.9 GB  837 MB/s      1s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.4587774Z pulling 5ee4f07cdb9b:  55% ▕█████████         ▏ 1.1 GB/1.9 GB  837 MB/s      1s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.5589579Z pulling 5ee4f07cdb9b:  60% ▕██████████        ▏ 1.2 GB/1.9 GB  837 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.6590192Z pulling 5ee4f07cdb9b:  64% ▕███████████       ▏ 1.2 GB/1.9 GB  837 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.7588261Z pulling 5ee4f07cdb9b:  69% ▕████████████      ▏ 1.3 GB/1.9 GB  837 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.8589495Z pulling 5ee4f07cdb9b:  75% ▕█████████████     ▏ 1.4 GB/1.9 GB  837 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:42.9585485Z pulling 5ee4f07cdb9b:  77% ▕█████████████     ▏ 1.5 GB/1.9 GB  837 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.0586906Z pulling 5ee4f07cdb9b:  80% ▕██████████████    ▏ 1.5 GB/1.9 GB  837 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.1588728Z pulling 5ee4f07cdb9b:  82% ▕██████████████    ▏ 1.6 GB/1.9 GB  837 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.2581447Z pulling 5ee4f07cdb9b:  83% ▕██████████████    ▏ 1.6 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.3586799Z pulling 5ee4f07cdb9b:  84% ▕███████████████   ▏ 1.6 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.4585910Z pulling 5ee4f07cdb9b:  85% ▕███████████████   ▏ 1.6 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.5586895Z pulling 5ee4f07cdb9b:  85% ▕███████████████   ▏ 1.6 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.6583875Z pulling 5ee4f07cdb9b:  86% ▕███████████████   ▏ 1.7 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.7581094Z pulling 5ee4f07cdb9b:  86% ▕███████████████   ▏ 1.7 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.8589079Z pulling 5ee4f07cdb9b:  87% ▕███████████████   ▏ 1.7 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:43.9584343Z pulling 5ee4f07cdb9b:  87% ▕███████████████   ▏ 1.7 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.0586211Z pulling 5ee4f07cdb9b:  87% ▕███████████████   ▏ 1.7 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.1584108Z pulling 5ee4f07cdb9b:  87% ▕███████████████   ▏ 1.7 GB/1.9 GB  795 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.2585919Z pulling 5ee4f07cdb9b:  88% ▕███████████████   ▏ 1.7 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.3584596Z pulling 5ee4f07cdb9b:  88% ▕███████████████   ▏ 1.7 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.4585504Z pulling 5ee4f07cdb9b:  88% ▕███████████████   ▏ 1.7 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.5587927Z pulling 5ee4f07cdb9b:  88% ▕███████████████   ▏ 1.7 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.6587971Z pulling 5ee4f07cdb9b:  89% ▕███████████████   ▏ 1.7 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.7586226Z pulling 5ee4f07cdb9b:  89% ▕████████████████  ▏ 1.7 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.8587936Z pulling 5ee4f07cdb9b:  90% ▕████████████████  ▏ 1.7 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:44.9587242Z pulling 5ee4f07cdb9b:  91% ▕████████████████  ▏ 1.8 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.0583013Z pulling 5ee4f07cdb9b:  92% ▕████████████████  ▏ 1.8 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.1588757Z pulling 5ee4f07cdb9b:  92% ▕████████████████  ▏ 1.8 GB/1.9 GB  563 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.2586986Z pulling 5ee4f07cdb9b:  93% ▕████████████████  ▏ 1.8 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.3589146Z pulling 5ee4f07cdb9b:  93% ▕████████████████  ▏ 1.8 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.4586914Z pulling 5ee4f07cdb9b:  94% ▕█████████████████ ▏ 1.8 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.5588092Z pulling 5ee4f07cdb9b:  95% ▕█████████████████ ▏ 1.8 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.6587947Z pulling 5ee4f07cdb9b:  95% ▕█████████████████ ▏ 1.8 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.7589028Z pulling 5ee4f07cdb9b:  95% ▕█████████████████ ▏ 1.8 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.8586441Z pulling 5ee4f07cdb9b:  96% ▕█████████████████ ▏ 1.8 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:45.9579891Z pulling 5ee4f07cdb9b:  96% ▕█████████████████ ▏ 1.8 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.0584617Z pulling 5ee4f07cdb9b:  96% ▕█████████████████ ▏ 1.9 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.1584172Z pulling 5ee4f07cdb9b:  97% ▕█████████████████ ▏ 1.9 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.2589321Z pulling 5ee4f07cdb9b:  97% ▕█████████████████ ▏ 1.9 GB/1.9 GB  449 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.3588888Z pulling 5ee4f07cdb9b:  97% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.4581499Z pulling 5ee4f07cdb9b:  97% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.5583555Z pulling 5ee4f07cdb9b:  97% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.6586221Z pulling 5ee4f07cdb9b:  97% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.7584947Z pulling 5ee4f07cdb9b:  97% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.8587131Z pulling 5ee4f07cdb9b:  97% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:46.9589169Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.0586237Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.1582867Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.2582242Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  374 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.3581239Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.4587069Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.5588055Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.6586029Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.7583019Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.8579901Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:47.9580606Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.0584180Z pulling 5ee4f07cdb9b:  98% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.1582124Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.2588783Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  314 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.3588188Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.4582938Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.5583688Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.6584269Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.7580937Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.8582238Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:48.9583871Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.0588464Z pulling 5ee4f07cdb9b:  99% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.1585914Z pulling 5ee4f07cdb9b: 100% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.2582950Z pulling 5ee4f07cdb9b: 100% ▕█████████████████ ▏ 1.9 GB/1.9 GB  272 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.3581159Z pulling 5ee4f07cdb9b: 100% ▕█████████████████ ▏ 1.9 GB/1.9 GB  240 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.4581327Z pulling 5ee4f07cdb9b: 100% ▕█████████████████ ▏ 1.9 GB/1.9 GB  240 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.5583940Z pulling 5ee4f07cdb9b: 100% ▕█████████████████ ▏ 1.9 GB/1.9 GB  240 MB/s      0s[K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.6587172Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.7585730Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.8582690Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:49.9587871Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.0590774Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.1583816Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.2584503Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.3584105Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.4586487Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.5589926Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.6584342Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.7589929Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.8583969Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K[?25h[?2026l[?2026h[?25l[A[1Gpulling manifest [K
+2026-10-22T20:05:50.8585305Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:50.9585896Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K[?25h[?2026l[?2026h[?25l[A[A[1Gpulling manifest [K
+2026-10-22T20:05:50.9587041Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:50.9588174Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:50.9589052Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.0590259Z verifying sha256 digest ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.0591357Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.0592292Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.0593197Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.1584121Z verifying sha256 digest ⠙ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.1584867Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.1585504Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.1586125Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.2587354Z verifying sha256 digest ⠹ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.2588681Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.2589603Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.2590470Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.3581792Z verifying sha256 digest ⠸ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.3582547Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.3583178Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.3583783Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.4587033Z verifying sha256 digest ⠼ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.4588558Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.4589450Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.4590775Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.5581089Z verifying sha256 digest ⠴ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.5582222Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.5582915Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.5583576Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.6585780Z verifying sha256 digest ⠦ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.6586858Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.6588129Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.6589120Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.7589917Z verifying sha256 digest ⠧ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.7590703Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.7591322Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.7591897Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.8584105Z verifying sha256 digest ⠇ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.8585159Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.8585878Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.8586551Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:51.9587901Z verifying sha256 digest ⠏ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:51.9588787Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:51.9589435Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:51.9590067Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:52.0581330Z verifying sha256 digest ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:52.0582267Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:52.0582992Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:52.0583708Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:52.1585742Z verifying sha256 digest ⠙ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:52.1586643Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:52.1588009Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:52.1588807Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:52.2589932Z verifying sha256 digest ⠹ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:52.2590932Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:52.2591777Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:52.2592604Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:52.3449919Z verifying sha256 digest ⠸ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[1Gpulling manifest [K
+2026-10-22T20:05:52.3451272Z pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+2026-10-22T20:05:52.3452509Z pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+2026-10-22T20:05:52.3453187Z pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+2026-10-22T20:05:52.3453616Z verifying sha256 digest [K
+2026-10-22T20:05:52.3453902Z writing manifest [K
+2026-10-22T20:05:52.3454182Z success [K[?25h[?2026l
+2026-10-22T20:05:52.3577335Z {"models":[]}ollama version is 0.40.8
+2026-10-22T20:05:52.4092424Z NAME          ID              SIZE      MODIFIED               
+2026-10-22T20:05:52.4093153Z qwen2.5:3b    357c53fb659c    1.9 GB    Less than a second ago    
+2026-10-22T20:05:52.4138505Z ##[group]Run python scripts/verify.py --live
+2026-10-22T20:05:52.4138897Z [36;1mpython scripts/verify.py --live[0m
+2026-10-22T20:05:52.4203467Z shell: /usr/bin/bash -e {0}
+2026-10-22T20:05:52.4203715Z env:
+2026-10-22T20:05:52.4203920Z   MODEL_PROVIDER: ollama
+2026-10-22T20:05:52.4204157Z   OLLAMA_MODEL: qwen2.5:3b
+2026-10-22T20:05:52.4204421Z   OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+2026-10-22T20:05:52.4204708Z   OLLAMA_HOST: 127.0.0.1:11434
+2026-10-22T20:05:52.4204948Z   OLLAMA_NUM_PARALLEL: 1
+2026-10-22T20:05:52.4205181Z   OLLAMA_CONTEXT_LENGTH: 8192
+2026-10-22T20:05:52.4205485Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:52.4205921Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T20:05:52.4206339Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:52.4206713Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:52.4207137Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:05:52.4207777Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T20:05:52.4208126Z ##[endgroup]
+2026-10-22T20:05:55.9840429Z 
+2026-10-22T20:05:55.9840444Z 
+2026-10-22T20:05:55.9841580Z ╭──────────────────────────────────────────────────────────────────────────────╮
+2026-10-22T20:05:55.9842462Z │                                                                              │
+2026-10-22T20:05:55.9842981Z │                                                                              │
+2026-10-22T20:05:55.9843514Z │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+2026-10-22T20:05:55.9844038Z │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+2026-10-22T20:05:55.9844557Z │                                                                              │
+2026-10-22T20:05:55.9845039Z │                                                                              │
+2026-10-22T20:05:55.9845536Z │                                                                              │
+2026-10-22T20:05:55.9846040Z │                                FastMCP 4.1.3                                 │
+2026-10-22T20:05:55.9846588Z │                            https://gofastmcp.com                             │
+2026-10-22T20:05:55.9847127Z │                                                                              │
+2026-10-22T20:05:55.9848115Z │                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+2026-10-22T20:05:55.9848775Z │                 🚀 Deploy free: https://horizon.prefect.io                   │
+2026-10-22T20:05:55.9849324Z │                                                                              │
+2026-10-22T20:05:55.9850581Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-10-22T20:05:55.9850904Z 
+2026-10-22T20:05:55.9850912Z 
+2026-10-22T20:05:55.9868585Z [10/22/26 20:05:55] INFO     Starting MCP server 'Campus Study  transport.py:241
+2026-10-22T20:05:55.9869297Z                              Toolkit' with transport 'stdio'                    
+2026-10-22T20:05:56.5711404Z Executing <Task finished name='Task-25' coro=<_MCPServerWithClientSession.call_tool() done, defined at /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/site-packages/agents/mcp/server.py:1599> result=CallToolResul...pe='complete') created at /opt/hostedtoolcache/Python/3.13.16/x64/lib/python3.13/asyncio/tasks.py:419> took 0.117 seconds
+2026-10-22T20:05:58.0155301Z 
+2026-10-22T20:05:58.0155355Z 
+2026-10-22T20:05:58.0156485Z ╭──────────────────────────────────────────────────────────────────────────────╮
+2026-10-22T20:05:58.0157178Z │                                                                              │
+2026-10-22T20:05:58.0158068Z │                                                                              │
+2026-10-22T20:05:58.0158652Z │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+2026-10-22T20:05:58.0159712Z │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+2026-10-22T20:05:58.0160290Z │                                                                              │
+2026-10-22T20:05:58.0160784Z │                                                                              │
+2026-10-22T20:05:58.0161208Z │                                                                              │
+2026-10-22T20:05:58.0161662Z │                                FastMCP 4.1.3                                 │
+2026-10-22T20:05:58.0162153Z │                            https://gofastmcp.com                             │
+2026-10-22T20:05:58.0162616Z │                                                                              │
+2026-10-22T20:05:58.0163130Z │                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+2026-10-22T20:05:58.0163689Z │                 🚀 Deploy free: https://horizon.prefect.io                   │
+2026-10-22T20:05:58.0164193Z │                                                                              │
+2026-10-22T20:05:58.0164690Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-10-22T20:05:58.0164964Z 
+2026-10-22T20:05:58.0164968Z 
+2026-10-22T20:05:58.0179246Z [10/22/26 20:05:58] INFO     Starting MCP server 'Campus Study  transport.py:241
+2026-10-22T20:05:58.0179847Z                              Toolkit' with transport 'stdio'                    
+2026-10-22T20:05:58.2918733Z [10/22/26 20:05:58] Error calling tool 'reserve_room'                           
+2026-10-22T20:05:58.3071035Z                     Error calling tool 'find_and_reserve'                       
+2026-10-22T20:05:58.3109967Z                     Error calling tool 'search_rooms'                           
+2026-10-22T20:06:01.9001249Z MCP CALL search_rooms {"day": "2026-10-23", "hour": 10, "party_size": 2}
+2026-10-22T20:06:01.9003545Z MCP RESULT {"type": "text", "text": "{\"day\":\"2026-10-23\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true},{\"room_id\":\"SEA-6\",\"name\":\"Sea View Collaboration Room\",\"capacity\":6,\"quiet\":false}]}"}
+2026-10-22T20:06:01.9006054Z ASSISTANT: Scripted test received the actual MCP result.
+2026-10-22T20:06:01.9007162Z MCP CALL reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "runner-action"}
+2026-10-22T20:06:01.9009478Z MCP RESULT {"type": "text", "text": "{\"reservation_id\":\"b4d070c2-dadc-45b1-92cb-216ab5d97494\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}"}
+2026-10-22T20:06:01.9011241Z ASSISTANT: Scripted test received the actual MCP result.
+2026-10-22T20:06:01.9012415Z MCP CALL find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "quiet_only": true, "student_name": "Rana", "request_id": "runner-plan"}
+2026-10-22T20:06:01.9015349Z MCP RESULT {"type": "text", "text": "{\"reservation\":{\"reservation_id\":\"e5e3a9de-9f99-4c2c-803d-aff479d2c952\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}"}
+2026-10-22T20:06:01.9018210Z ASSISTANT: Scripted test received the actual MCP result.
+2026-10-22T20:06:01.9019562Z test_runner_executes_three_tools_and_returns_results_to_model (test_agent_runner.AgentRunnerTests.test_runner_executes_three_tools_and_returns_results_to_model) ... ok
+2026-10-22T20:06:01.9021227Z test_action_persists_across_restart (test_core.ToolkitTests.test_action_persists_across_restart) ... ok
+2026-10-22T20:06:01.9022831Z test_concurrent_writers_cannot_double_book (test_core.ToolkitTests.test_concurrent_writers_cannot_double_book) ... ok
+2026-10-22T20:06:01.9024038Z test_data_empty_is_valid (test_core.ToolkitTests.test_data_empty_is_valid) ... ok
+2026-10-22T20:06:01.9025046Z test_data_read_only_and_sorted (test_core.ToolkitTests.test_data_read_only_and_sorted) ... ok
+2026-10-22T20:06:01.9026212Z test_idempotency_and_changed_request (test_core.ToolkitTests.test_idempotency_and_changed_request) ... ok
+2026-10-22T20:06:01.9027295Z test_invalid_inputs (test_core.ToolkitTests.test_invalid_inputs) ... ok
+2026-10-22T20:06:01.9028463Z test_no_match_no_write (test_core.ToolkitTests.test_no_match_no_write) ... ok
+2026-10-22T20:06:01.9029659Z test_orchestration_invokes_both_capabilities (test_core.ToolkitTests.test_orchestration_invokes_both_capabilities) ... ok
+2026-10-22T20:06:01.9031066Z test_orchestration_recovers_from_race (test_core.ToolkitTests.test_orchestration_recovers_from_race) ... ok
+2026-10-22T20:06:01.9032479Z test_plan_replay_does_not_book_a_different_room (test_core.ToolkitTests.test_plan_replay_does_not_book_a_different_room) ... ok
+2026-10-22T20:06:01.9033838Z test_slot_conflict_has_no_second_write (test_core.ToolkitTests.test_slot_conflict_has_no_second_write) ... ok
+2026-10-22T20:06:01.9035168Z test_unknown_room_capacity_name_and_request (test_core.ToolkitTests.test_unknown_room_capacity_name_and_request) ... ok
+2026-10-22T20:06:01.9036631Z test_discovery_calls_resource_and_errors_over_stdio (test_mcp.MCPTests.test_discovery_calls_resource_and_errors_over_stdio) ... ok
+2026-10-22T20:06:01.9037738Z 
+2026-10-22T20:06:01.9038006Z ----------------------------------------------------------------------
+2026-10-22T20:06:01.9038618Z Ran 14 tests in 3.720s
+2026-10-22T20:06:01.9038852Z 
+2026-10-22T20:06:01.9038984Z OK
+2026-10-22T20:06:01.9039394Z 
+2026-10-22T20:06:01.9039401Z 
+2026-10-22T20:06:01.9039407Z 
+2026-10-22T20:06:01.9040081Z ╭──────────────────────────────────────────────────────────────────────────────╮
+2026-10-22T20:06:01.9040877Z │                                                                              │
+2026-10-22T20:06:01.9041652Z │                                                                              │
+2026-10-22T20:06:01.9042425Z │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+2026-10-22T20:06:01.9043204Z │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+2026-10-22T20:06:01.9043917Z │                                                                              │
+2026-10-22T20:06:01.9044614Z │                                                                              │
+2026-10-22T20:06:01.9045314Z │                                                                              │
+2026-10-22T20:06:01.9046046Z │                                FastMCP 4.1.3                                 │
+2026-10-22T20:06:01.9046891Z │                            https://gofastmcp.com                             │
+2026-10-22T20:06:01.9047910Z │                                                                              │
+2026-10-22T20:06:01.9048988Z │                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+2026-10-22T20:06:01.9049943Z │                 🚀 Deploy free: https://horizon.prefect.io                   │
+2026-10-22T20:06:01.9050751Z │                                                                              │
+2026-10-22T20:06:01.9051593Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-10-22T20:06:01.9052039Z 
+2026-10-22T20:06:01.9052046Z 
+2026-10-22T20:06:01.9052375Z [10/22/26 20:06:01] INFO     Starting MCP server 'Campus Study  transport.py:241
+2026-10-22T20:06:01.9053117Z                              Toolkit' with transport 'stdio'                    
+2026-10-22T20:06:01.9053852Z [10/22/26 20:06:01] Error calling tool 'reserve_room'                           
+2026-10-22T20:06:01.9054629Z DISCOVERY: search_rooms, reserve_room, find_and_reserve
+2026-10-22T20:06:01.9055040Z 
+2026-10-22T20:06:01.9055514Z CLIENT -> SERVER search_rooms {"day": "2026-10-23", "hour": 10, "party_size": 2, "quiet_only": true}
+2026-10-22T20:06:01.9056284Z SERVER -> CLIENT {
+2026-10-22T20:06:01.9056623Z   "meta": {
+2026-10-22T20:06:01.9056994Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T20:06:01.9057763Z       "name": "Campus Study Toolkit",
+2026-10-22T20:06:01.9058228Z       "version": "4.1.3"
+2026-10-22T20:06:01.9058594Z     }
+2026-10-22T20:06:01.9058897Z   },
+2026-10-22T20:06:01.9059202Z   "content": [
+2026-10-22T20:06:01.9059517Z     {
+2026-10-22T20:06:01.9059827Z       "type": "text",
+2026-10-22T20:06:01.9061352Z       "text": "{\"day\":\"2026-10-23\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true}]}",
+2026-10-22T20:06:01.9063276Z       "annotations": null,
+2026-10-22T20:06:01.9063696Z       "meta": null
+2026-10-22T20:06:01.9064023Z     }
+2026-10-22T20:06:01.9064341Z   ],
+2026-10-22T20:06:01.9064664Z   "structured_content": {
+2026-10-22T20:06:01.9065050Z     "day": "2026-10-23",
+2026-10-22T20:06:01.9065405Z     "hour": 10,
+2026-10-22T20:06:01.9065753Z     "timezone": "Asia/Beirut",
+2026-10-22T20:06:01.9066214Z     "duration_minutes": 60,
+2026-10-22T20:06:01.9066745Z     "rooms": [
+2026-10-22T20:06:01.9067060Z       {
+2026-10-22T20:06:01.9067384Z         "room_id": "CEDAR-2",
+2026-10-22T20:06:01.9068060Z         "name": "Cedar Study Pod",
+2026-10-22T20:06:01.9068488Z         "capacity": 2,
+2026-10-22T20:06:01.9068842Z         "quiet": true
+2026-10-22T20:06:01.9069183Z       },
+2026-10-22T20:06:01.9069556Z       {
+2026-10-22T20:06:01.9069871Z         "room_id": "OLIVE-4",
+2026-10-22T20:06:01.9070302Z         "name": "Olive Study Room",
+2026-10-22T20:06:01.9070758Z         "capacity": 4,
+2026-10-22T20:06:01.9071193Z         "quiet": true
+2026-10-22T20:06:01.9071530Z       }
+2026-10-22T20:06:01.9071823Z     ]
+2026-10-22T20:06:01.9074236Z   },
+2026-10-22T20:06:01.9074552Z   "is_error": false,
+2026-10-22T20:06:01.9074959Z   "result_type": "complete"
+2026-10-22T20:06:01.9075369Z }
+2026-10-22T20:06:01.9075545Z 
+2026-10-22T20:06:01.9076348Z CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-specific"}
+2026-10-22T20:06:01.9077372Z SERVER -> CLIENT {
+2026-10-22T20:06:01.9077968Z   "meta": {
+2026-10-22T20:06:01.9078336Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T20:06:01.9078844Z       "name": "Campus Study Toolkit",
+2026-10-22T20:06:01.9079281Z       "version": "4.1.3"
+2026-10-22T20:06:01.9079646Z     }
+2026-10-22T20:06:01.9079932Z   },
+2026-10-22T20:06:01.9080232Z   "content": [
+2026-10-22T20:06:01.9080560Z     {
+2026-10-22T20:06:01.9080875Z       "type": "text",
+2026-10-22T20:06:01.9082220Z       "text": "{\"reservation_id\":\"fcf2ac7e-cefc-4aa2-83c7-338f3b78091a\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}",
+2026-10-22T20:06:01.9083919Z       "annotations": null,
+2026-10-22T20:06:01.9084322Z       "meta": null
+2026-10-22T20:06:01.9084688Z     }
+2026-10-22T20:06:01.9085027Z   ],
+2026-10-22T20:06:01.9085339Z   "structured_content": {
+2026-10-22T20:06:01.9085842Z     "reservation_id": "fcf2ac7e-cefc-4aa2-83c7-338f3b78091a",
+2026-10-22T20:06:01.9086452Z     "room_id": "CEDAR-2",
+2026-10-22T20:06:01.9086831Z     "day": "2026-10-23",
+2026-10-22T20:06:01.9087227Z     "hour": 10,
+2026-10-22T20:06:01.9087823Z     "party_size": 2,
+2026-10-22T20:06:01.9088205Z     "student_name": "Rana",
+2026-10-22T20:06:01.9088610Z     "timezone": "Asia/Beirut",
+2026-10-22T20:06:01.9089025Z     "duration_minutes": 60
+2026-10-22T20:06:01.9089400Z   },
+2026-10-22T20:06:01.9089699Z   "is_error": false,
+2026-10-22T20:06:01.9090061Z   "result_type": "complete"
+2026-10-22T20:06:01.9090433Z }
+2026-10-22T20:06:01.9090600Z 
+2026-10-22T20:06:01.9091371Z CLIENT -> SERVER find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
+2026-10-22T20:06:01.9092447Z SERVER -> CLIENT {
+2026-10-22T20:06:01.9092780Z   "meta": {
+2026-10-22T20:06:01.9093140Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T20:06:01.9093655Z       "name": "Campus Study Toolkit",
+2026-10-22T20:06:01.9094117Z       "version": "4.1.3"
+2026-10-22T20:06:01.9094489Z     }
+2026-10-22T20:06:01.9094777Z   },
+2026-10-22T20:06:01.9095091Z   "content": [
+2026-10-22T20:06:01.9095411Z     {
+2026-10-22T20:06:01.9095703Z       "type": "text",
+2026-10-22T20:06:01.9098055Z       "text": "{\"reservation\":{\"reservation_id\":\"18dc4971-9d9d-4b73-af80-f5169a825f65\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}",
+2026-10-22T20:06:01.9100597Z       "annotations": null,
+2026-10-22T20:06:01.9101006Z       "meta": null
+2026-10-22T20:06:01.9101342Z     }
+2026-10-22T20:06:01.9101636Z   ],
+2026-10-22T20:06:01.9101945Z   "structured_content": {
+2026-10-22T20:06:01.9102332Z     "reservation": {
+2026-10-22T20:06:01.9102812Z       "reservation_id": "18dc4971-9d9d-4b73-af80-f5169a825f65",
+2026-10-22T20:06:01.9103403Z       "room_id": "OLIVE-4",
+2026-10-22T20:06:01.9103806Z       "day": "2026-10-23",
+2026-10-22T20:06:01.9104187Z       "hour": 10,
+2026-10-22T20:06:01.9104524Z       "party_size": 3,
+2026-10-22T20:06:01.9104892Z       "student_name": "Rana",
+2026-10-22T20:06:01.9105320Z       "timezone": "Asia/Beirut",
+2026-10-22T20:06:01.9105748Z       "duration_minutes": 60
+2026-10-22T20:06:01.9106129Z     },
+2026-10-22T20:06:01.9106659Z     "selection_reason": "Smallest available room meeting your constraints.",
+2026-10-22T20:06:01.9107310Z     "steps": [
+2026-10-22T20:06:01.9107956Z       "search_rooms",
+2026-10-22T20:06:01.9108324Z       "reserve_room"
+2026-10-22T20:06:01.9108670Z     ]
+2026-10-22T20:06:01.9109000Z   },
+2026-10-22T20:06:01.9109334Z   "is_error": false,
+2026-10-22T20:06:01.9109725Z   "result_type": "complete"
+2026-10-22T20:06:01.9110107Z }
+2026-10-22T20:06:01.9110268Z 
+2026-10-22T20:06:01.9110999Z CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-conflict"}
+2026-10-22T20:06:01.9112033Z SERVER -> CLIENT {
+2026-10-22T20:06:01.9112368Z   "meta": {
+2026-10-22T20:06:01.9112743Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T20:06:01.9113263Z       "name": "Campus Study Toolkit",
+2026-10-22T20:06:01.9113716Z       "version": "4.1.3"
+2026-10-22T20:06:01.9114070Z     }
+2026-10-22T20:06:01.9114362Z   },
+2026-10-22T20:06:01.9114654Z   "content": [
+2026-10-22T20:06:01.9114964Z     {
+2026-10-22T20:06:01.9115267Z       "type": "text",
+2026-10-22T20:06:01.9115882Z       "text": "SLOT_UNAVAILABLE: room was booked; search again or choose another hour.",
+2026-10-22T20:06:01.9116618Z       "annotations": null,
+2026-10-22T20:06:01.9117274Z       "meta": null
+2026-10-22T20:06:01.9117882Z     }
+2026-10-22T20:06:01.9118190Z   ],
+2026-10-22T20:06:01.9118528Z   "structured_content": null,
+2026-10-22T20:06:01.9118951Z   "is_error": true,
+2026-10-22T20:06:01.9119308Z   "result_type": "complete"
+2026-10-22T20:06:01.9119687Z }
+2026-10-22T20:06:01.9119850Z 
+2026-10-22T20:06:01.9120602Z CLIENT -> SERVER find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
+2026-10-22T20:06:01.9121640Z SERVER -> CLIENT {
+2026-10-22T20:06:01.9121969Z   "meta": {
+2026-10-22T20:06:01.9122340Z     "io.modelcontextprotocol/serverInfo": {
+2026-10-22T20:06:01.9122867Z       "name": "Campus Study Toolkit",
+2026-10-22T20:06:01.9123316Z       "version": "4.1.3"
+2026-10-22T20:06:01.9123681Z     }
+2026-10-22T20:06:01.9123975Z   },
+2026-10-22T20:06:01.9124277Z   "content": [
+2026-10-22T20:06:01.9124591Z     {
+2026-10-22T20:06:01.9124885Z       "type": "text",
+2026-10-22T20:06:01.9126870Z       "text": "{\"reservation\":{\"reservation_id\":\"18dc4971-9d9d-4b73-af80-f5169a825f65\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Existing result for this request_id.\",\"steps\":[\"idempotency replay\"]}",
+2026-10-22T20:06:01.9129199Z       "annotations": null,
+2026-10-22T20:06:01.9129594Z       "meta": null
+2026-10-22T20:06:01.9129924Z     }
+2026-10-22T20:06:01.9130214Z   ],
+2026-10-22T20:06:01.9130529Z   "structured_content": {
+2026-10-22T20:06:01.9130928Z     "reservation": {
+2026-10-22T20:06:01.9131402Z       "reservation_id": "18dc4971-9d9d-4b73-af80-f5169a825f65",
+2026-10-22T20:06:01.9132226Z       "room_id": "OLIVE-4",
+2026-10-22T20:06:01.9132601Z       "day": "2026-10-23",
+2026-10-22T20:06:01.9132952Z       "hour": 10,
+2026-10-22T20:06:01.9133300Z       "party_size": 3,
+2026-10-22T20:06:01.9133685Z       "student_name": "Rana",
+2026-10-22T20:06:01.9134168Z       "timezone": "Asia/Beirut",
+2026-10-22T20:06:01.9134590Z       "duration_minutes": 60
+2026-10-22T20:06:01.9134968Z     },
+2026-10-22T20:06:01.9135423Z     "selection_reason": "Existing result for this request_id.",
+2026-10-22T20:06:01.9136003Z     "steps": [
+2026-10-22T20:06:01.9136364Z       "idempotency replay"
+2026-10-22T20:06:01.9136738Z     ]
+2026-10-22T20:06:01.9137028Z   },
+2026-10-22T20:06:01.9137340Z   "is_error": false,
+2026-10-22T20:06:01.9137963Z   "result_type": "complete"
+2026-10-22T20:06:01.9138342Z }
+2026-10-22T20:06:01.9138499Z 
+2026-10-22T20:06:01.9138863Z This is an MCP-client demonstration, not an LLM routing demonstration.
+2026-10-22T20:06:01.9139793Z For the live agent, start Ollama, pull qwen2.5:3b, and run python -m campus_toolkit.agent.
+2026-10-22T20:08:32.2779713Z 
+2026-10-22T20:08:32.2779815Z 
+2026-10-22T20:08:32.2779826Z 
+2026-10-22T20:08:32.2780541Z ╭──────────────────────────────────────────────────────────────────────────────╮
+2026-10-22T20:08:32.2781427Z │                                                                              │
+2026-10-22T20:08:32.2782063Z │                                                                              │
+2026-10-22T20:08:32.2782805Z │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+2026-10-22T20:08:32.2783425Z │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+2026-10-22T20:08:32.2783830Z │                                                                              │
+2026-10-22T20:08:32.2784211Z │                                                                              │
+2026-10-22T20:08:32.2784586Z │                                                                              │
+2026-10-22T20:08:32.2785014Z │                                FastMCP 4.1.3                                 │
+2026-10-22T20:08:32.2785454Z │                            https://gofastmcp.com                             │
+2026-10-22T20:08:32.2786172Z │                                                                              │
+2026-10-22T20:08:32.2786657Z │                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+2026-10-22T20:08:32.2787166Z │                 🚀 Deploy free: https://horizon.prefect.io                   │
+2026-10-22T20:08:32.2788050Z │                                                                              │
+2026-10-22T20:08:32.2788534Z ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-10-22T20:08:32.2788788Z 
+2026-10-22T20:08:32.2788793Z 
+2026-10-22T20:08:32.2788984Z [10/22/26 20:06:04] INFO     Starting MCP server 'Campus Study  transport.py:241
+2026-10-22T20:08:32.2789402Z                              Toolkit' with transport 'stdio'                    
+2026-10-22T20:08:32.2789801Z REAL LLM VERIFICATION: provider=ollama, model=qwen2.5:3b
+2026-10-22T20:08:32.2790030Z 
+2026-10-22T20:08:32.2790368Z USER: Which quiet rooms are available for 2 people on 2026-10-23 at 10:00 Beirut time? Only look up availability.
+2026-10-22T20:08:32.2790960Z MCP CALL search_rooms {"day":"2026-10-23","hour":10,"party_size":2}
+2026-10-22T20:08:32.2792334Z MCP RESULT {"type": "text", "text": "{\"day\":\"2026-10-23\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true},{\"room_id\":\"SEA-6\",\"name\":\"Sea View Collaboration Room\",\"capacity\":6,\"quiet\":false}]}"}
+2026-10-22T20:08:32.2793800Z ASSISTANT: The following quiet rooms are available for 2 people on 2026-10-23 at 10:00 Beirut time:
+2026-10-22T20:08:32.2794182Z 
+2026-10-22T20:08:32.2794571Z - Cedar Study Pod (CEDAR-2): Can accommodate 2 people and is quiet.
+2026-10-22T20:08:32.2795055Z - Olive Study Room (OLIVE-4): Can accommodate 4 people and is quiet.
+2026-10-22T20:08:32.2795321Z 
+2026-10-22T20:08:32.2795603Z None of the rooms are available for 6 people. Please specify a different party size or date.
+2026-10-22T20:08:32.2796050Z ROUTING CHECK: PASS search_rooms
+2026-10-22T20:08:32.2796220Z 
+2026-10-22T20:08:32.2796453Z USER: Book fictional room CEDAR-2 for Rana, 2 people, on 2026-10-23 at 10:00 Beirut time.
+2026-10-22T20:08:32.2797248Z MCP CALL reserve_room {"party_size":2,"student_name":"Rana","request_id":"8741cd466cfb49429ad0e456714c1d24","room_id":"CEDAR-2","day":"2026-10-23","hour":10}
+2026-10-22T20:08:32.2798881Z MCP RESULT {"type": "text", "text": "{\"reservation_id\":\"2bdb7a29-2e3a-4f66-b6ef-8e15fe8c465f\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}"}
+2026-10-22T20:08:32.2800222Z ASSISTANT: Rana has been booked in room CEDAR-2 for 2 people starting at 10:00 on 2026-10-23 in the Asia/Beirut time zone. The reservation ID is 2bdb7a29-2e3a-4f66-b6ef-8e15fe8c465f.
+2026-10-22T20:08:32.2800934Z ROUTING CHECK: PASS reserve_room
+2026-10-22T20:08:32.2801104Z 
+2026-10-22T20:08:32.2801366Z USER: Find and book a quiet fictional room for Rana, 3 people, on 2026-10-23 at 10:00 Beirut time.
+2026-10-22T20:08:32.2802179Z MCP CALL find_and_reserve {"request_id":"f4881852ee7e449a857922951fc1790b","quiet_only":true,"day":"2026-10-23","hour":10,"party_size":3,"student_name":"Rana"}
+2026-10-22T20:08:32.2803853Z MCP RESULT {"type": "text", "text": "{\"reservation\":{\"reservation_id\":\"3803dabc-f7c2-430f-a2f8-d34f19610e6d\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}"}
+2026-10-22T20:08:32.2805858Z ASSISTANT: Rana has been booked in room OLIVE-4 for a quiet study session with 3 people starting at 10:00 on 2026-10-23 in Beirut time. The reservation ID is 3803dabc-f7c2-430f-a2f8-d34f19610e6d. This room is the smallest available that meets your requirements.
+2026-10-22T20:08:32.2806982Z ROUTING CHECK: PASS find_and_reserve
+2026-10-22T20:08:32.2807170Z 
+2026-10-22T20:08:32.2807353Z All three live agent routing checks passed with a real language model.
+2026-10-22T20:08:32.2807867Z 
+2026-10-22T20:08:32.5392052Z ##[group]Run actions/upload-artifact@v4
+2026-10-22T20:08:32.5392378Z with:
+2026-10-22T20:08:32.5392587Z   name: free-local-llm-verification
+2026-10-22T20:08:32.5392850Z   path: evidence/
+2026-10-22T20:08:32.5393053Z   retention-days: 7
+2026-10-22T20:08:32.5393266Z   if-no-files-found: warn
+2026-10-22T20:08:32.5393494Z   compression-level: 6
+2026-10-22T20:08:32.5393703Z   overwrite: false
+2026-10-22T20:08:32.5393913Z   include-hidden-files: false
+2026-10-22T20:08:32.5394156Z env:
+2026-10-22T20:08:32.5394340Z   MODEL_PROVIDER: ollama
+2026-10-22T20:08:32.5394560Z   OLLAMA_MODEL: qwen2.5:3b
+2026-10-22T20:08:32.5394817Z   OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+2026-10-22T20:08:32.5395102Z   OLLAMA_HOST: 127.0.0.1:11434
+2026-10-22T20:08:32.5395335Z   OLLAMA_NUM_PARALLEL: 1
+2026-10-22T20:08:32.5395559Z   OLLAMA_CONTEXT_LENGTH: 8192
+2026-10-22T20:08:32.5395856Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:08:32.5396317Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+2026-10-22T20:08:32.5396741Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:08:32.5397119Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:08:32.5397733Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+2026-10-22T20:08:32.5398142Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+2026-10-22T20:08:32.5398464Z ##[endgroup]
+2026-10-22T20:08:32.7051328Z (node:2783) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T20:08:32.7052469Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T20:08:32.7136484Z With the provided path, there will be 8 files uploaded
+2026-10-22T20:08:32.7143766Z Artifact name is valid!
+2026-10-22T20:08:32.7144684Z Root directory input is valid!
+2026-10-22T20:08:33.0536609Z Beginning upload of artifact content to blob storage
+2026-10-22T20:08:33.0903651Z (node:2783) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-22T20:08:33.3538687Z Uploaded bytes 21900
+2026-10-22T20:08:33.4152916Z Finished uploading artifact content to blob storage!
+2026-10-22T20:08:33.4153782Z SHA256 digest of uploaded artifact zip is 0ac16ff2790154482e082f7bb86fe5694aa5bd03a9552389d11488f4c335aa38
+2026-10-22T20:08:33.4156053Z Finalizing artifact upload
+2026-10-22T20:08:33.9283929Z Artifact free-local-llm-verification.zip successfully finalized. Artifact ID 12455770681
+2026-10-22T20:08:33.9285386Z Artifact free-local-llm-verification has been successfully uploaded! Final size is 21900 bytes. Artifact ID is 12455770681
+2026-10-22T20:08:33.9292060Z Artifact download URL: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39845692818/artifacts/12455770681
+2026-10-22T20:08:33.9475077Z Post job cleanup.
+2026-10-22T20:08:34.0702663Z (node:2795) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T20:08:34.0703567Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T20:08:34.0877922Z Post job cleanup.
+2026-10-22T20:08:34.2038084Z [command]/usr/bin/git version
+2026-10-22T20:08:34.2096904Z git version 2.55.0
+2026-10-22T20:08:34.2168934Z Temporarily overriding HOME='/home/runner/work/_temp/be1341b8-ac10-4ef1-a737-0ed0ec4de708' before making global git config changes
+2026-10-22T20:08:34.2189072Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T20:08:34.2198635Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/campus-study-mcp-c5/campus-study-mcp-c5
+2026-10-22T20:08:34.2248359Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T20:08:34.2329237Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T20:08:34.2694745Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T20:08:34.2739492Z http.https://github.com/.extraheader
+2026-10-22T20:08:34.2761823Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-22T20:08:34.2810325Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T20:08:34.3092563Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T20:08:34.3139904Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T20:08:34.3517326Z Cleaning up orphan processes
+2026-10-22T20:08:34.3982478Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
