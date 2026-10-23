@@ -1,0 +1,26 @@
+Actual first live-model run: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39844850724
+This attempt failed because the model selected find_and_reserve for a specific-room request. It is retained as development evidence, not a passing demonstration.
+
+REAL LLM VERIFICATION: provider=ollama, model=qwen2.5:3b
+2026-10-22T20:03:02.0344016Z 
+2026-10-22T20:03:02.0344388Z USER: Which quiet rooms are available for 2 people on 2026-10-23 at 10:00 Beirut time? Only look up availability.
+2026-10-22T20:03:02.0345388Z MCP CALL search_rooms {"party_size":2,"quiet_only":true,"day":"2026-10-23","hour":10}
+2026-10-22T20:03:02.0346587Z MCP RESULT {"type": "text", "text": "{\"day\":\"2026-10-23\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true}]}"}
+2026-10-22T20:03:02.0347711Z ASSISTANT: There are two quiet rooms available for your request:
+2026-10-22T20:03:02.0348131Z 1. **Cedar Study Pod** - Capacity: 2 people
+2026-10-22T20:03:02.0348470Z 2. **Olive Study Room** - Capacity: 4 people
+2026-10-22T20:03:02.0348677Z 
+2026-10-22T20:03:02.0349061Z Would you like to reserve one of these rooms? Please provide the room ID or specify another room if you have a preference.
+2026-10-22T20:03:02.0349631Z ROUTING CHECK: PASS search_rooms
+2026-10-22T20:03:02.0349815Z 
+2026-10-22T20:03:02.0350070Z USER: Book fictional room CEDAR-2 for Rana, 2 people, on 2026-10-23 at 10:00 Beirut time.
+2026-10-22T20:03:02.0350833Z MCP CALL find_and_reserve {"day":"2026-10-23","hour":10,"party_size":2,"student_name":"Rana","request_id":"049d2dae4e894a9ba72553a6549215b2"}
+2026-10-22T20:03:02.0352800Z MCP RESULT {"type": "text", "text": "{\"reservation\":{\"reservation_id\":\"a9c41d2f-9e68-4004-a598-dd8fe59d7940\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}"}
+2026-10-22T20:03:02.0355014Z ASSISTANT: I have successfully reserved the fictional room CEDAR-2 for Rana, a group of 2 people, starting at 10:00 on 2026-10-23 in Beirut time. The reservation ID is a9c41d2f-9e68-4004-a598-dd8fe59d7940. This room is the smallest available that meets your requirements. Here are the steps I followed:
+2026-10-22T20:03:02.0356062Z 
+2026-10-22T20:03:02.0356183Z 1. I first searched for available rooms.
+2026-10-22T20:03:02.0356565Z 2. Then, I booked the room CEDAR-2 for the specified date and time.
+2026-10-22T20:03:02.0356849Z 
+2026-10-22T20:03:02.0356960Z Enjoy your study session!
+2026-10-22T20:03:02.0357120Z 
+2026-10-22T20:03:02.2977645Z 
