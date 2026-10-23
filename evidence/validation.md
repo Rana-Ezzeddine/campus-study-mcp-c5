@@ -38,17 +38,24 @@ The first run failed because the current MCP 2 SDK uses Python attributes `outpu
 
 Direct dependencies are pinned to the versions actually resolved in the real run: FastMCP 4.1.3, OpenAI Agents SDK 0.24.0, MCP 2.3.0 and python-dotenv 1.2.4. Both Python versions passed with those pins. The first failed run remains visible in repository history; subsequent verified runs passed.
 
-## Remaining external steps
+## Live language-model verification (free)
 
-- **Live OpenAI LLM routing has not run.** No OPENAI_API_KEY is configured in this task environment. The source, SDK Runner wiring and MCP transport have been tested, but no real model decision is claimed.
-- The video is omitted per the user's instruction. C5 still lists a 5-7 minute screencast as a deliverable.
+Verified run: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39845692818
 
-To capture real model evidence, configure your API key locally in `.env`, then run:
+Source commit: `636e66417931c2796746147dd8f081c16260112f`.
 
-```bash
-python scripts/verify.py --live
-```
+A real Qwen2.5 3B model ran locally through Ollama on a standard GitHub Linux runner. It selected and executed search_rooms, reserve_room and find_and_reserve from three natural-language requests. The check verified the tool names and database state after every request. All three routing checks passed; the complete 14-test suite also passed. No OpenAI API key or paid model endpoint was used. The OpenAI Agents SDK and FastMCP remained the host framework and server implementation.
 
-Alternatively, configure an OPENAI_API_KEY repository secret yourself and run the manual Live OpenAI agent verification workflow. Do not place a credential in source or chat. API calls use your account's API credit.
+`live-agent-output.txt` retains actual prompts, model-selected calls, MCP results and model answers. The output is extracted from the original CI log without its timestamp prefixes. `free-live-ci-log.txt` retains that full log; the workflow artifacts preserve the original verification files.
 
-The 371-word reading summary and reference-server source review are also included. The reference filesystem server was inspected but not executed. No grade is guaranteed.
+The first local-model attempt selected orchestration for a named-room booking. Clarifying the mutually exclusive tool descriptions and host instructions corrected this in the successful run. The failed attempt is retained in `free-llm-first-attempt.txt`; it is not presented as passing evidence.
+
+### Scope and observed limitation
+
+This establishes real model tool selection for the three demonstrated scenarios, not guaranteed correctness for every future prompt. In the successful lookup, the small model omitted quiet_only, then filtered the returned quiet flags in its answer. It also added an unsupported sentence about six-person availability. The routing test does not grade every sentence of the model answer. A production host should validate result summaries or use a stronger local model. The recorded output is left intact.
+
+### Running without payment
+
+Start Ollama, pull qwen2.5:3b, then run `python scripts/verify.py --live`. The default configuration uses a local endpoint and needs no API credential. See `docs/free_model_setup.md`.
+
+The video remains omitted per the user's request. C5 still lists a 5-7 minute screencast. The 371-word reading summary and reference-server source review are included. No grade is guaranteed.
