@@ -24,7 +24,7 @@ Explain the full round trip: user prompt -> host model -> SDK MCP client -> Fast
 - [ ] Read and understand the code, summary and reflection; adapt the reflection to your own experience.
 - [x] Retain the dependency versions resolved during real CI verification.
 - [x] Run all tests, including transport and SDK Runner: 14 passed, zero skips, Python 3.11 and 3.13.
-- [ ] Run `campus_toolkit.demo` and `campus_toolkit.live_demo`; retain real outputs if useful.
+- [x] Run both demos and retain actual output, including real local-model routing for all three tools.
 - [x] Publish source without `.env` or runtime databases: repository link below.
 - [ ] Include the 300-400 word reading summary and two-paragraph reflection.
 - [ ] If required, record the screencast and submit accessible repository and video links.
