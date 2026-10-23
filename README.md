@@ -6,7 +6,7 @@ Repository: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
 
 Verified run: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39840397595
 
-**Verification: 14 tests passed with zero skips on Python 3.11 and 3.13.** Real MCP calls, resource access, failures, replay and the SDK Runner integration passed. The runner test uses an explicitly scripted model. The separate live verification uses an actual local language model through Ollama; see the validation record for its execution status.
+**Verification: 14 tests passed with zero skips on Python 3.11 and 3.13.** Real MCP calls, resource access, failures, replay and the SDK Runner integration passed. The runner test uses an explicitly scripted model. Real Qwen2.5 3B tool selection also passed for all three tools with no API key: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39845692818. See the validation record for scope and the observed answer-quality limitation.
 
 A fictional campus room assistant built with **FastMCP** and the **OpenAI Agents SDK**, using a **free local Ollama model by default**. No OpenAI API key, payment method, or paid API is required for this mode. It exposes exactly three MCP tools and one read-only catalog resource. The catalog and bookings are local demonstration data, not AUB facilities or a real campus reservation service.
 
