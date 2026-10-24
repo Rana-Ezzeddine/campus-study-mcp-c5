@@ -42,7 +42,7 @@ class ScriptedToolModel(Model):
             assert self.received_tool_output, "Runner did not return the MCP result to the model."
             output = [ResponseOutputMessage(id="scripted-message", type="message", role="assistant",
                 status="completed", content=[ResponseOutputText(type="output_text",
-                    text="Scripted test received the actual MCP result.", annotations=[])])]
+                    text="None of the rooms are available for 6 people.", annotations=[])])]
         return ModelResponse(output=output, usage=Usage(), response_id=None)
 
     async def stream_response(self, *args, **kwargs):
@@ -54,7 +54,7 @@ class AgentRunnerTests(unittest.IsolatedAsyncioTestCase):
     async def test_runner_executes_three_tools_and_returns_results_to_model(self):
         day = (datetime.now(ZoneInfo("Asia/Beirut")) + timedelta(days=1)).date().isoformat()
         scenarios = [
-            ("search_rooms", dict(day=day, hour=10, party_size=2), []),
+            ("search_rooms", dict(day=day, hour=10, party_size=2, quiet_only=True), []),
             ("reserve_room", dict(room_id="CEDAR-2", day=day, hour=10, party_size=2,
                 student_name="Rana", request_id="runner-action"), [("CEDAR-2",)]),
             ("find_and_reserve", dict(day=day, hour=10, party_size=3, quiet_only=True,
@@ -70,7 +70,10 @@ class AgentRunnerTests(unittest.IsolatedAsyncioTestCase):
                         result = await run_turn(agent, "Scripted host integration check for " + name)
                         self.assertTrue(model.received_tool_output)
                         self.assertEqual(model.calls, 2)
-                        self.assertIn("actual MCP result", result.final_output)
+                        self.assertNotIn("available for 6 people", result.final_output)
+                        self.assertNotIn("available for 6 people", json.dumps(result.to_input_list()))
+                        self.assertTrue(result.receipts)
+                        self.assertTrue(all(r.error is None for r in result.receipts))
                         self.assertEqual(sum(i.type == "tool_call_item" for i in result.new_items), 1)
                         with sqlite3.connect(db_path) as db:
                             self.assertEqual(db.execute(

@@ -20,8 +20,13 @@ class MCPTests(unittest.IsolatedAsyncioTestCase):
                 for tool in tools:
                     self.assertTrue(tool.description)
                     self.assertTrue(tool.output_schema)
-                search = await server.call_tool("search_rooms", dict(day=day, hour=10, party_size=2))
+                    if tool.name in {"search_rooms", "find_and_reserve"}:
+                        self.assertIn("quiet_only", tool.input_schema["required"])
+                omitted = await server.call_tool("search_rooms", dict(day=day, hour=10, party_size=2))
+                self.assertTrue(omitted.is_error)
+                search = await server.call_tool("search_rooms", dict(day=day, hour=10, party_size=2, quiet_only=True))
                 self.assertFalse(search.is_error)
+                self.assertTrue(all(r["quiet"] for r in search.structured_content["rooms"]))
                 args = dict(room_id="CEDAR-2", day=day, hour=10, party_size=2,
                             student_name="Rana", request_id="wire-action")
                 saved = await server.call_tool("reserve_room", args)
@@ -38,7 +43,7 @@ class MCPTests(unittest.IsolatedAsyncioTestCase):
                 no_match = await server.call_tool("find_and_reserve", dict(day=day, hour=10,
                     party_size=6, student_name="Rana", request_id="wire-empty", quiet_only=True))
                 self.assertTrue(no_match.is_error)
-                invalid = await server.call_tool("search_rooms", dict(day="bad", hour=10, party_size=2))
+                invalid = await server.call_tool("search_rooms", dict(day="bad", hour=10, party_size=2, quiet_only=False))
                 self.assertTrue(invalid.is_error)
                 # Resource is a separate MCP primitive; it does not expand the tool count.
                 resource = await server.session.read_resource("campus://catalog")

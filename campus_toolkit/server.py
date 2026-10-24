@@ -20,6 +20,7 @@ Hour = Annotated[int, Field(ge=8, le=19, description="Start hour in Asia/Beirut;
 Size = Annotated[int, Field(ge=1, le=6, description="Number of people.")]
 Name = Annotated[str, Field(min_length=1, max_length=80, description="Student name supplied by the user.")]
 Request = Annotated[str, Field(pattern=r"^[A-Za-z0-9_-]{1,64}$", description="Unique operation ID; reuse unchanged on retry.")]
+Quiet = Annotated[bool, Field(strict=True, description="REQUIRED: true when the user requests quiet rooms; false when either quiet or collaborative is acceptable. Always supply this preference.")]
 
 
 @contextmanager
@@ -38,7 +39,7 @@ def create_server(db_path: Path | None = None) -> FastMCP:
 
     @mcp.tool(annotations={"readOnlyHint": True, "openWorldHint": False})
     def search_rooms(day: Day, hour: Hour, party_size: Size,
-                     quiet_only: bool = False) -> SearchResult:
+                     quiet_only: Quiet) -> SearchResult:
         """DATA: Look up available fictional campus rooms for one hour. No reservation is created.
         Results are ordered by capacity then ID. Empty rooms means no match.
         Invalid or past dates produce a clear error. Use before a specific-room reservation.
@@ -65,7 +66,7 @@ def create_server(db_path: Path | None = None) -> FastMCP:
                             "idempotentHint": True, "openWorldHint": False})
     def find_and_reserve(day: Day, hour: Hour, party_size: Size,
                          student_name: Name, request_id: Request,
-                         quiet_only: bool = False) -> PlanResult:
+                         quiet_only: Quiet) -> PlanResult:
         """ORCHESTRATION: Choose a suitable room for a booking request with NO user-specified room ID.
         Do NOT use this tool if the user names CEDAR-2, OLIVE-4 or SEA-6; use reserve_room instead.
         Fulfill an explicit request to find and book a suitable fictional study room.

@@ -1,5 +1,5 @@
 name: Free local LLM verification
-# Recheck the clarified single-purpose tool descriptions with a real local model.
+# Verify required preferences, all arguments and receipt-based factual answers.
 
 on:
   push:
