@@ -1,0 +1,4 @@
+  Duration: 00:05:17.47, start: 0.000000, bitrate: 161 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 160 kb/s, 15 fps, 15 tbr, 15360 tbn (default)
+Audio streams: 0
+Original live interaction preserved; captioned explanatory sections added.

@@ -33,9 +33,9 @@ Windows activation: `.venv\Scripts\activate`. The direct dependencies are pinned
 
 The **MCP-only demo needs no API key**. It launches a real FastMCP subprocess and calls it through `MCPServerStdio` from the OpenAI Agents SDK. It demonstrates all three tools, a slot conflict and an idempotent retry. Its temporary database is removed after the demo, so rerunning is safe. This checks the protocol round trip but does not test model tool selection.
 
-## Recorded tool demonstration
+## Captioned submission demonstration
 
-[Watch the recorded three-tool demonstration](https://drive.google.com/file/d/1-6kNFAOYEox10yscdkUFsxriu9GgYd8s/view?usp=drivesdk). The 1 minute 27 second clip shows all three successful real agent calls and their expanded MCP results. It is a short tool demonstration; the brief requires a 5–7 minute screencast with introduction and discussion of challenges. See `docs/demo_guide.md` and `docs/demo_narration.md` to complete that presentation.
+The submission ZIP includes `demo/Campus_Study_MCP_C5_Demo.mp4`: a 5 minute 17 second silent walkthrough with section titles and burned-in subtitles. It covers the project, three tool categories, MCP architecture, actual agent interaction, predictable failures, verification, challenges and limitations. The original 1:27 screen recording is embedded at its original timing with its original Mac cursor movements. No audio track is included. The explanatory source panels and test excerpts are taken from the project and retained actual evidence; they are not new execution footage.
 
 ## Run the actual agent
 
@@ -137,6 +137,6 @@ Run `python -m unittest discover -s tests -p test_core.py -v` for dependency-fre
 
 ## Submission
 
-Submit this source folder or a repository containing it, plus the reading summary and reflection. The repository link is provided above. The original brief also requires a 5-7 minute screencast. The linked short tool demonstration is included; expand it to the required 5–7 minute presentation using the guide and narration draft. Review the reflection in your own voice and use the live verification evidence before claiming a complete model demonstration. The Free local LLM verification workflow also performs this check on a standard Linux runner in this public repository, without any API secret. The separate paid-OpenAI workflow is optional and requires explicit selection.
+Submit this source folder or a repository containing it, plus the reading summary and reflection. The repository link is provided above. The original brief also requires a 5-7 minute screencast. The submission ZIP includes the completed 5:17 captioned demonstration. The original short clip is retained as source material. Review the reflection in your own voice and use the live verification evidence before claiming a complete model demonstration. The Free local LLM verification workflow also performs this check on a standard Linux runner in this public repository, without any API secret. The separate paid-OpenAI workflow is optional and requires explicit selection.
 
 References: [FastMCP tools](https://gofastmcp.com/servers/tools), [OpenAI Agents SDK MCP](https://openai.github.io/openai-agents-python/mcp/), and sources in the reading summary.

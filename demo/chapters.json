@@ -1,0 +1,50 @@
+[
+  {
+    "chapter": "Project introduction",
+    "duration_seconds": 8
+  },
+  {
+    "chapter": "Project and scope",
+    "duration_seconds": 18
+  },
+  {
+    "chapter": "Three distinct tools",
+    "duration_seconds": 30
+  },
+  {
+    "chapter": "Architecture",
+    "duration_seconds": 28
+  },
+  {
+    "chapter": "Interfaces and discovery",
+    "duration_seconds": 22
+  },
+  {
+    "chapter": "Recorded agent demonstration",
+    "duration_seconds": 87.4667
+  },
+  {
+    "chapter": "Orchestration design",
+    "duration_seconds": 22
+  },
+  {
+    "chapter": "Predictable failures",
+    "duration_seconds": 22
+  },
+  {
+    "chapter": "Challenge and solution",
+    "duration_seconds": 22
+  },
+  {
+    "chapter": "Actual verification",
+    "duration_seconds": 26
+  },
+  {
+    "chapter": "Reflection and limitations",
+    "duration_seconds": 20
+  },
+  {
+    "chapter": "Submission",
+    "duration_seconds": 12
+  }
+]

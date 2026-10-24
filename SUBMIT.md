@@ -1,13 +1,13 @@
-# C5 submission
-
-Rana Ezzeddine
+# C5 submission — Rana Ezzeddine
 
 Repository: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
 
-Source and setup: README.md, requirements.txt, campus_toolkit/, scripts/
-Reading summary: docs/reading_summary.md (371 words)
-Reflection: docs/reflection.md (two paragraphs)
-Video: demo/campus-study-demo.mp4 (1:27)
-Actual test and live-model evidence: evidence/
+- Source and setup: README.md, requirements.txt, campus_toolkit/, scripts/
+- Reading summary: docs/reading_summary.md (371 words)
+- Reflection: docs/reflection.md (two paragraphs)
+- Final video: demo/Campus_Study_MCP_C5_Demo.mp4 (5:17, silent, captions burned in)
+- Actual verification records: evidence/
 
-The video demonstrates all three real tool interactions. It is shorter than the required 5–7 minute screencast. Use docs/demo_narration.md to complete the presentation before submitting if strict compliance is required. The video is included directly in this ZIP. The Drive backup is private by default; grant access before submitting that link.
+Submit this ZIP and provide the repository link. If the submission system requests a separate video, upload the final MP4 from demo/. The shorter campus-study-demo.mp4 is the original source clip, not the final presentation.
+
+The final video combines explanatory sections, real source/test excerpts and the original recorded agent interaction. It preserves the recorded Mac cursor and contains no audio. No newly generated tool execution or simulated cursor is presented as real footage.
