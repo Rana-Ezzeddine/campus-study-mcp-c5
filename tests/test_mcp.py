@@ -7,6 +7,7 @@ import unittest
 from zoneinfo import ZoneInfo
 
 from campus_toolkit.agent import connection
+from agents.exceptions import UserError
 
 
 class MCPTests(unittest.IsolatedAsyncioTestCase):
@@ -22,7 +23,10 @@ class MCPTests(unittest.IsolatedAsyncioTestCase):
                     self.assertTrue(tool.output_schema)
                     if tool.name in {"search_rooms", "find_and_reserve"}:
                         self.assertIn("quiet_only", tool.input_schema["required"])
-                omitted = await server.call_tool("search_rooms", dict(day=day, hour=10, party_size=2))
+                with self.assertRaisesRegex(UserError, "quiet_only"):
+                    await server.call_tool("search_rooms", dict(day=day, hour=10, party_size=2))
+                # Also check the FastMCP server itself, without the host's preflight validation.
+                omitted = await server.session.call_tool("search_rooms", dict(day=day, hour=10, party_size=2))
                 self.assertTrue(omitted.is_error)
                 search = await server.call_tool("search_rooms", dict(day=day, hour=10, party_size=2, quiet_only=True))
                 self.assertFalse(search.is_error)

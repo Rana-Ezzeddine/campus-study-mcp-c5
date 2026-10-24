@@ -1,5 +1,5 @@
 name: Free local LLM verification
-# Verify required preferences, all arguments and receipt-based factual answers.
+# Verify required preferences at both boundaries, all arguments and factual answers.
 
 on:
   push:
