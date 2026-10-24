@@ -1,6 +1,6 @@
 DISCOVERY: search_rooms, reserve_room, find_and_reserve
 
-CLIENT -> SERVER search_rooms {"day": "2026-10-23", "hour": 10, "party_size": 2, "quiet_only": true}
+CLIENT -> SERVER search_rooms {"day": "2026-10-25", "hour": 10, "party_size": 2, "quiet_only": true}
 SERVER -> CLIENT {
   "meta": {
     "io.modelcontextprotocol/serverInfo": {
@@ -11,13 +11,13 @@ SERVER -> CLIENT {
   "content": [
     {
       "type": "text",
-      "text": "{\"day\":\"2026-10-23\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true}]}",
+      "text": "{\"day\":\"2026-10-25\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true}]}",
       "annotations": null,
       "meta": null
     }
   ],
   "structured_content": {
-    "day": "2026-10-23",
+    "day": "2026-10-25",
     "hour": 10,
     "timezone": "Asia/Beirut",
     "duration_minutes": 60,
@@ -40,7 +40,7 @@ SERVER -> CLIENT {
   "result_type": "complete"
 }
 
-CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-specific"}
+CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-25", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-specific"}
 SERVER -> CLIENT {
   "meta": {
     "io.modelcontextprotocol/serverInfo": {
@@ -51,15 +51,15 @@ SERVER -> CLIENT {
   "content": [
     {
       "type": "text",
-      "text": "{\"reservation_id\":\"2d600afc-bd72-4217-881a-d83cc7f0e7e7\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}",
+      "text": "{\"reservation_id\":\"68591875-6d3f-4541-ad28-b70bba2e7fdb\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-25\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}",
       "annotations": null,
       "meta": null
     }
   ],
   "structured_content": {
-    "reservation_id": "2d600afc-bd72-4217-881a-d83cc7f0e7e7",
+    "reservation_id": "68591875-6d3f-4541-ad28-b70bba2e7fdb",
     "room_id": "CEDAR-2",
-    "day": "2026-10-23",
+    "day": "2026-10-25",
     "hour": 10,
     "party_size": 2,
     "student_name": "Rana",
@@ -70,7 +70,7 @@ SERVER -> CLIENT {
   "result_type": "complete"
 }
 
-CLIENT -> SERVER find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
+CLIENT -> SERVER find_and_reserve {"day": "2026-10-25", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
 SERVER -> CLIENT {
   "meta": {
     "io.modelcontextprotocol/serverInfo": {
@@ -81,16 +81,16 @@ SERVER -> CLIENT {
   "content": [
     {
       "type": "text",
-      "text": "{\"reservation\":{\"reservation_id\":\"de958062-b801-4f23-aa37-7a0fccadaa44\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}",
+      "text": "{\"reservation\":{\"reservation_id\":\"0f88c4c6-792d-4101-a676-10083f4142db\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-25\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}",
       "annotations": null,
       "meta": null
     }
   ],
   "structured_content": {
     "reservation": {
-      "reservation_id": "de958062-b801-4f23-aa37-7a0fccadaa44",
+      "reservation_id": "0f88c4c6-792d-4101-a676-10083f4142db",
       "room_id": "OLIVE-4",
-      "day": "2026-10-23",
+      "day": "2026-10-25",
       "hour": 10,
       "party_size": 3,
       "student_name": "Rana",
@@ -107,7 +107,7 @@ SERVER -> CLIENT {
   "result_type": "complete"
 }
 
-CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-23", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-conflict"}
+CLIENT -> SERVER reserve_room {"room_id": "CEDAR-2", "day": "2026-10-25", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "demo-conflict"}
 SERVER -> CLIENT {
   "meta": {
     "io.modelcontextprotocol/serverInfo": {
@@ -128,7 +128,7 @@ SERVER -> CLIENT {
   "result_type": "complete"
 }
 
-CLIENT -> SERVER find_and_reserve {"day": "2026-10-23", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
+CLIENT -> SERVER find_and_reserve {"day": "2026-10-25", "hour": 10, "party_size": 3, "student_name": "Rana", "request_id": "demo-plan", "quiet_only": true}
 SERVER -> CLIENT {
   "meta": {
     "io.modelcontextprotocol/serverInfo": {
@@ -139,16 +139,16 @@ SERVER -> CLIENT {
   "content": [
     {
       "type": "text",
-      "text": "{\"reservation\":{\"reservation_id\":\"de958062-b801-4f23-aa37-7a0fccadaa44\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-23\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Existing result for this request_id.\",\"steps\":[\"idempotency replay\"]}",
+      "text": "{\"reservation\":{\"reservation_id\":\"0f88c4c6-792d-4101-a676-10083f4142db\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-25\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Existing result for this request_id.\",\"steps\":[\"idempotency replay\"]}",
       "annotations": null,
       "meta": null
     }
   ],
   "structured_content": {
     "reservation": {
-      "reservation_id": "de958062-b801-4f23-aa37-7a0fccadaa44",
+      "reservation_id": "0f88c4c6-792d-4101-a676-10083f4142db",
       "room_id": "OLIVE-4",
-      "day": "2026-10-23",
+      "day": "2026-10-25",
       "hour": 10,
       "party_size": 3,
       "student_name": "Rana",
@@ -165,4 +165,4 @@ SERVER -> CLIENT {
 }
 
 This is an MCP-client demonstration, not an LLM routing demonstration.
-For the live agent, run python -m campus_toolkit.agent with OPENAI_API_KEY set.
+For the live agent, start Ollama, pull qwen2.5:3b, and run python -m campus_toolkit.agent.

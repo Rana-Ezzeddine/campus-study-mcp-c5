@@ -45,7 +45,7 @@ python -m campus_toolkit.agent
 
 ## What the live check proves
 
-Three natural-language requests are sent to the local language model. The model sees the MCP tool descriptions and selects its calls. The OpenAI Agents SDK executes the calls over stdio through the FastMCP server. The check validates actual tool-call names and the resulting reservation database. It does not force tool selection with a hard-coded tool_choice or use the scripted test model.
+Three natural-language requests are sent to the local language model. The model sees the MCP tool descriptions and selects its calls. The OpenAI Agents SDK executes the calls over stdio through the FastMCP server. The check validates tool-call names, all expected argument values, room constraints, factual summaries and reservation state. Both preference-taking MCP tools require an explicit quiet_only boolean. The host formats displayed answers from validated MCP receipts and never displays the raw model-written final narrative. It does not force tool selection with a hard-coded tool_choice or use the scripted test model.
 
 The application disables OpenAI tracing. In local mode the client connects only to a loopback hostname and uses the placeholder `ollama`, which is not an API key. Optional paid OpenAI mode requires explicitly setting MODEL_PROVIDER=openai and configuring a key; it is not used by default or by the free workflow.
 

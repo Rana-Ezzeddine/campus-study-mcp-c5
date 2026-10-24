@@ -4,9 +4,9 @@
 
 Repository: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
 
-Verified run: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39840397595
+Verified run: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/40095974780
 
-**Verification: 14 tests passed with zero skips on Python 3.11 and 3.13.** Real MCP calls, resource access, failures, replay and the SDK Runner integration passed. The runner test uses an explicitly scripted model. Real Qwen2.5 3B tool selection also passed for all three tools with no API key: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/39845692818. See the validation record for scope and the observed answer-quality limitation.
+**Verification: 19 tests passed with zero skips on Python 3.11 and 3.13.** Real MCP calls, resource access, failures, replay and the SDK Runner integration passed. The runner test uses an explicitly scripted model. Real Qwen2.5 3B tool selection also passed for all three tools with no API key: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5/actions/runs/40095974824. The stronger run checks exact arguments, result constraints, factual presentation and persisted reservations; see the validation record.
 
 A fictional campus room assistant built with **FastMCP** and the **OpenAI Agents SDK**, using a **free local Ollama model by default**. No OpenAI API key, payment method, or paid API is required for this mode. It exposes exactly three MCP tools and one read-only catalog resource. The catalog and bookings are local demonstration data, not AUB facilities or a real campus reservation service.
 
@@ -73,7 +73,7 @@ The Python application (`agent.py`) is the **Host**. Its SDK `MCPServerStdio` co
 
 `find_and_reserve` calls `Toolkit.search_rooms` and then `Toolkit.reserve_room`, which are the same implementations used by the two standalone MCP handlers. Helpers and database methods are not registered as additional tools. Internal calls are local function calls; the host-to-server boundary uses MCP. `campus://catalog` is a separate `@mcp.resource`, not a fourth tool, and is not automatically injected into the model context. It is available to resource-aware clients and tested separately.
 
-Output types are dataclasses that FastMCP uses to derive structured schemas. Input annotations and `Field` metadata document types and constraints. The discovery test asserts exactly three tool names and nonempty descriptions/output schemas.
+Output types are dataclasses that FastMCP uses to derive structured schemas. Both preference-taking MCP tools require an explicit strict boolean quiet_only. The host validates MCP receipts against the actual calls and formats displayed answers from those facts. Raw model-written availability claims are discarded and excluded from later chat history. Unverifiable results produce a warning rather than a booking confirmation. Input annotations and `Field` metadata document types and constraints. The discovery test asserts exactly three tool names and nonempty descriptions/output schemas.
 
 ## Behavior and data contracts
 
@@ -81,7 +81,7 @@ Output types are dataclasses that FastMCP uses to derive structured schemas. Inp
 - Party size: 1-6. `quiet_only=true` excludes collaboration rooms. Matches are ordered by capacity, then room ID.
 - Static fictional rooms: CEDAR-2 (2 seats, quiet), OLIVE-4 (4 seats, quiet), SEA-6 (6 seats, collaborative).
 - `reserve_room` requires room ID, day, hour, party size, student name and request ID. It validates the room and capacity again, independently of prior searches.
-- `find_and_reserve` requires day, hour, party size, name, request ID, and optional quiet flag. Its single goal is a successful suitable reservation. When no match exists it raises a clear error without creating a reservation.
+- `find_and_reserve` requires day, hour, party size, name, request ID, and an explicit quiet flag. Its single goal is a successful suitable reservation. When no match exists it raises a clear error without creating a reservation.
 - Request IDs: 1-64 letters/digits/underscores/hyphens. Identical retries return the same reservation, even after restarting. Reusing an ID for changed arguments or another write tool produces `REQUEST_ID_CONFLICT`. A request ID is not an authentication token.
 - The host supplies a new UUID per user turn. SDK retries within a turn reuse the operation ID. A new chat turn is a new operation: if a user explicitly asks for another booking, the assistant does not treat it as a network retry.
 - SQLite `BEGIN IMMEDIATE` and a unique `(room_id, day, hour)` constraint prevent double booking. The orchestration can try the next result after a race. No files are written by the data lookup after server startup initialization.
@@ -107,7 +107,9 @@ Domain failures become `ToolError`, so MCP callers receive error results instead
 | `campus_toolkit/server.py` | FastMCP server; exactly three tools plus catalog resource |
 | `campus_toolkit/agent.py` | OpenAI Agents SDK host, interactive chat and printed tool evidence |
 | `campus_toolkit/demo.py` | MCP client round trip without model calls |
-| `campus_toolkit/live_demo.py` | Live model routing through all three tools |
+| `campus_toolkit/live_demo.py` | Checks all tool names, expected arguments, room constraints, factual presentation and database state |
+| `campus_toolkit/presentation.py` | Validates MCP receipts and renders factual answers |
+| `tests/test_presentation.py` | Regressions for invented claims and inconsistent results |
 | `tests/test_core.py` | Domain success/failure, read-only behavior, concurrency and replay tests |
 | `tests/test_mcp.py` | Real subprocess discovery, calls, errors and resource test |
 | `tests/test_agent_runner.py` | Real SDK Runner and MCP transport with a scripted model; not an LLM test |

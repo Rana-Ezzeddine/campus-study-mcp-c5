@@ -12,8 +12,13 @@ test_plan_replay_does_not_book_a_different_room (test_core.ToolkitTests.test_pla
 test_slot_conflict_has_no_second_write (test_core.ToolkitTests.test_slot_conflict_has_no_second_write) ... ok
 test_unknown_room_capacity_name_and_request (test_core.ToolkitTests.test_unknown_room_capacity_name_and_request) ... ok
 test_discovery_calls_resource_and_errors_over_stdio (test_mcp.MCPTests.test_discovery_calls_resource_and_errors_over_stdio) ... ok
+test_bad_preference_and_mismatched_results_are_rejected (test_presentation.PresentationTests.test_bad_preference_and_mismatched_results_are_rejected) ... ok
+test_no_match_does_not_invent_availability (test_presentation.PresentationTests.test_no_match_does_not_invent_availability) ... ok
+test_no_tool_receipt_does_not_repeat_a_model_claim (test_presentation.PresentationTests.test_no_tool_receipt_does_not_repeat_a_model_claim) ... ok
+test_summary_projects_only_verified_fields (test_presentation.PresentationTests.test_summary_projects_only_verified_fields) ... ok
+test_unverifiable_action_never_becomes_a_confirmation (test_presentation.PresentationTests.test_unverifiable_action_never_becomes_a_confirmation) ... ok
 
 ----------------------------------------------------------------------
-Ran 14 tests in 3.752s
+Ran 19 tests in 3.871s
 
 OK
