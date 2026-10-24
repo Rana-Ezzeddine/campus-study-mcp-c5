@@ -1,6 +1,6 @@
-# Optional 5-7 minute demonstration guide
+# 5–7 minute demonstration guide
 
-The video is omitted from this package as requested. C5 still lists it as a graded deliverable. This outline is ready to use if you choose to record it.
+A real 1:27 three-tool screen recording is available: https://drive.google.com/file/d/1-6kNFAOYEox10yscdkUFsxriu9GgYd8s/view?usp=drivesdk. All three tools succeed and their MCP calls/results are expanded. Keep this clip. Add approximately four minutes introducing the project, explaining the architecture, showing the source and tests, and discussing challenges. The combined recording should be 5–7 minutes. `demo_narration.md` supplies a draft for the additional explanation.
 
 ## Before recording
 
@@ -27,8 +27,9 @@ Explain the full round trip: user prompt -> host model -> SDK MCP client -> Fast
 - [x] Run both demos and retain actual output, including real local-model routing for all three tools.
 - [x] Publish source without `.env` or runtime databases: repository link below.
 - [ ] Include the 300-400 word reading summary and two-paragraph reflection.
-- [ ] If required, record the screencast and submit accessible repository and video links.
+- [ ] Complete the required 5–7 minute screencast and submit accessible repository and video links.
+- [x] Record the real three-tool interaction with expanded MCP calls and results (1:27).
 
 Repository: https://github.com/Rana-Ezzeddine/campus-study-mcp-c5
 
-No video is included. No grade is guaranteed.
+The current video is a short demonstration, not yet the full required presentation. No grade is guaranteed.

@@ -33,6 +33,10 @@ Windows activation: `.venv\Scripts\activate`. The direct dependencies are pinned
 
 The **MCP-only demo needs no API key**. It launches a real FastMCP subprocess and calls it through `MCPServerStdio` from the OpenAI Agents SDK. It demonstrates all three tools, a slot conflict and an idempotent retry. Its temporary database is removed after the demo, so rerunning is safe. This checks the protocol round trip but does not test model tool selection.
 
+## Recorded tool demonstration
+
+[Watch the recorded three-tool demonstration](https://drive.google.com/file/d/1-6kNFAOYEox10yscdkUFsxriu9GgYd8s/view?usp=drivesdk). The 1 minute 27 second clip shows all three successful real agent calls and their expanded MCP results. It is a short tool demonstration; the brief requires a 5–7 minute screencast with introduction and discussion of challenges. See `docs/demo_guide.md` and `docs/demo_narration.md` to complete that presentation.
+
 ## Run the actual agent
 
 ```bash
@@ -52,6 +56,14 @@ Example conversation (replace the date with tomorrow, within 30 days):
 1. "Which quiet rooms are available for 2 people tomorrow at 10:00 Beirut time? Only search."
 2. "Book CEDAR-2 for Rana, 2 people, tomorrow at 10:00 Beirut time."
 3. "Find and book a quiet room for Rana, 3 people, tomorrow at 10:00 Beirut time."
+
+Optional local browser interface (the same agent and exactly the same three MCP tools):
+
+```bash
+python scripts/start_web_demo.py
+```
+
+Open http://127.0.0.1:8767. The launcher starts a background process that survives the terminal closing. Browser demo reservations persist in `runtime/web_demo.sqlite3`; the runtime files are gitignored. Each browser request is independently sent to the real model with complete booking details; it does not reuse conversation history. The buttons send natural-language requests, not forced tool calls. The existing terminal agent supports conversation history.
 
 Single prompt mode:
 
@@ -73,12 +85,12 @@ The Python application (`agent.py`) is the **Host**. Its SDK `MCPServerStdio` co
 
 `find_and_reserve` calls `Toolkit.search_rooms` and then `Toolkit.reserve_room`, which are the same implementations used by the two standalone MCP handlers. Helpers and database methods are not registered as additional tools. Internal calls are local function calls; the host-to-server boundary uses MCP. `campus://catalog` is a separate `@mcp.resource`, not a fourth tool, and is not automatically injected into the model context. It is available to resource-aware clients and tested separately.
 
-Output types are dataclasses that FastMCP uses to derive structured schemas. Both preference-taking MCP tools require an explicit strict boolean quiet_only. The host validates MCP receipts against the actual calls and formats displayed answers from those facts. Raw model-written availability claims are discarded and excluded from later chat history. Unverifiable results produce a warning rather than a booking confirmation. Input annotations and `Field` metadata document types and constraints. The discovery test asserts exactly three tool names and nonempty descriptions/output schemas.
+Output types are dataclasses that FastMCP uses to derive structured schemas. Both lookup and orchestration require an explicit strict boolean `quiet_only`; there is no silent MCP default. The model chooses the tools and arguments, then the host validates the returned receipts and formats the displayed answer from those facts. Raw model-written availability claims are discarded and excluded from subsequent chat history. Unknown or inconsistent results produce an unverified-result warning rather than a booking confirmation. Input annotations and `Field` metadata document types and constraints. The discovery test asserts exactly three tool names and nonempty descriptions/output schemas.
 
 ## Behavior and data contracts
 
 - One-hour bookings, starting at integer hours **08:00 through 19:00**, in **Asia/Beirut**. The start must be in the future and no more than 30 calendar days ahead. Dates use `YYYY-MM-DD`. Timezone rules come from Python `zoneinfo`.
-- Party size: 1-6. `quiet_only=true` excludes collaboration rooms. Matches are ordered by capacity, then room ID.
+- Party size: 1-6. `quiet_only=true` excludes collaboration rooms; supply `false` when either room type is acceptable. Matches are ordered by capacity, then room ID.
 - Static fictional rooms: CEDAR-2 (2 seats, quiet), OLIVE-4 (4 seats, quiet), SEA-6 (6 seats, collaborative).
 - `reserve_room` requires room ID, day, hour, party size, student name and request ID. It validates the room and capacity again, independently of prior searches.
 - `find_and_reserve` requires day, hour, party size, name, request ID, and an explicit quiet flag. Its single goal is a successful suitable reservation. When no match exists it raises a clear error without creating a reservation.
@@ -106,10 +118,12 @@ Domain failures become `ToolError`, so MCP callers receive error results instead
 | `campus_toolkit/core.py` | Domain logic, typed outputs and SQLite persistence |
 | `campus_toolkit/server.py` | FastMCP server; exactly three tools plus catalog resource |
 | `campus_toolkit/agent.py` | OpenAI Agents SDK host, interactive chat and printed tool evidence |
+| `campus_toolkit/web_demo.py` | Optional loopback-only browser demo with actual MCP traces |
+| `scripts/start_web_demo.py` | Detached browser-demo launcher; persistent demo database |
 | `campus_toolkit/demo.py` | MCP client round trip without model calls |
-| `campus_toolkit/live_demo.py` | Checks all tool names, expected arguments, room constraints, factual presentation and database state |
-| `campus_toolkit/presentation.py` | Validates MCP receipts and renders factual answers |
-| `tests/test_presentation.py` | Regressions for invented claims and inconsistent results |
+| `campus_toolkit/live_demo.py` | Live checks of tool names, every expected argument, result constraints, factual presentation and reservations |
+| `campus_toolkit/presentation.py` | Validates MCP receipts and renders factual summaries without model-written claims |
+| `tests/test_presentation.py` | Regression checks for invented availability and inconsistent outputs |
 | `tests/test_core.py` | Domain success/failure, read-only behavior, concurrency and replay tests |
 | `tests/test_mcp.py` | Real subprocess discovery, calls, errors and resource test |
 | `tests/test_agent_runner.py` | Real SDK Runner and MCP transport with a scripted model; not an LLM test |
@@ -123,6 +137,6 @@ Run `python -m unittest discover -s tests -p test_core.py -v` for dependency-fre
 
 ## Submission
 
-Submit this source folder or a repository containing it, plus the reading summary and reflection. The repository link is provided above. The original brief also requires a 5-7 minute screencast. The video is intentionally omitted per your request; use the guide if your instructor still requires it. Review the reflection in your own voice and use the live verification evidence before claiming a complete model demonstration. The Free local LLM verification workflow also performs this check on a standard Linux runner in this public repository, without any API secret. The separate paid-OpenAI workflow is optional and requires explicit selection.
+Submit this source folder or a repository containing it, plus the reading summary and reflection. The repository link is provided above. The original brief also requires a 5-7 minute screencast. The linked short tool demonstration is included; expand it to the required 5–7 minute presentation using the guide and narration draft. Review the reflection in your own voice and use the live verification evidence before claiming a complete model demonstration. The Free local LLM verification workflow also performs this check on a standard Linux runner in this public repository, without any API secret. The separate paid-OpenAI workflow is optional and requires explicit selection.
 
 References: [FastMCP tools](https://gofastmcp.com/servers/tools), [OpenAI Agents SDK MCP](https://openai.github.io/openai-agents-python/mcp/), and sources in the reading summary.

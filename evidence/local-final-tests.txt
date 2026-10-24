@@ -1,0 +1,91 @@
+test_runner_executes_three_tools_and_returns_results_to_model (test_agent_runner.AgentRunnerTests.test_runner_executes_three_tools_and_returns_results_to_model) ... 
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                FastMCP 4.1.3                                 │
+│                            https://gofastmcp.com                             │
+│                                                                              │
+│                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+│                 🚀 Deploy free: https://horizon.prefect.io                   │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[10/24/26 21:38:27] INFO     Starting MCP server 'Campus Study  transport.py:241
+                             Toolkit' with transport 'stdio'                    
+Executing <Task pending name='Task-2' coro=<AgentRunnerTests.test_runner_executes_three_tools_and_returns_results_to_model() running at /Users/ranaezzeddine/.codex/.chatgpt-projects/g-p-6ac80cd7fe2c81918355bca2fc692d2a/outputs/campus-study-mcp/tests/test_agent_runner.py:70> wait_for=<Task pending name='Task-6' coro=<preserve_tool_task_cancellation() running at /Users/ranaezzeddine/.codex/.chatgpt-projects/g-p-6ac80cd7fe2c81918355bca2fc692d2a/outputs/campus-study-mcp/.venv/lib/python3.13/site-packages/agents/run_internal/run_loop.py:978> cb=[Task.task_wakeup()] created at /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/tasks.py:410> cb=[_run_until_complete_cb() at /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py:181] created at /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py:100> took 0.133 seconds
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/traceback.py:293: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10a917790>
+  def __init__(self, filename, lineno, name, *, lookup_line=True,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_action_persists_across_restart (test_core.ToolkitTests.test_action_persists_across_restart) ... ok
+test_concurrent_writers_cannot_double_book (test_core.ToolkitTests.test_concurrent_writers_cannot_double_book) ... ok
+test_data_empty_is_valid (test_core.ToolkitTests.test_data_empty_is_valid) ... ok
+test_data_read_only_and_sorted (test_core.ToolkitTests.test_data_read_only_and_sorted) ... ok
+test_idempotency_and_changed_request (test_core.ToolkitTests.test_idempotency_and_changed_request) ... ok
+test_invalid_inputs (test_core.ToolkitTests.test_invalid_inputs) ... ok
+test_no_match_no_write (test_core.ToolkitTests.test_no_match_no_write) ... ok
+test_orchestration_invokes_both_capabilities (test_core.ToolkitTests.test_orchestration_invokes_both_capabilities) ... ok
+test_orchestration_recovers_from_race (test_core.ToolkitTests.test_orchestration_recovers_from_race) ... ok
+test_plan_replay_does_not_book_a_different_room (test_core.ToolkitTests.test_plan_replay_does_not_book_a_different_room) ... ok
+test_slot_conflict_has_no_second_write (test_core.ToolkitTests.test_slot_conflict_has_no_second_write) ... ok
+test_unknown_room_capacity_name_and_request (test_core.ToolkitTests.test_unknown_room_capacity_name_and_request) ... ok
+test_discovery_calls_resource_and_errors_over_stdio (test_mcp.MCPTests.test_discovery_calls_resource_and_errors_over_stdio) ... 
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                FastMCP 4.1.3                                 │
+│                            https://gofastmcp.com                             │
+│                                                                              │
+│                 🖥  Server:      Campus Study Toolkit, 4.1.3                  │
+│                 🚀 Deploy free: https://horizon.prefect.io                   │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[10/24/26 21:38:29] INFO     Starting MCP server 'Campus Study  transport.py:241
+                             Toolkit' with transport 'stdio'                    
+                    WARNING  Invalid arguments for tool           server.py:1501
+                             'search_rooms': {'error_count': 1,                 
+                             'error_types': ['missing_argument']}               
+[10/24/26 21:38:29] Error calling tool 'reserve_room'                           
+                    Error calling tool 'find_and_reserve'                       
+                    Error calling tool 'search_rooms'                           
+ok
+test_bad_preference_and_mismatched_results_are_rejected (test_presentation.PresentationTests.test_bad_preference_and_mismatched_results_are_rejected) ... ok
+test_no_match_does_not_invent_availability (test_presentation.PresentationTests.test_no_match_does_not_invent_availability) ... ok
+test_no_tool_receipt_does_not_repeat_a_model_claim (test_presentation.PresentationTests.test_no_tool_receipt_does_not_repeat_a_model_claim) ... ok
+test_summary_projects_only_verified_fields (test_presentation.PresentationTests.test_summary_projects_only_verified_fields) ... ok
+test_unverifiable_action_never_becomes_a_confirmation (test_presentation.PresentationTests.test_unverifiable_action_never_becomes_a_confirmation) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 3.214s
+
+OK
+MCP CALL search_rooms {"day": "2026-10-25", "hour": 10, "party_size": 2, "quiet_only": true}
+MCP RESULT {"type": "text", "text": "{\"day\":\"2026-10-25\",\"hour\":10,\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60,\"rooms\":[{\"room_id\":\"CEDAR-2\",\"name\":\"Cedar Study Pod\",\"capacity\":2,\"quiet\":true},{\"room_id\":\"OLIVE-4\",\"name\":\"Olive Study Room\",\"capacity\":4,\"quiet\":true}]}"}
+ASSISTANT: Available quiet rooms for 2 people, 2026-10-25 10:00-11:00 (Asia/Beirut):
+- Cedar Study Pod (CEDAR-2): 2 seats, quiet.
+- Olive Study Room (OLIVE-4): 4 seats, quiet.
+No reservation was created.
+MCP CALL reserve_room {"room_id": "CEDAR-2", "day": "2026-10-25", "hour": 10, "party_size": 2, "student_name": "Rana", "request_id": "runner-action"}
+MCP RESULT {"type": "text", "text": "{\"reservation_id\":\"028c8aa0-3fe1-4b26-bb8d-ad4b9ad723bc\",\"room_id\":\"CEDAR-2\",\"day\":\"2026-10-25\",\"hour\":10,\"party_size\":2,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60}"}
+ASSISTANT: Reserved CEDAR-2 for Rana, 2 people, 2026-10-25 10:00-11:00 (Asia/Beirut).
+Reservation ID: 028c8aa0-3fe1-4b26-bb8d-ad4b9ad723bc.
+MCP CALL find_and_reserve {"day": "2026-10-25", "hour": 10, "party_size": 3, "quiet_only": true, "student_name": "Rana", "request_id": "runner-plan"}
+MCP RESULT {"type": "text", "text": "{\"reservation\":{\"reservation_id\":\"e5f614f1-f75b-452a-9de7-82ca5591f028\",\"room_id\":\"OLIVE-4\",\"day\":\"2026-10-25\",\"hour\":10,\"party_size\":3,\"student_name\":\"Rana\",\"timezone\":\"Asia/Beirut\",\"duration_minutes\":60},\"selection_reason\":\"Smallest available room meeting your constraints.\",\"steps\":[\"search_rooms\",\"reserve_room\"]}"}
+ASSISTANT: Reserved OLIVE-4 for Rana, 3 people, 2026-10-25 10:00-11:00 (Asia/Beirut).
+Reservation ID: e5f614f1-f75b-452a-9de7-82ca5591f028.
+Selection: Smallest available room meeting your constraints.
